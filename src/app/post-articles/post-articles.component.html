@@ -1,0 +1,55 @@
+<div class="page">
+<div class="row">
+  <div class="col-6">
+    <h1>Post an article....</h1>
+    </div>
+  </div>
+<form #imageForm= ngForm (ngSubmit)="onSubmit()">
+<div class="row">
+    <div class="col-6">
+        <div class="form-group">
+        <label for="caption"> Article topic</label>
+        <input type="text"  name="caption"  [(ngModel)]="caption" class="form-control" id="caption" placeholder="Write the article topic" required>
+      </div>
+      </div>
+      </div><br>
+<div class="row">
+  
+    <div class="col-5">
+        <img src="{{imageUrl}}" height="200px" width="250px">
+      <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)" name="img" [(ngModel)]="img"><br><br>
+     
+    </div>
+  </div>
+ 
+  <div class="row">
+      <div class="col-6">
+          <div class="form-group shadow-textarea">
+              <label for="description">Add the description.....</label>
+              <textarea class="form-control z-depth-1" name="description" [(ngModel)]="description" id="description" rows="3" placeholder="Write something here..."  required></textarea>
+          </div>
+      </div>
+     
+    </div>
+    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- Article panel starts here -->
+    <div class="articlePanel">
+        <h2>Articles details</h2>
+        <div class="card w-50" *ngFor="let article of articles">
+          
+            <div class="card-body" >
+                <h3 class="card-title">{{article['caption']}}</h3>
+                <p class="card-text">{{article['description']}}</p>
+                <a href="#" class="btn btn-primary">Delete</a>
+                <a href="#" class="btn btn-primary">Edit</a>
+            </div>
+        </div>
+<!-- another panel -->
+        
+
+      </div>
+<!-- end of page -->
+</div>
