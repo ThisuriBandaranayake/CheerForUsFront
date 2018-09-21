@@ -1,10 +1,9 @@
-<p>
-  article-feed works!
-</p>
+<div class="page">
+<p class="top">Article Feed</p>
 <!--News card-->
-<div class="col-8">
-<div class="card mb-3 text-center hoverable">
-    <div class="card-body">
+<div class="col-8" >
+<div class="card mb-3 text-center hoverable" *ngFor="let admin_article of admin_articles">
+    <div class="card-body" >
         <!--Grid row-->
         <div class="row">
 
@@ -21,16 +20,14 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-md-7 text-left ml-3 mt-3">
+            <div class="col-md-7 text-left ml-3 mt-3"  >
                 <!--Excerpt-->
                 <a href="" class="green-text">
                     <h6 class="font-bold pb-1"><i class="fa fa-desktop"></i> Work</h6>
                 </a>
-                <h4 class="mb-4"><strong>This is title of the news</strong></h4>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque, totam
-                    rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</p>
-                <p>by <a><strong>Carine Fox</strong></a>, 19/08/2016</p>
+                <h4 class="mb-4"><strong>{{admin_article['caption']}}</strong></h4>
+                <p>{{admin_article['description']}}</p>
+                <!-- <p>by <a><strong>Carine Fox</strong></a>, 19/08/2016</p> -->
                 <a class="btn btn-success">Read more</a>
             </div>
             <!--Grid column-->
@@ -40,3 +37,4 @@
 </div>
 </div>
 <!--News card-->
+</div>

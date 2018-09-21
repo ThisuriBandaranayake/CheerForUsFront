@@ -17,8 +17,8 @@ export class PostArticlesComponent implements OnInit {
   caption:string;
   description:string;
   img:string;
-imageUrl : string = "assets/images/t1.jpg";
-fileToUpload : File = null;
+  imageUrl : string = "assets/images/t1.jpg";
+  fileToUpload : File = null;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {

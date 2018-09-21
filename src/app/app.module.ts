@@ -13,6 +13,7 @@ import { PostComponent } from './post/post.component';
 import { PoatArticlesComponent } from './poat-articles/poat-articles.component';
 import { PostArticlesComponent } from './post-articles/post-articles.component';
 import { ArticleFeedComponent } from './article-feed/article-feed.component';
+import { NavComponent } from './nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { ArticleFeedComponent } from './article-feed/article-feed.component';
     PostComponent,
     PoatArticlesComponent,
     PostArticlesComponent,
-    ArticleFeedComponent
+    ArticleFeedComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,10 @@ import { ArticleFeedComponent } from './article-feed/article-feed.component';
     MDBBootstrapModule.forRoot(),
     FormsModule,
     RouterModule.forRoot([
+      {
+        path:'nav',
+        component:NavComponent
+      },
       {
         path:'add',
         component:AddComponent
