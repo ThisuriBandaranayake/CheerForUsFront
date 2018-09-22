@@ -18,6 +18,7 @@
         <div class="row">
           
             <div class="col-5">
+                    <div class="form-group">
                 <img src="{{imageUrl}}" height="200px" width="250px">
                 <br><br>
               <input type="file" class="upload" #Image accept="image/*" (change)="handleFileInput($event.target.files)" name="img" [(ngModel)]="img"><br><br>
@@ -25,6 +26,7 @@
             </div>
           </div>
          
+          </div>
           <div class="row">
               <div class="col-10">
                   <div class="form-group shadow-textarea">
@@ -51,7 +53,7 @@
           
             <div class="card-body" >
                 <h3 class="card-title">{{admin_article['caption']}}</h3>
-                <p> <img ng-src="{{admin_article['img']}}" height="50px" width="50px"> </p>
+                <p> <img src="{{admin_article['img']}}" height="50px" width="50px"> </p>
                 <p class="card-text">{{admin_article['description']}}</p>
                 <a href="#" class="btn btn-primary">Delete</a>
                 <a href="#" class="btn btn-primary">Edit</a>

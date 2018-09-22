@@ -14,6 +14,8 @@ import { PoatArticlesComponent } from './poat-articles/poat-articles.component';
 import { PostArticlesComponent } from './post-articles/post-articles.component';
 import { ArticleFeedComponent } from './article-feed/article-feed.component';
 import { NavComponent } from './nav/nav.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminNavComponent } from './admin-nav/admin-nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,9 @@ import { NavComponent } from './nav/nav.component';
     PoatArticlesComponent,
     PostArticlesComponent,
     ArticleFeedComponent,
-    NavComponent
+    NavComponent,
+    AdminDashboardComponent,
+    AdminNavComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,16 @@ import { NavComponent } from './nav/nav.component';
     MDBBootstrapModule.forRoot(),
     FormsModule,
     RouterModule.forRoot([
+      {
+        path:'admin-nav',
+        component:AdminNavComponent
+
+      },
+      {
+        path:'admin-dashboard',
+        component:AdminDashboardComponent
+
+      },
       {
         path:'nav',
         component:NavComponent

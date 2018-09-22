@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
+
 @Component({
   selector: 'app-post-articles',
   templateUrl: './post-articles.component.html',
@@ -16,7 +17,7 @@ export class PostArticlesComponent implements OnInit {
   error:null;
   caption:string;
   description:string;
-  img:string;
+  img:Blob;
   imageUrl : string = "assets/images/t1.jpg";
   fileToUpload : File = null;
   constructor(private http: HttpClient) { }
@@ -42,7 +43,7 @@ reader.readAsDataURL(this.fileToUpload);
 onSubmit() {
   let input = new FormData();
 input.append('caption',this.caption);
-input.append('img',this.img);
+input.append('img',this.imageUrl);
 input.append('description',this.description);
   return this.http.post('http://localhost:8000/api/articleStore',input).subscribe(
     data => {
