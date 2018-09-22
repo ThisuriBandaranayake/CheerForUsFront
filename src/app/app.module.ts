@@ -16,6 +16,7 @@ import { ArticleFeedComponent } from './article-feed/article-feed.component';
 import { NavComponent } from './nav/nav.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { AdminDetailsComponent } from './admin-details/admin-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
     ArticleFeedComponent,
     NavComponent,
     AdminDashboardComponent,
-    AdminNavComponent
+    AdminNavComponent,
+    AdminDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,11 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
       {
         path:'admin-nav',
         component:AdminNavComponent
+
+      },
+      {
+        path:'admin-details',
+        component:AdminDetailsComponent
 
       },
       {

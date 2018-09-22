@@ -17,8 +17,8 @@ export class PostArticlesComponent implements OnInit {
   error:null;
   caption:string;
   description:string;
-  img:Blob;
-  imageUrl : string = "assets/images/t1.jpg";
+  img:any;
+  imageUrl : string = "assets/images/upload.jpg";
   fileToUpload : File = null;
   constructor(private http: HttpClient) { }
 
