@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-
+import { Location } from '@angular/common';
+import {ArticlePostingService} from '../article-posting.service';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-post-articles',
@@ -12,15 +14,19 @@ export class PostArticlesComponent implements OnInit {
     caption:null,
     img:null,
     description:null,
+   
   }
   admin_articles;
   error:null;
   caption:string;
   description:string;
   img:any;
+  id:number;
   imageUrl : string = "assets/images/upload.jpg";
   fileToUpload : File = null;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private location: Location
+    ) { }
 
   ngOnInit() {
 this.http.get('http://localhost:8000/api/articles').subscribe(data=>{
@@ -52,5 +58,18 @@ input.append('description',this.description);
 error => console.log(error)
   );
 }
+goBack(): void {
+  this.location.back();
+}
 
+
+delete(id: number){
+ this.http.delete('http://localhost:8000/api/articles',({
+headers: new HttpHeaders({
+  'Content-Type':'application/json',
+}),
+// not working
+ }))
+
+}
 }

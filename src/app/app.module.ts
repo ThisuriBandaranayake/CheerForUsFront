@@ -9,26 +9,28 @@ import { AddComponent } from './add/add.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
 import { RouterModule} from '@angular/router';
-import { PostComponent } from './post/post.component';
-import { PoatArticlesComponent } from './poat-articles/poat-articles.component';
+
 import { PostArticlesComponent } from './post-articles/post-articles.component';
 import { ArticleFeedComponent } from './article-feed/article-feed.component';
 import { NavComponent } from './nav/nav.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { AdminNavComponent } from './admin-nav/admin-nav.component';
+
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
+import {ArticlePostingService} from './article-posting.service';
+import { ProfileComponent } from './profile/profile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     AddComponent,
-    PostComponent,
-    PoatArticlesComponent,
+   
     PostArticlesComponent,
     ArticleFeedComponent,
     NavComponent,
     AdminDashboardComponent,
-    AdminNavComponent,
-    AdminDetailsComponent
+   
+    AdminDetailsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -37,9 +39,10 @@ import { AdminDetailsComponent } from './admin-details/admin-details.component';
     MDBBootstrapModule.forRoot(),
     FormsModule,
     RouterModule.forRoot([
+     
       {
-        path:'admin-nav',
-        component:AdminNavComponent
+        path:'profile',
+        component:ProfileComponent
 
       },
       {
@@ -71,7 +74,7 @@ import { AdminDetailsComponent } from './admin-details/admin-details.component';
     ])
     
   ],
-  providers: [],
+  providers: [ArticlePostingService],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
