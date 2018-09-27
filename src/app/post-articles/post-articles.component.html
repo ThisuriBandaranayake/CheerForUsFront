@@ -61,7 +61,7 @@
                 <p> <img src="{{admin_article['img']}}" height="50px" width="50px"> </p>
                 <p class="card-text">{{admin_article['description']}}</p>
                 <button class="btn btn-primary" (click)="delete(admin_article.id)">Delete</button>
-                <a href="#" class="btn btn-primary">Edit</a>
+                <button class="btn btn-primary" routerLink="/edit-article/{{admin_article.id}}" >Edit</button>
             </div>
            
         </div>

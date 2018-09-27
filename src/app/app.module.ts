@@ -18,6 +18,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
 import {ArticlePostingService} from './article-posting.service';
 import { ProfileComponent } from './profile/profile.component';
+import { EditArticleComponent } from './edit-article/edit-article.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,10 @@ import { ProfileComponent } from './profile/profile.component';
     AdminDashboardComponent,
    
     AdminDetailsComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditArticleComponent,
+    SideNavComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,16 @@ import { ProfileComponent } from './profile/profile.component';
     MDBBootstrapModule.forRoot(),
     FormsModule,
     RouterModule.forRoot([
-     
+      {
+        path:'side-nav',
+        component:SideNavComponent
+
+      },
+      {
+        path:'edit-article/:id',
+        component:EditArticleComponent
+
+      },
       {
         path:'profile',
         component:ProfileComponent
