@@ -58,18 +58,27 @@ input.append('description',this.description);
 error => console.log(error)
   );
 }
+
 goBack(): void {
   this.location.back();
 }
 
 
-delete(id: number){
- this.http.delete('http://localhost:8000/api/articles',({
-headers: new HttpHeaders({
-  'Content-Type':'application/json',
-}),
-// not working
- }))
+delete(id){
+var response = confirm("Are you sure you want to delete this article?");
 
+if(response == true){
+  this.http.get('http://localhost:8000/api/deleteArticles/'+id).subscribe(response =>{
+console.log(response);
+
+  })
+  this.http.get('http://localhost:8000/api/articles').subscribe(data=>{
+  console.log(data);
+  this.admin_articles=data;
+})
 }
+else{
+}
+}
+
 }
