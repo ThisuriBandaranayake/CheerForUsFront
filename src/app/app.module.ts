@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule} from '@angular/common/http';
+// MDB Angular Free
+
+import { ButtonsModule, WavesModule, IconsModule } from 'angular-bootstrap-md'
+
 
 import { AppComponent } from './app.component';
 import { AddComponent } from './add/add.component';
@@ -20,6 +24,7 @@ import {ArticlePostingService} from './article-posting.service';
 import { ProfileComponent } from './profile/profile.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     ProfileComponent,
     EditArticleComponent,
     SideNavComponent,
+    HomeComponent,
   
   ],
   imports: [
@@ -43,7 +49,13 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
+    ButtonsModule, WavesModule, IconsModule,
     RouterModule.forRoot([
+      {
+        path:'home',
+        component:HomeComponent
+
+      },
       {
         path:'side-nav',
         component:SideNavComponent
