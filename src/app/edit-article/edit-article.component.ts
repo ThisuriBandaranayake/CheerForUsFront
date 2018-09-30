@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 export class EditArticleComponent implements OnInit {
 
   admin_articles;
-  admin_article;
+ 
   error:null;
   caption:string;
   description:string;
