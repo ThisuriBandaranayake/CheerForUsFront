@@ -1,8 +1,4 @@
-
-<div class="row">
-    <br><br>
-    </div>
-   
+<app-admin-nav></app-admin-nav>
 
 <p class="text-center">Post an article....</p>
 <div class="container">
@@ -14,11 +10,23 @@
 <form #imageForm= ngForm (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-10">
+                <div class="row">
+                    <br>
+                    <br>
+                    </div>
                 <div class="form-group">
                 <label for="caption" class="texts"> Article topic</label>
-                <input type="text"  name="caption"  [(ngModel)]="caption" class="form-control" id="caption" placeholder="Write the article topic" required>
+                <input type="text"  name="caption"  [(ngModel)]="model.caption" class="form-control" placeholder="Write the article topic" required minlength="1" #caption="ngModel">
+                <div *ngIf="caption.invalid && (caption.dirty || caption.touched)"
+                class="alert alert-danger">
+            
+              <div *ngIf="caption.errors.required">
+                Topic is required.
               </div>
+              </div>  
+            </div>
               </div>
+             
               </div><br>
         <div class="row">
           
@@ -42,7 +50,7 @@
              
             </div>
             <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!imageForm.valid" > Submit</button>
             </form>
         
         

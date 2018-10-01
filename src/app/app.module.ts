@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule} from '@angular/common/http';
+//import { FormGroup, FormControl, Validators } from '@angular/forms';
 // MDB Angular Free
 
 import { ButtonsModule, WavesModule, IconsModule } from 'angular-bootstrap-md'
@@ -25,6 +26,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { HomeComponent } from './home/home.component';
+import { ProfileNavComponent } from './profile-nav/profile-nav.component';
+import { IDashboardComponent } from './idashboard/idashboard.component';
+import { AdminNavComponent } from './admin-nav/admin-nav.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,9 @@ import { HomeComponent } from './home/home.component';
     EditArticleComponent,
     SideNavComponent,
     HomeComponent,
+    ProfileNavComponent,
+    IDashboardComponent,
+    AdminNavComponent,
   
   ],
   imports: [
@@ -49,11 +56,27 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
+    //FormGroup, FormControl, Validators,
     ButtonsModule, WavesModule, IconsModule,
     RouterModule.forRoot([
       {
-        path:'home',
+        path:'',
         component:HomeComponent
+
+      },
+      {
+        path:'adminNav',
+        component:AdminNavComponent
+
+      },
+      {
+        path:'idashboard',
+        component:IDashboardComponent
+
+      },
+      {
+        path:'profile-nav',
+        component:ProfileNavComponent
 
       },
       {
