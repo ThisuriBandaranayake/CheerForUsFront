@@ -5,14 +5,14 @@ import { HttpClientModule} from '@angular/common/http';
 //import { FormGroup, FormControl, Validators } from '@angular/forms';
 // MDB Angular Free
 
-import { ButtonsModule, WavesModule, IconsModule } from 'angular-bootstrap-md'
-
+// MDB Angular Free
+import { CheckboxModule, WavesModule, ButtonsModule, InputsModule, IconsModule } from 'angular-bootstrap-md'
 
 import { AppComponent } from './app.component';
 import { AddComponent } from './add/add.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 import { RouterModule} from '@angular/router';
 
 import { PostArticlesComponent } from './post-articles/post-articles.component';
@@ -29,6 +29,9 @@ import { HomeComponent } from './home/home.component';
 import { ProfileNavComponent } from './profile-nav/profile-nav.component';
 import { IDashboardComponent } from './idashboard/idashboard.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { LoginComponent } from './login/login.component';
+import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
+import { ISignUpComponent } from './isign-up/isign-up.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
     ProfileNavComponent,
     IDashboardComponent,
     AdminNavComponent,
+    LoginComponent,
+    UserSignUpComponent,
+    ISignUpComponent,
   
   ],
   imports: [
@@ -56,12 +62,31 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
+    InputsModule,
+    CheckboxModule,
+    
     //FormGroup, FormControl, Validators,
     ButtonsModule, WavesModule, IconsModule,
     RouterModule.forRoot([
       {
         path:'',
         component:HomeComponent
+
+      },
+      {
+        path:'user-sign-up',
+        component:UserSignUpComponent
+
+      },
+      {
+        path:'isign-up',
+        component:ISignUpComponent
+
+      },
+      {
+        path:'login',
+        component:LoginComponent
 
       },
       {
