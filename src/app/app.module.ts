@@ -32,6 +32,7 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { LoginComponent } from './login/login.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { ISignUpComponent } from './isign-up/isign-up.component';
+import { AdminSignUpComponent } from './admin-sign-up/admin-sign-up.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ISignUpComponent } from './isign-up/isign-up.component';
     LoginComponent,
     UserSignUpComponent,
     ISignUpComponent,
+    AdminSignUpComponent,
   
   ],
   imports: [
@@ -72,6 +74,11 @@ import { ISignUpComponent } from './isign-up/isign-up.component';
       {
         path:'',
         component:HomeComponent
+
+      },
+      {
+        path:'admin-sign-up',
+        component:AdminSignUpComponent
 
       },
       {
