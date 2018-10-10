@@ -33,6 +33,7 @@ import { LoginComponent } from './login/login.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { ISignUpComponent } from './isign-up/isign-up.component';
 import { AdminSignUpComponent } from './admin-sign-up/admin-sign-up.component';
+import { ForumComponent } from './forum/forum.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { AdminSignUpComponent } from './admin-sign-up/admin-sign-up.component';
     UserSignUpComponent,
     ISignUpComponent,
     AdminSignUpComponent,
+    ForumComponent,
   
   ],
   imports: [
