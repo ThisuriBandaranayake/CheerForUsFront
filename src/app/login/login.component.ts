@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Router } from "@angular/router";
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,11 +21,8 @@ export class LoginComponent implements OnInit {
     password:string;
 
   elegantForm: FormGroup;
-  constructor(public fb: FormBuilder,private http:HttpClient) {
-    this.elegantForm = fb.group({
-      elegantFormEmailEx: ['', [Validators.required, Validators.email]],
-      elegantFormPasswordEx: ['', Validators.required],
-    });
+  constructor(public fb: FormBuilder,private http:HttpClient, private router: Router) {
+    
    }
 
   ngOnInit() {
@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
        console.log(data);
        this.email=null;
        this.password=null;
+       this.router.navigate(["/profile"], { "queryParams": data });
      }
    )
   }
