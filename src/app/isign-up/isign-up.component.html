@@ -9,36 +9,53 @@
         <div class="col-md-5">
         <div class="example z-depth-5">
           <!-- Default form register -->
-  <form class="text-center border border-light p-5" >
+  <form class="text-center border border-light p-5" #IForm=ngForm (ngSubmit)="onSubmit()">
 
       <p class="h4 mb-4">Institute Registration</p>
 
       <div class="form-row mb-4">
         <div class="col">
           <!-- First name -->
-          <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Institute name">
+          <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Institute name" name="name" [(ngModel)]="name">
         </div>
         
       </div>
-      <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" placeholder="Address Line 1 ">
-      <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" placeholder=" Address Line 2">
+      <input type="text"  class="form-control mb-4" placeholder="Address Line 1 " name="address1" [(ngModel)]="address1">
+      <input type="text" class="form-control mb-4" placeholder=" Address Line 2" name="address2" [(ngModel)]="address2">
+      <div class="form-row mb-4">
+        <div class="col">
+          <!-- First name -->
+          <input type="text"  class="form-control" placeholder="City " name="city" [(ngModel)]="city">
+        </div>
+        <div class="col">
+          <!-- Last name -->
+          <input type="text"  class="form-control" placeholder="Province" name="province" [(ngModel)]="province">
+        </div>
+      </div>
+      <div class="form-row mb-4">
+        <div class="col">
+          <!-- First name -->
+          <input type="text"  class="form-control" placeholder="Contact Number" name="tpno" [(ngModel)]="tpno">
+        </div>
+        <div class="col">
+          <!-- Last name -->
+          <input type="text"  class="form-control" placeholder="Postal code" name="postalCode" [(ngModel)]="postalCode">
+        </div>
+      </div>
       <!-- E-mail -->
-      <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+      <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="email" [(ngModel)]="email">
 
       <!-- Password -->
-      <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+      <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="password" [(ngModel)]="password">
       <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
         At least 8 characters and 1 digit
       </small>
-      <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+      <input type="password"  class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="cpassword" [(ngModel)]="cpassword">
       <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
           Retype your password.
         </small>
       <!-- Phone number -->
-      <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
-      <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-        Optional - for two step authentication
-      </small>
+    
 
       <!-- Newsletter -->
       <div class="row">

@@ -6,15 +6,15 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-5">
-        <div class="example z-depth-5"><form class="text-center border border-light p-5">
+        <div class="example z-depth-5"><form class="text-center border border-light p-5" #login=ngForm (ngSubmit)="onSubmit()">
 
             <p class="h4 mb-4"> Login</p>
           
             <!-- Email -->
-            <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+            <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" name="email" [(ngModel)]="email">
           
             <!-- Password -->
-            <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+            <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" name="password" [(ngModel)]="password">
           
             <div class="d-flex justify-content-around">
               <div>

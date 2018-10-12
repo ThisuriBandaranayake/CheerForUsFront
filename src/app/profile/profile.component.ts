@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   avatar : string = "assets/images/avatar.png";
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit() {
+    this.http.get('',);
   }
 
 }
