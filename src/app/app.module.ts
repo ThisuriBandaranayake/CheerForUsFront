@@ -35,6 +35,7 @@ import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { ISignUpComponent } from './isign-up/isign-up.component';
 import { AdminSignUpComponent } from './admin-sign-up/admin-sign-up.component';
 import { ForumComponent } from './forum/forum.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ForumComponent } from './forum/forum.component';
     ISignUpComponent,
     AdminSignUpComponent,
     ForumComponent,
+    SearchComponent,
   
   ],
   imports: [
@@ -154,6 +156,14 @@ import { ForumComponent } from './forum/forum.component';
       {
         path:'article-feed',
         component:ArticleFeedComponent
+      },
+      {
+        path:'forum',
+        component:ForumComponent
+      },
+      {
+        path:'search',
+        component:SearchComponent
       },
     ])
     
