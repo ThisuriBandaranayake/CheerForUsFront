@@ -5,18 +5,19 @@
  
 
 <p class="text-center">Edit your article....</p>
-<div class="container">
+<div class="container" *ngFor="let admin_article of admin_articles">
       
       <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
              
-<form #imageForm= ngForm (ngSubmit)="editArticle()">
+<form #imageForm= ngForm (ngSubmit)="editArticle()" >
       <div class="row">
           <div class="col-10">
               <div class="form-group">
               <label for="caption" class="texts"> Article topic</label>
-              <input type="text"  name="caption"  [(ngModel)]="caption" class="form-control" id="caption" placeholder="Write the article topic" required>
+              <input type="text"  name="caption"  [(ngModel)]="caption" class="form-control" id="caption" placeholder="Write the article topic"  required>
+           
             </div>
             </div>
             </div><br>

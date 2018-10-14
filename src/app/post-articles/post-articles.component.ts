@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Location } from '@angular/common';
 import {ArticlePostingService} from '../article-posting.service';
 import { forEach } from '@angular/router/src/utils/collection';
+import { Router } from "@angular/router";
 //import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-post-articles',
@@ -28,13 +29,14 @@ export class PostArticlesComponent implements OnInit {
   imageUrl : string = "assets/images/upload.png";
   fileToUpload : File = null;
   constructor(private http: HttpClient,
-    private location: Location
+    private location: Location,private router: Router
     ) { }
 
   ngOnInit() {
 this.http.get('http://localhost:8000/api/articles').subscribe(data=>{
   console.log(data);
   this.admin_articles=data;
+  
 })
   }
 handleFileInput(file : FileList){
@@ -53,7 +55,7 @@ onSubmit() {
  
   let input = new FormData();
 input.append('caption',this.caption);
-input.append('img',this.imageUrl);
+input.append('img',this.fileToUpload);
 input.append('description',this.description);
   return this.http.post('http://localhost:8000/api/articleStore',input).subscribe(
     data => {
@@ -88,6 +90,16 @@ console.log(response);
 else{
 }
 }
-
+edit(id){
+  return this.http.get('http://localhost:8000/api/articleDetails/'+id).subscribe(data =>{
+    console.log(data);
+    this.admin_articles=data;
+    this.router.navigate(["/edit-article/{{admin_article.id}}"]);
+    // this.admin_article=this.admin_article[0];
+    // this.admin_article.id=id;
+    // this.admin_article.caption=this.caption;
+    // this.admin_article.description=this.description;
+   })
+  }
 
 }

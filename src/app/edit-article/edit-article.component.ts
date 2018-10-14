@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostArticlesComponent } from '../post-articles/post-articles.component';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Router,ActivatedRoute,Params } from "@angular/router";
 
 @Component({
   selector: 'app-edit-article',
@@ -9,6 +10,16 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class EditArticleComponent implements OnInit {
 
+  public form ={
+    id:null,
+    caption:null,
+    img:null,
+    description:null,
+  
+   
+  }
+
+  
   admin_articles;
  
   error:null;
@@ -19,7 +30,7 @@ export class EditArticleComponent implements OnInit {
   imageUrl : string = "assets/images/upload.jpg";
   fileToUpload : File = null;
 
-  constructor( private http:HttpClient) { }
+  constructor( private http:HttpClient,private route: ActivatedRoute,private router:Router,) { }
 
   handleFileInput(file : FileList){
     this.fileToUpload = file.item(0);
@@ -32,19 +43,40 @@ export class EditArticleComponent implements OnInit {
     reader.readAsDataURL(this.fileToUpload);
     }
 
-  ngOnInit() {
-    this.getDetails(this.id);
+  ngOnInit() { 
+    var id=this.route.snapshot.params['id'];
+    
+    
+    return this.http.get('http://localhost:8000/api/articleDetails/'+id).subscribe(
+      data =>{
+     
+      this.admin_articles=data;
+      //console.log(data);
+      //this.admin_articles=this.admin_articles[0];
+      this.admin_articles.id=id;    
+      this.caption= this.admin_articles.caption;
+      this.img= this.admin_articles.img;
+      this.description=this.admin_articles.description;    
+     },
+     error => console.log(error)
+     );
+    //this.getDetails(id);
    }
 
-
    getDetails(id){
-    return this.http.get('http://localhost:8000/api/articleDetails/'+id).subscribe(data =>{
-      console.log(data);
+  
+
+    return this.http.get('http://localhost:8000/api/articleDetails/'+id).subscribe(
+      data =>{
+     
       this.admin_articles=data;
-      // this.admin_article=this.admin_article[0];
-      // this.admin_article.id=id;
-      // this.admin_article.caption=this.caption;
-      // this.admin_article.description=this.description;
-     })
+      console.log(data);
+      //this.admin_articles=this.admin_articles[0];
+      this.admin_articles.id=id;    
+    this.caption= "Hell"; //this.admin_articles.caption;
+     this.img= this.admin_articles.img;
+      this.description=this.admin_articles.description;
+    
+     });
   }
 }

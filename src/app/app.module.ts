@@ -3,6 +3,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule} from '@angular/common/http';
 import { Router } from "@angular/router";
+
 //import { FormGroup, FormControl, Validators } from '@angular/forms';
 // MDB Angular Free
 

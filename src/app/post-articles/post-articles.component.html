@@ -16,14 +16,14 @@
                     </div>
                 <div class="form-group">
                 <label for="caption" class="texts"> Article topic</label>
-                <input type="text"  name="caption"  [(ngModel)]="model.caption" class="form-control" placeholder="Write the article topic" required minlength="1" #caption="ngModel">
-                <div *ngIf="caption.invalid && (caption.dirty || caption.touched)"
+                <input type="text"  name="caption"  [(ngModel)]="caption" class="form-control" placeholder="Write the article topic" required minlength="1" >
+                <!-- <div *ngIf="caption.invalid && (caption.dirty || caption.touched)"
                 class="alert alert-danger">
             
               <div *ngIf="caption.errors.required">
                 Topic is required.
               </div>
-              </div>  
+              </div>   -->
             </div>
               </div>
              
@@ -66,7 +66,7 @@
           
             <div class="card-body" >
                 <h3 class="card-title">{{admin_article['caption']}}</h3>
-                <p> <img src="{{admin_article['img']}}" height="50px" width="50px"> </p>
+                <p> <img src="http://localhost:8000/storage/avatars/{{admin_article['img']}}" height="50px" width="50px"> </p>
                 <p class="card-text">{{admin_article['description']}}</p>
                 <button class="btn btn-primary" (click)="delete(admin_article.id)">Delete</button>
                 <button class="btn btn-primary" routerLink="/edit-article/{{admin_article.id}}" >Edit</button>
