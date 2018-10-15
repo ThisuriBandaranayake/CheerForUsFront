@@ -110,3 +110,117 @@
   </mdb-flipping-card>
 </div>
 <!--/.Rotating card-->
+
+
+
+<div class="col-md-4">
+  <mdb-flipping-card #card>
+    <!--Front Side-->
+    <div class="face front card tp-box_side tp-box_front">
+      <!-- Image-->
+      <div class="card-up">
+        <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
+          <img src="http://www.australiabusinesscards.com/wp-content/uploads/fitness-posters-for-gym-gym-advertisement-poster-flyer-social-media-graphic-design-template.jpg" class="img-fluid" alt="">
+
+        </div>
+      </div>
+      <!--/.Image-->
+
+      <!--Content-->
+      <div class="content">
+        <a class="rotate-btn" data-card="card-2" (click)="card.toggle()">
+          <i class="fa fa-share-alt"></i>
+        </a>
+        <h4>Card title</h4>
+        <hr>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat tenetur odio suscipit non commodi vel eius
+          veniam maxime.</p>
+        <a class="link-text">
+          <h5>Read more
+            <i class="fa fa-chevron-right"></i>
+          </h5>
+        </a>
+      </div>
+      <!--/.Content-->
+
+    </div>
+    <!--/.Front Side-->
+
+    <!--Back Side-->
+    <div class="face back tp-box_side tp-box_back">
+      <!--Title-->
+      <h4 class="card-title">Social shares
+        <i class="fa fa-close rotate-btn" (click)="card.toggle()"></i>
+      </h4>
+      <hr>
+
+      <!--Social Icons-->
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" size="sm" class="btn-fb waves-light" mdbWavesEffect>
+            <i class="fa fa-facebook"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" size="sm" class="btn-tw waves-light" mdbWavesEffect>
+            <i class="fa fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" size="sm" class="btn-gplus waves-light" mdbWavesEffect>
+            <i class="fa fa-google-plus"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" size="sm" class="btn-li waves-light" mdbWavesEffect>
+            <i class="fa fa-linkedin"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" size="sm" class="btn-git waves-light" mdbWavesEffect>
+            <i class="fa fa-github"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" size="sm" class="btn-pin waves-light" mdbWavesEffect>
+            <i class="fa fa-pinterest"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" size="sm" class="btn-ins waves-light" mdbWavesEffect>
+            <i class="fa fa-instagram"> </i>
+          </a>
+        </li>
+      </ul>
+
+      <h5>Join our community</h5>
+      <hr>
+
+      <!--Social Icons-->
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a mdbBtn class="btn-fb waves-light" mdbWavesEffect>
+            <i class="fa fa-facebook"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn class=" btn-tw waves-light" mdbWavesEffect>
+            <i class="fa fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn class="btn-li waves-light" mdbWavesEffect>
+            <i class="fa fa-linkedin"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn class="btn-ins waves-light" mdbWavesEffect>
+            <i class="fa fa-instagram"> </i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--/.Back Side-->
+  </mdb-flipping-card>
+</div>
+<!--/.Rotating card-->
