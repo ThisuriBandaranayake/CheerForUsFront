@@ -91,7 +91,7 @@ else{
 }
 }
 edit(id){
-  return this.http.get('http://localhost:8000/api/articleDetails/'+id).subscribe(data =>{
+  return this.http.get(`http://localhost:8000/api/articleDetails/${id}`).subscribe(data =>{
     console.log(data);
     this.admin_articles=data;
     this.router.navigate(["/edit-article/{{admin_article.id}}"]);

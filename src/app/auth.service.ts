@@ -9,7 +9,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  sendLoginRequest(email: String, password: String) {
+  sendLoginRequest(email: string, password: string) {
     let httpHeaders = new HttpHeaders({
       "Content-Type": "application/json",
       "X-Requested-With": "XMLHttpRequest"
@@ -32,8 +32,9 @@ export class AuthService {
     let httpHeaders = new HttpHeaders({
       Authorization: "Bearer " + accessToken
     });
+    console.log(accessToken);
     return this.http.get(
-      "http://127.0.0.1:8000/auth/api/details",
+      "http://127.0.0.1:8000/api/details",
       {
         observe: "response",
         headers: httpHeaders

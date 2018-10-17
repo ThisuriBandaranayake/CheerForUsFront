@@ -27,7 +27,7 @@ export class EditArticleComponent implements OnInit {
   description:string;
   img:any;
   id:number;
-  imageUrl : string = "assets/images/upload.jpg";
+  imageUrl : string = "http://localhost:8000/storage/avatars/{{img}}";
   fileToUpload : File = null;
 
   constructor( private http:HttpClient,private route: ActivatedRoute,private router:Router,) { }
@@ -47,16 +47,18 @@ export class EditArticleComponent implements OnInit {
     var id=this.route.snapshot.params['id'];
     
     
-    return this.http.get('http://localhost:8000/api/articleDetails/'+id).subscribe(
+    return this.http.get(`http://localhost:8000/api/articleDetails/${id}`).subscribe(
       data =>{
      
       this.admin_articles=data;
-      //console.log(data);
+      console.log(data);
       //this.admin_articles=this.admin_articles[0];
-      this.admin_articles.id=id;    
-      this.caption= this.admin_articles.caption;
-      this.img= this.admin_articles.img;
-      this.description=this.admin_articles.description;    
+      this.admin_articles.id=data['0'].id;    
+      this.caption= data['0'].caption;
+      this.imageUrl= 'http://localhost:8000/storage/avatars/' + data['0'].img;
+      console.log(this.img);
+      this.description= data['0'].description;  
+     // this.imageUrl=;  
      },
      error => console.log(error)
      );

@@ -10,6 +10,7 @@ import {AuthService} from '../auth.service';
 export class ProfileComponent implements OnInit {
  // usertype;
   user;
+  usertype;
   avatar : string = "assets/images/avatar.png";
   constructor(private auth:AuthService) { }
 
@@ -18,9 +19,17 @@ export class ProfileComponent implements OnInit {
     .getUserDetails(localStorage.getItem("access_token"))
       .subscribe(response => {
         console.log(response)
-        //this.usertype = response["usertype"];
+        this.usertype = response["usertype"];
         this.user = response["body"];
       });
   }
+  keys() : Array<string> {
+    return Object.keys(this.user);
+  }
 
+  ngOnDestroy(): void {
+    localStorage.removeItem("access_token");
+  }
 }
+
+
