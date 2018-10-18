@@ -28,7 +28,7 @@ export class EditArticleComponent implements OnInit {
   img:any;
   id:number;
   imageUrl : string = "http://localhost:8000/storage/avatars/{{img}}";
-  fileToUpload : File = null;
+  fileToUpload : File ;
 
   constructor( private http:HttpClient,private route: ActivatedRoute,private router:Router,) { }
 
@@ -56,29 +56,29 @@ export class EditArticleComponent implements OnInit {
       this.admin_articles.id=data['0'].id;    
       this.caption= data['0'].caption;
       this.imageUrl= 'http://localhost:8000/storage/avatars/' + data['0'].img;
-      console.log(this.img);
+      this.fileToUpload=data['0'].img;
+     // console.log(this.img);
       this.description= data['0'].description;  
-     // this.imageUrl=;  
+       
      },
      error => console.log(error)
      );
     //this.getDetails(id);
    }
 
-   getDetails(id){
   
-
-    return this.http.get('http://localhost:8000/api/articleDetails/'+id).subscribe(
-      data =>{
-     
+  update(){
+    
+  let input = new FormData();
+  input.append('caption',this.caption);
+  input.append('img',this.fileToUpload);
+  input.append('description',this.description);
+    var id=this.route.snapshot.params['id'];
+    return this.http.post(`http://localhost:8000/api/updateArticle/${id}`,input).subscribe(
+    data=>{
       this.admin_articles=data;
       console.log(data);
-      //this.admin_articles=this.admin_articles[0];
-      this.admin_articles.id=id;    
-    this.caption= "Hell"; //this.admin_articles.caption;
-     this.img= this.admin_articles.img;
-      this.description=this.admin_articles.description;
-    
-     });
+    }
+    );
   }
 }
