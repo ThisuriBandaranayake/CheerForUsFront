@@ -39,9 +39,18 @@ response:string;
        // dialogRef.close();
         
           localStorage.setItem('access_token', response['body']['success']['token']);
+          console.log(response);
+          if( (response['body']['user_type'])=="customer"){         
           this.router.navigate(["/profile"]);
+          }
+        else  if( (response['body']['user_type'])=="admin"){         
+            this.router.navigate(["/admin-dashboard"]);
+            }
+          else  if( (response['body']['user_type'])=="institute"){         
+              this.router.navigate(["/idashboard"]);
+              }
+          
         
-      
       },
     
     );

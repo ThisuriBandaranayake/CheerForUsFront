@@ -56,7 +56,7 @@ export class EditArticleComponent implements OnInit {
       this.admin_articles.id=data['0'].id;    
       this.caption= data['0'].caption;
       this.imageUrl= 'http://localhost:8000/storage/avatars/' + data['0'].img;
-      this.fileToUpload=data['0'].img;
+      this.fileToUpload= data['0'].img;
      // console.log(this.img);
       this.description= data['0'].description;  
        
@@ -80,5 +80,18 @@ export class EditArticleComponent implements OnInit {
       console.log(data);
     }
     );
+  }
+  edit(){
+    let input = new FormData();
+  input.append('caption',this.caption);
+  input.append('img',this.fileToUpload);
+  input.append('description',this.description);
+    var id=this.route.snapshot.params['id'];
+    return this.http.post(`http://localhost:8000/api/update/${id}`,input).subscribe(
+      data=>{
+        this.admin_articles=data;
+        console.log(data);
+      }
+      );
   }
 }
