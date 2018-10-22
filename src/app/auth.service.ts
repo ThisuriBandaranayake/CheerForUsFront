@@ -19,7 +19,7 @@ export class AuthService {
       password: password
     };
     return this.http.post(
-      "http://127.0.0.1:8000/api/login",
+      "http://127.0.0.1:8000/api/user/login",
       body,
       {
         observe: "response",
