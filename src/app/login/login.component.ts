@@ -38,7 +38,7 @@ response:string;
       response => {
        // dialogRef.close();
         
-          localStorage.setItem('access_token', response['body']['success']['token']);
+          localStorage.setItem('access_token', response['body']['access_token']);
           console.log(response);
           if( (response['body']['user_type'])=="customer"){         
           this.router.navigate(["/profile"]);
