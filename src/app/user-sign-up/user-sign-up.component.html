@@ -8,18 +8,23 @@
           <div class="col-md-5">
           <div class="example z-depth-5">
             <!-- Default form register -->
-    <form class="text-center border border-light p-5" #customerForm=ngForm (ngSubmit)="onSubmit()" >
+    <form class="text-center border border-light p-5" #customerForm=ngForm (ngSubmit)="signup()" >
 
         <p class="h4 mb-4">Sign up</p>
   
         <div class="form-row mb-4">
           <div class="col">
             <!-- First name -->
-            <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="User name" name="username" [(ngModel)]="username">
+            <input type="text" id="defaultRegisterFormUserName" class="form-control" placeholder="User name" name="username" [(ngModel)]="username">
           </div>
-          
         </div>
+        <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" placeholder="First Name"  name="fname" [(ngModel)]="fname">
+        <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" placeholder="Last Name"  name="lname" [(ngModel)]="laname">
+        <input type="text" id="defaultRegisterFormContactNo" class="form-control mb-4" placeholder="Contact No"  name="contactno" [(ngModel)]="contactno">
+        <input type="text" id="defaultRegisterFormGender" class="form-control mb-4" placeholder="Gender"  name="gender" [(ngModel)]="gender">
+        <input type="date" id="defaultRegisterFormBirthday" class="form-control mb-4" placeholder="Birthday"  name="birthday" [(ngModel)]="birthday">
   
+        
         <!-- E-mail -->
         <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail"  name="email" [(ngModel)]="email">
   
