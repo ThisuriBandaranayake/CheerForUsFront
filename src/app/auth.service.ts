@@ -34,7 +34,7 @@ export class AuthService {
     });
     console.log(accessToken);
     return this.http.get(
-      "http://127.0.0.1:8000/api/details",
+      "http://127.0.0.1:8000/api/user/details",
       {
         observe: "response",
         headers: httpHeaders
