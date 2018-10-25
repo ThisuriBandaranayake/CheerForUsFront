@@ -6,6 +6,8 @@ import {AuthService} from '../auth.service';
   styleUrls: ['./admin-dashboard.component.scss']
 })
 export class AdminDashboardComponent implements OnInit {
+user;
+usertype:string;
 
   constructor(private auth:AuthService) { }
 
@@ -14,10 +16,21 @@ export class AdminDashboardComponent implements OnInit {
     .getUserDetails(localStorage.getItem("access_token"))
       .subscribe(response => {
         if(response['body']['user_type']=="admin"){
-        console.log(response)
-        }
-        //this.usertype = response["usertype"];
-        //this.user = response["body"];
+          this.user=response;
+          this.usertype = response["usertype"];
+         this.user = response["body"];
+         console.log(response)
+          }
+       
+          // data=>{
+          //   console.log(data);
+          //   if(response['body']['user_type']=="customer"){
+          //     this.user=data;
+          //    // console.log(response)
+          //     }
+            
+          // }
+        
       });
   }
 
