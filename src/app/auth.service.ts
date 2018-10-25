@@ -41,4 +41,17 @@ export class AuthService {
       }
     );
   }
+
+  logOut(accessToken: string){
+    let httpHeaders = new HttpHeaders({
+      Authorization: "Bearer " + accessToken
+    });
+    return this.http.get(
+      "http://127.0.0.1:8000/api/user/logout-all",
+      {
+        observe: "response",
+        headers: httpHeaders
+      }
+    );
+  }
 }
