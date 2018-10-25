@@ -44,7 +44,7 @@
      
 
       <!-- Card -->
-      <div class="card mb-6" *ngIf="user" >
+      <div class="card mb-6" *ngIf="user">
     
         <!--Card image-->
         <div class="view overlay">
@@ -66,6 +66,7 @@
           <p class="card-text"></p>
           <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
           <button type="button" class="btn btn-light-blue btn-md">Edit Info</button>
+          <button type="button" class="btn btn-light-blue btn-md" (click)="logout()">Log Out</button>
     
         </div>
          
