@@ -24,10 +24,10 @@ export class PostArticlesComponent implements OnInit {
   error:null;
   caption:string;
   description:string;
-  img:any;
+  img:string;
   id:number;
   imageUrl : string = "assets/images/upload.png";
-  fileToUpload : File = null;
+  fileToUpload : File;
   constructor(private http: HttpClient,
     private location: Location,private router: Router
     ) { }
@@ -35,7 +35,7 @@ export class PostArticlesComponent implements OnInit {
   ngOnInit() {
 this.http.get('http://localhost:8000/api/articles').subscribe(data=>{
   console.log(data);
-  this.admin_articles=data;
+  this.admin_articles=data; 
   
 })
   }

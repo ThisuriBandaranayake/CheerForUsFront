@@ -66,7 +66,7 @@
           
             <div class="card-body" >
                 <h3 class="card-title">{{admin_article['caption']}}</h3>
-                <p> <img src="http://localhost:8000/storage/avatars/{{admin_article['img']}}" height="50px" width="50px"> </p>
+                <p> <img src="http://localhost:8000/storage/images/{{admin_article.img}}" height="50px" width="50px"> </p>
                 <p class="card-text">{{admin_article['description']}}</p>
                 <button class="btn btn-primary" (click)="delete(admin_article.id)">Delete</button>
                 <button class="btn btn-primary" routerLink="/edit-article/{{admin_article.id}}" >Edit</button>
