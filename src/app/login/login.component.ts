@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
         else if ((response['body']['user_type']) == "institute") {
           this.router.navigate(["/idashboard"]);
         }
-        alert(this.getDialogMessage(response));
+        //alert(this.getDialogMessage(response));
         console.log(response);
       },
       error => {

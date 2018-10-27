@@ -1,47 +1,75 @@
 .intro-header {
-    height: unset !important;
-  }
-  .intro-2 {
-    background: url("/assets/images/b3.jpeg")no-repeat center center;
-    background-size: cover;
-  }
-  .view {
-    height: 100vh !important;
-  }
+  height: unset !important;
+}
+
+.view {
+  height: 100vh !important;
+}
+
+
+
+@media only screen and (max-width: 768px) {
   .navbar {
-    background-color: transparent;
+      background-color: rgb(213, 227, 248);
+  }
+
 }
-.top-nav-collapse {
-  background-color: #4285F4;
+h1 {
+  letter-spacing: 8px;
 }
-  
-  @media only screen and (max-width: 768px) {
-    .navbar {
-        background-color: #4285F4;
-    }
+h5 {
+  letter-spacing: 3px;
 }
-  .rgba-gradient .full-bg-img {
-    background: linear-gradient(45deg, rgba(83, 125, 210, 0.4), rgba(178, 30, 123, 0.4) 100%);
+.hr-light {
+  border-top: 3px solid #fff;
+  width: 80px;
+}
+@media (max-width: 740px) {
+  .full-height,
+  .full-height body,
+  .full-height header,
+  .full-height header .view {
+    height: 700px;
   }
-  .card {
-    background-color: rgba(229, 228, 255, 0.2);
-  }
-  
-  .md-form .prefix {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-  }
-  .md-form label {
-    color: #ffffff;
-  }
-  h6 {
-    line-height: 1.7;
-  }
-  @media (max-width: 740px) {
-    .full-height,
-    .full-height body,
-    .full-height header,
-    .full-height header .view {
-      height: 1040px;
-    }
-  }
+}
+
+
+#content{
+  overflow: visible;
+  text-align: center;
+  font-size: 1.5rem;
+}
+#container{
+  width: 100%;
+}
+
+#square{
+  position: fixed;
+  z-index: -1;
+  top: 0px; 
+  left: 0px;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+
+#rectangle{
+  position: fixed;
+  z-index: -1;
+  bottom: 0px; 
+  left: 50px;
+  width: 200px;
+  height: 100px;
+  background-color: red;
+}
+
+#circle{
+  position: fixed;
+  z-index: -1;
+  bottom: 0px; 
+  right: 0px;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border-radius: 50px;
+}

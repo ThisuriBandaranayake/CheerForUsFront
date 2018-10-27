@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule} from '@angular/common/http';
 import { Router } from "@angular/router";
 
+
 //import { FormGroup, FormControl, Validators } from '@angular/forms';
 // MDB Angular Free
 
@@ -36,6 +37,7 @@ import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { ISignUpComponent } from './isign-up/isign-up.component';
 import { AdminSignUpComponent } from './admin-sign-up/admin-sign-up.component';
 import { ForumComponent } from './forum/forum.component';
+import { ParallaxDirective } from './parallax.directive';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,7 @@ import { ForumComponent } from './forum/forum.component';
     ISignUpComponent,
     AdminSignUpComponent,
     ForumComponent,
+    ParallaxDirective,
   
   ],
   imports: [

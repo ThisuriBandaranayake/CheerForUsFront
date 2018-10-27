@@ -32,7 +32,7 @@ export class AuthService {
     let httpHeaders = new HttpHeaders({
       Authorization: "Bearer " + accessToken
     });
-    console.log(accessToken);
+   // console.log();
     return this.http.get(
       "http://127.0.0.1:8000/api/user/details",
       {

@@ -55,7 +55,7 @@ export class EditArticleComponent implements OnInit {
       //this.admin_articles=this.admin_articles[0];
       this.admin_articles.id=data['0'].id;    
       this.caption= data['0'].caption;
-      this.imageUrl= 'http://localhost:8000/storage/avatars/' + data['0'].img;
+      this.imageUrl= 'http://localhost:8000/storage/images/' + data['0'].img;
       this.fileToUpload= data['0'].img;
      // console.log(this.img);
       this.description= data['0'].description;  
