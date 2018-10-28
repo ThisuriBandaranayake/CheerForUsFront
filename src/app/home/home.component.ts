@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WOW } from 'wowjs/dist/wow.min';
+//import { WOW } from 'wowjs/dist/wow.min';
 //import { ParallaxDirective } '../parallax.directive';
 
 
@@ -17,10 +17,10 @@ export class HomeComponent implements OnInit {
    // this.datajarallax = {"speed": 0.2};
   }
 
-  ngAfterViewInit() {
-    new WOW().init();
+  // ngAfterViewInit() {
+  //   new WOW().init();
     
-  }
+  // }
   
 
 }
