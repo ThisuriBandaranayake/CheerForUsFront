@@ -20,7 +20,7 @@ import { RouterModule} from '@angular/router';
 
 import { PostArticlesComponent } from './post-articles/post-articles.component';
 import { ArticleFeedComponent } from './article-feed/article-feed.component';
-import { NavComponent } from './nav/nav.component';
+
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
@@ -31,7 +31,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileNavComponent } from './profile-nav/profile-nav.component';
 import { IDashboardComponent } from './idashboard/idashboard.component';
-import { AdminNavComponent } from './admin-nav/admin-nav.component';
+
 import { LoginComponent } from './login/login.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { ISignUpComponent } from './isign-up/isign-up.component';
@@ -46,7 +46,6 @@ import { ParallaxDirective } from './parallax.directive';
    
     PostArticlesComponent,
     ArticleFeedComponent,
-    NavComponent,
     AdminDashboardComponent,
    
     AdminDetailsComponent,
@@ -56,7 +55,6 @@ import { ParallaxDirective } from './parallax.directive';
     HomeComponent,
     ProfileNavComponent,
     IDashboardComponent,
-    AdminNavComponent,
     LoginComponent,
     UserSignUpComponent,
     ISignUpComponent,
@@ -103,11 +101,7 @@ import { ParallaxDirective } from './parallax.directive';
         component:LoginComponent
 
       },
-      {
-        path:'adminNav',
-        component:AdminNavComponent
 
-      },
       {
         path:'idashboard',
         component:IDashboardComponent
@@ -143,10 +137,7 @@ import { ParallaxDirective } from './parallax.directive';
         component:AdminDashboardComponent
 
       },
-      {
-        path:'nav',
-        component:NavComponent
-      },
+     
       {
         path:'add',
         component:AddComponent
