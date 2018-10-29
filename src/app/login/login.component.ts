@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from "@angular/router";
 import { AuthService } from '../auth.service';
 import { stringify } from '@angular/core/src/util';
-
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +13,7 @@ import { stringify } from '@angular/core/src/util';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  
   submitted = false;
   //  public form={
   //     email:null,
@@ -27,7 +28,8 @@ export class LoginComponent implements OnInit {
   //     email:string;
   //     password:string;
   // response :string;
-  elegantForm: FormGroup;
+  
+ // elegantForm: FormGroup;
   constructor(public fb: FormBuilder,
     private http: HttpClient,
     private router: Router,
