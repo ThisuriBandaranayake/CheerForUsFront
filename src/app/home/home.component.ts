@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { WOW } from 'wowjs/dist/wow.min';
 //import { ParallaxDirective } '../parallax.directive';
-
+import { ParticlesModule } from 'angular-particle';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomeComponent implements OnInit { 
-  
+  particlesJS: any;
   constructor() { }
 
   ngOnInit() {
+
+   // this.particlesJS.load('particles-js', 'particles.json', null);
    // this.datajarallax = {"speed": 0.2};
   }
 

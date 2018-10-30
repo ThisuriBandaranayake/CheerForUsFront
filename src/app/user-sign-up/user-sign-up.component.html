@@ -15,28 +15,93 @@
         <div class="form-row mb-4">
           <div class="col">
             <!-- First name -->
-            <input type="text" id="defaultRegisterFormUserName" class="form-control" placeholder="User name" name="username" [(ngModel)]="username">
+            <input type="text" id="defaultRegisterFormUserName" class="form-control" placeholder="User name" name="username" required [(ngModel)]="username"  #uname="ngModel">
+            <div *ngIf="uname.invalid && (uname.dirty || uname.touched)"
+          class="alert alert-danger">
+          <div *ngIf="uname.errors.required">
+           Username Required.
+          </div>
+      </div>
           </div>
         </div>
-        <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" placeholder="First Name"  name="fname" [(ngModel)]="fname">
-        <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" placeholder="Last Name"  name="lname" [(ngModel)]="laname">
-        <input type="text" id="defaultRegisterFormContactNo" class="form-control mb-4" placeholder="Contact No"  name="contactno" [(ngModel)]="contactno">
-        <input type="text" id="defaultRegisterFormGender" class="form-control mb-4" placeholder="Gender"  name="gender" [(ngModel)]="gender">
-        <input type="date" id="defaultRegisterFormBirthday" class="form-control mb-4" placeholder="Birthday"  name="birthday" [(ngModel)]="birthday">
+        <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" placeholder="First Name"  name="fname" required [(ngModel)]="fname" #fn="ngModel">
+        <div *ngIf="fn.invalid && (fn.dirty || fn.touched)"
+      class="alert alert-danger">
+    <div *ngIf="fn.errors.required">
+     First name required.
+    </div>  
+     </div>
+        <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" placeholder="Last Name"  name="lname" required [(ngModel)]="laname" #ln="ngModel">
+        <div *ngIf="ln.invalid && (ln.dirty || ln.touched)"
+  class="alert alert-danger">
+  <div *ngIf="ln.errors.required">
+    Last name required.
+  </div>
+  </div>
+        <input type="text" id="defaultRegisterFormContactNo" class="form-control mb-4" placeholder="Contact No"  name="contactno" required [(ngModel)]="contactno" #contact="ngModel">
+        
+  <div *ngIf="contact.invalid && (contact.dirty || contact.touched)"
+  class="alert alert-danger">
+  <div *ngIf="contact.errors.required">
+    Contact number required.
+  </div>
+  </div>
+        <input type="text" id="defaultRegisterFormGender" class="form-control mb-4" placeholder="Gender"  name="gender" required [(ngModel)]="gender" #gen="ngModel">
+        
+  <div *ngIf="gen.invalid && (gen.dirty || gen.touched)"
+  class="alert alert-danger">
+  <div *ngIf="gen.errors.required">
+    Gender required.
+  </div>
+  </div>
+        <input type="date" id="defaultRegisterFormBirthday" class="form-control mb-4" placeholder="Birthday"  name="birthday" required [(ngModel)]="birthday" #bd="ngModel">
   
+        <div *ngIf="bd.invalid && (bd.dirty || bd.touched)"
+        class="alert alert-danger">
+        <div *ngIf="bd.errors.required">
+          Birthday required.
+        </div>
+        </div>
         
         <!-- E-mail -->
-        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail"  name="email" [(ngModel)]="email">
+        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail"  name="email" required [(ngModel)]="email" #em="ngModel">
   
+        <div *ngIf="em.invalid && (em.dirty || em.touched)"
+        class="alert alert-danger">
+        <div *ngIf="em.errors.required">
+          Email required.
+        </div>
+        </div>
         <!-- Password -->
-        <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"  name="password" [(ngModel)]="password">
+        <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"  name="password" required [(ngModel)]="password" #pw="ngModel">
         <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
           At least 8 characters and 1 digit
         </small>
-        <input type="password"  class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="cpassword" [(ngModel)]="cpassword">
+        <div *ngIf="pw.invalid && (pw.dirty || pw.touched)"
+      class="alert alert-danger">
+      <div *ngIf="pw.errors.required">
+       Password Required.
+      </div>
+      <div *ngIf="pw.errors.minlength">
+       Password must contain atleast 6 characters.
+      </div>
+      </div>
+        <input type="password"  class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="cpassword" required [(ngModel)]="cpassword" #cpw="ngModel">
         <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
             Retype your password.
           </small>
+          
+      
+      
+  <div *ngIf="pwc.invalid && (pwc.dirty || pwc.touched)"
+  class="alert alert-danger">
+  <div *ngIf="pwc.errors.required">
+ Password Confirmation Required.
+  </div>
+  <div *ngIf="pwc.errors.minlength">
+  Password doesn't match.
+</div>
+</div>
         <!-- Phone number -->
        
   
@@ -84,5 +149,15 @@
   
       </div>
       
+        
+
+      
+
   
+
+
+
+
+      
+
   

@@ -13,7 +13,7 @@ import { Router } from "@angular/router";
 export class ProfileComponent implements OnInit {
  // usertype;
   user;
-  customers;
+  customer;
   usertype;
   name:string;
   email:string;
@@ -27,10 +27,10 @@ export class ProfileComponent implements OnInit {
     .getUserDetails(localStorage.getItem("access_token"))
       .subscribe(response => {
         if(response['body']['user_type']=="customer"){
-          this.user=response;
+          this.customer=response;
           this.usertype = response["usertype"];
          this.user = response["body"];
-         // console.log(response)
+          console.log(response)
           }
        
           // data=>{

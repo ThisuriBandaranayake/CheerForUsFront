@@ -23,6 +23,7 @@
     "@angular/router": "^6.0.0-rc.1",
     "@types/chart.js": "^2.7.31",
     "angular-bootstrap-md": "^6.2.2",
+    "angular-particle": "^1.0.4",
     "angular2-image-upload": "^1.0.0-rc.1",
     "angular5-csv": "^0.2.10",
     "chart.js": "^2.5.0",

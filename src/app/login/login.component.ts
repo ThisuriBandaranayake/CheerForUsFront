@@ -14,15 +14,12 @@ import { FormControl } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   
-  submitted = false;
-  //  public form={
-  //     email:null,
-  //     password:null,
-  //   }
+ 
   email;
   password;
   response: string;
   error: string;
+  errormsg:string;
   //   users;
   //     id:number;
   //     email:string;
@@ -37,11 +34,11 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.loginForm = this.fb.group({
+    // this.loginForm = this.fb.group({
 
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
+    //   email: ['', [Validators.required, Validators.email]],
+    //   password: ['', [Validators.required, Validators.minLength(6)]]
+    // });
 
   }
 
@@ -68,6 +65,9 @@ export class LoginComponent implements OnInit {
       },
       error => {
         console.log(error);
+       console.log(error['error']['message']);
+       console.log(error['error']['error']);
+       this.errormsg=error['error']['error'];
         alert(this.getDialogMessage(error));
       }
     );

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-user-sign-up',

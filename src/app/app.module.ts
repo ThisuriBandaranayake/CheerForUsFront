@@ -3,7 +3,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule} from '@angular/common/http';
 import { Router } from "@angular/router";
-
+import { ParticlesModule } from 'angular-particle';
 
 //import { FormGroup, FormControl, Validators } from '@angular/forms';
 // MDB Angular Free
@@ -72,6 +72,7 @@ import { ParallaxDirective } from './parallax.directive';
     ReactiveFormsModule,
     InputsModule,
     CheckboxModule,
+    ParticlesModule,
     
     //FormGroup, FormControl, Validators,
     ButtonsModule, WavesModule, IconsModule,
