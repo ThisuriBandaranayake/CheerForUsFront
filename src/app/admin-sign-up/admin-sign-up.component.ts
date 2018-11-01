@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-admin-sign-up',
@@ -21,7 +22,7 @@ export class AdminSignUpComponent implements OnInit {
     password:string;
     cpassword:string;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   ngOnInit() {
   }
@@ -63,10 +64,36 @@ export class AdminSignUpComponent implements OnInit {
             this.email=null;
             this.password=null;
             this.cpassword=null;
+            this.router.navigate(["/login"]);
           },
-      error => console.log(error)
+      error => {
+        console.log(error);
+       console.log(error['error']['message']);
+       console.log(error['error']['error']);
+      // this.errormsg=error['error']['error'];
+        alert(this.getDialogMessage(error));
+      }
         );
        
       } 
+      getDialogMessage(data) {
+        let msg: string;
+        console.log(data.status != null);
+        if (data.status != null) {
+          msg = data.status;
+        }
+        if (data.message != null) {
+          msg = msg == null ? data.statusText : msg + '\n' + data.statusText;
+        }
+        // if (data.error != null) {
+        //   let errors: string = '';
+        //   let errs:Map<string, string[]> = data.error['errors'];
+        //   errs.forEach((v, k) => {
+        //     errors += '\n' + v;
+        //   });
+        //   msg = msg == null ? errors : msg + '\n' + errors;
+        // }
+        return msg;
+      }
 
 }
