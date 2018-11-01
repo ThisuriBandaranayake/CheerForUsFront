@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../auth.service';
+import { Router } from "@angular/router";
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -9,7 +11,7 @@ export class AdminDashboardComponent implements OnInit {
 user;
 usertype:string;
 
-  constructor(private auth:AuthService) { }
+  constructor(private auth:AuthService,private router: Router) { }
 
   ngOnInit() {
     this.auth
@@ -33,5 +35,17 @@ usertype:string;
         
       });
   }
+
+  logout(){
+    this.auth.logOut(localStorage.getItem("access_token") ).subscribe
+    (
+      response=>{
+        console.log(response);
+        this.router.navigate(["/login"]);
+          
+      }
+    );
+      
+    }
 
 }
