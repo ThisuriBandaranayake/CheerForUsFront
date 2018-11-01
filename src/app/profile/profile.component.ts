@@ -59,7 +59,7 @@ export class ProfileComponent implements OnInit {
   (
     response=>{
       console.log(response);
-      this.router.navigate([""]);
+      this.router.navigate(["/login"]);
         
     }
   );
