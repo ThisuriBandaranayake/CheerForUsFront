@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Router } from "@angular/router";
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-sign-up',
@@ -8,7 +9,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./admin-sign-up.component.scss']
 })
 export class AdminSignUpComponent implements OnInit {
-
+  validatingForm: FormGroup;
   public form ={
     username:null,
     email:null,
@@ -22,7 +23,15 @@ export class AdminSignUpComponent implements OnInit {
     password:string;
     cpassword:string;
 
-  constructor(private http:HttpClient, private router:Router) { }
+  constructor(private http:HttpClient, private router:Router,private fb: FormBuilder) { 
+    this.validatingForm = fb.group({
+      'minlength': [null, Validators.required, Validators.minLength(3)],
+      'maxlength': [null, Validators.maxLength(5)],
+      'min': [null, Validators.min(10)],
+      'email': [null, [Validators.required, Validators.email]],
+    });
+
+  }
 
   ngOnInit() {
   }

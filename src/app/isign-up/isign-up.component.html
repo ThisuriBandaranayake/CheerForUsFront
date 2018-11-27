@@ -9,61 +9,70 @@
         <div class="col-md-5">
         <div class="example z-depth-5">
           <!-- Default form register -->
-  <form class="text-center border border-light p-5" #IForm=ngForm (ngSubmit)="onSignUp()">
+  <form class="text border border-light p-5" #IForm=ngForm (ngSubmit)="onSignUp()">
 
       <p class="h4 mb-4">Institute Registration</p>
 
-      <div class="form-row mb-4">
-        <div class="col">
-          <!-- First name -->
-          <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Institute name" name="name" [(ngModel)]="name">
-        </div>
-        
+     <div>
+        <label  class="texts"> Institute name :</label>
+      <input type="text" class="form-control mb-4" placeholder="Institute name" name="name" [(ngModel)]="name">   
       </div>
-      <div class="form-row mb-4">
-        <div class="col">
-          <!-- First name -->
-          <input type="text" id="defaultRegisterFormUsertName" class="form-control" placeholder="User name" name="username" [(ngModel)]="username">
-        </div>
-        
-      </div>
+      <div>       
+          <label  class="texts"> Address line1 :</label>   
       <input type="text"  class="form-control mb-4" placeholder="Address Line 1 " name="address1" [(ngModel)]="address1">
+      </div>
+      <div>
+          <label  class="texts"> Address line2 :</label>
       <input type="text" class="form-control mb-4" placeholder=" Address Line 2" name="address2" [(ngModel)]="address2">
+      </div>
+      <div>
+          <label  class="texts"> Country:</label>
+      <input type="text" class="form-control mb-4" placeholder=" Country" name="country" [(ngModel)]="country">
+      </div>
       <div class="form-row mb-4">
         <div class="col">
           <!-- First name -->
+          <label  class="texts"> City :</label>
           <input type="text"  class="form-control" placeholder="City " name="city" [(ngModel)]="city">
         </div>
         <div class="col">
           <!-- Last name -->
+          <label  class="texts"> Province :</label>
           <input type="text"  class="form-control" placeholder="Province" name="province" [(ngModel)]="province">
         </div>
       </div>
       <div class="form-row mb-4">
         <div class="col">
           <!-- First name -->
+          <label  class="texts"> Contact number:</label>
           <input type="text"  class="form-control" placeholder="Contact Number" name="tpno" [(ngModel)]="tpno">
         </div>
         <div class="col">
           <!-- Last name -->
+          <label  class="texts"> Postal code :</label>
           <input type="text"  class="form-control" placeholder="Postal code" name="postalCode" [(ngModel)]="postalCode">
         </div>
       </div>
       <!-- E-mail -->
+      <div>
+          <label  class="texts"> Email :</label>
       <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="email" [(ngModel)]="email">
-
+      </div>
       <!-- Password -->
+      <div>
+          <label  class="texts"> Password :</label>
       <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="password" [(ngModel)]="password">
       <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
         At least 6 characters 
       </small>
+      </div>
+      <div>
+          <label  class="texts"> Confirm password :</label>
       <input type="password"  class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="cpassword" [(ngModel)]="cpassword">
       <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
           Retype your password.
         </small>
-      <!-- Phone number -->
-    
-
+        </div>
       <!-- Newsletter -->
       <div class="row">
         <div class="col-md-6 mx-auto d-flex justify-content-center">
@@ -72,7 +81,7 @@
       </div>
 
       <!-- Sign up button -->
-      <button mdbBtn color="info"  class="my-4" type="submit">Register</button>
+      <button mdbBtn color="info"  class="my-4" type="submit">Send registration request</button>
 
       <!-- Social register -->
       <p>or sign up with:</p>

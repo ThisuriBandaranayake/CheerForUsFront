@@ -20,6 +20,7 @@ export class ISignUpComponent implements OnInit {
     postalCode:null,
     province:null,
     username:null,
+    country:null,
   }
 
   users;
@@ -36,6 +37,7 @@ export class ISignUpComponent implements OnInit {
     province:string;
     username:string;
     error:null;
+    country:string;
 
   constructor(private http:HttpClient,private router:Router) { }
 
@@ -46,11 +48,12 @@ export class ISignUpComponent implements OnInit {
 
 onSignUp(){
   let input=new FormData();
-  input.append('name',this.username);
+ // input.append('name',this.username);
   input.append('institute_name',this.name);
   input.append('email',this.email);
   input.append('address_line1',this.address1);
   input.append('address_line2',this.address2);
+  input.append('country',this.country);
   input.append('city',this.city);
   input.append('user_type',"institute");
   input.append('province',this.province);

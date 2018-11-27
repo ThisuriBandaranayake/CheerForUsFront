@@ -38,6 +38,9 @@ import { ISignUpComponent } from './isign-up/isign-up.component';
 import { AdminSignUpComponent } from './admin-sign-up/admin-sign-up.component';
 import { ForumComponent } from './forum/forum.component';
 import { ParallaxDirective } from './parallax.directive';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FooterComponent } from './footer/footer.component';
+import { InstituteComponent } from './institute/institute.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,9 @@ import { ParallaxDirective } from './parallax.directive';
     AdminSignUpComponent,
     ForumComponent,
     ParallaxDirective,
+    EditProfileComponent,
+    FooterComponent,
+    InstituteComponent,
   
   ],
   imports: [
@@ -151,6 +157,19 @@ import { ParallaxDirective } from './parallax.directive';
         path:'article-feed',
         component:ArticleFeedComponent
       },
+      {
+        path:'edit-profile',
+        component:EditProfileComponent
+      },
+      {
+        path:'footer',
+        component:FooterComponent
+      },
+      {
+        path:'institute',
+        component:InstituteComponent
+      },
+      
     ])
     
   ],

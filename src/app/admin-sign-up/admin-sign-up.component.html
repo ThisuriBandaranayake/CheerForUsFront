@@ -25,7 +25,7 @@
       <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail"  name="email" [(ngModel)]="email">
 
       <!-- Password -->
-      <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="passowrd" [(ngModel)]="password">
+      <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="passoword" [(ngModel)]="password">
       <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
         At least 6 characters
       </small>
@@ -77,8 +77,47 @@
     </div>
     <div class="row">
 <br><br>
-
+ 
     </div>
+
+    <!-- <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-5">
+        <div class="example z-depth-5">
+         
+  
+
+      <form [formGroup]="validatingForm" class="text-center border border-light p-5"  #aForm=ngForm (ngSubmit)="onSignUp()">
+        <div><h2>Admin Registration</h2></div>
+          <div class="md-form">
+            <input mdbInputDirective type="text"  class="form-control" data-error="wrong text" data-success="right text"
+              formControlName="minlength"  name="username" [(ngModel)]="username">
+            <label for="form2">Username</label>
+          </div>
+          <div class="md-form">
+              <input mdbInputDirective type="text"  class="form-control" data-error="wrong text" data-success="right text"
+                formControlName="minlength" name="email" [(ngModel)]="email">
+              <label for="form2">Email</label>
+            </div>
+            <div class="md-form">
+                <input mdbInputDirective type="text"  class="form-control" data-error="wrong text" data-success="right text"
+                  formControlName="minlength" name="passoword" [(ngModel)]="password">
+                <label for="form2">Password</label>
+              </div>
+              <div class="md-form">
+                  <input mdbInputDirective type="text"  class="form-control" data-error="wrong text" data-success="right text"
+                    formControlName="minlength" name="cpassowrd" [(ngModel)]="cpassword">
+                  <label for="form2">Confirm password</label>
+                </div>
+               
+        </form>
+    
+  </div>
+          </div>
+        <div class="col-md-3"></div>
+    </div> -->
+
+
     
 
 

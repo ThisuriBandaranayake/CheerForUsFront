@@ -1,0 +1,60 @@
+<div class="row">
+    <br><br>
+    <br><br>
+    </div>
+    <div class="col-md-5">
+<div class="card mb-10" >
+    
+  <!--Card image-->
+  <div class="view overlay">
+    <img class="card-img-top" src="{{avatar}}" alt="Card image cap"> 
+    <a href="#!">
+      <div class="mask rgba-white-slight"></div>
+    </a> 
+  </div>
+
+  <!--Card content-->
+ <!-- Default form login -->
+ <div class="col-md-8" *ngIf="user">
+<form #profileEdit=ngForm (ngSubmit)="edit()" >
+ 
+<div>
+    <label  class="texts"> First name :</label>
+    <input type="text" class="form-control"  name="fname" [(ngModel)]="fname"  placeholder=""  required minlength="1"  >
+    
+</div>
+<div>
+    <label  class="texts"> Last name :</label>
+    <input type="text" class="form-control"  name="lname" [(ngModel)]="lname"  placeholder=""  required minlength="1"  >
+    
+</div>
+<div>
+    <label  class="texts"> Gender :</label>
+    <input type="text" class="form-control"  name="gender" [(ngModel)]="gender" placeholder=""  required minlength="1"  >
+    
+</div>
+  <!-- Email -->
+  <label>Email:</label>
+  <input type="email" name="email" class="form-control mb-4" [(ngModel)]="email"  placeholder="" >
+  <label>Contact number:</label>
+  <input type="string" class="form-control mb-4" name="contactnumber" [(ngModel)]="contactnumber"  placeholder="" > 
+  <label>Date of birth:</label>
+  <input type="date" class="form-control mb-4" name="birthday" [(ngModel)]="birthday"  placeholder="" >
+ 
+
+  <!-- Sign in button -->
+  <button mdbBtn color="info" block="true" class="my-4" type="submit">Update</button>
+
+  <!-- Register -->
+  
+</form>
+</div>
+<!-- Default form login -->
+   
+<!-- Card -->
+</div>
+</div>
+<div class="row">
+  <br><br>
+  <br><br>
+  </div>

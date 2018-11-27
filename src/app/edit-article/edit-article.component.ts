@@ -81,17 +81,5 @@ export class EditArticleComponent implements OnInit {
     }
     );
   }
-  edit(){
-    let input = new FormData();
-  input.append('caption',this.caption);
-  input.append('img',this.fileToUpload);
-  input.append('description',this.description);
-    var id=this.route.snapshot.params['id'];
-    return this.http.post(`http://localhost:8000/api/update/${id}`,input).subscribe(
-      data=>{
-        this.admin_articles=data;
-        console.log(data);
-      }
-      );
-  }
+ 
 }
