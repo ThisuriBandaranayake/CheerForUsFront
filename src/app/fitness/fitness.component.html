@@ -1,0 +1,13 @@
+<br><br><br>
+<form class="form-inline md-form mr-auto mb-4" #search=ngForm (ngSubmit)="onSubmit()">
+  <select class="mdb-select" searchable="Search here.." name="q" [(ngModel)]="location" required   placeholder="Search" aria-label="Search">
+    <option value="" disabled selected>Choose your location</option>
+    <option value=""  class="rounded-circle">Moratuwa</option>
+    <option value=""  class="rounded-circle">Nugegoda</option>
+    <option value=""  class="rounded-circle">Dehiwala</option>
+  </select>
+  
+  <button class="btn btn-elegant btn-rounded btn-sm my-0" type="submit">Search</button>
+    <!--<button type="submit">Submit</button>-->
+  
+</form>  
