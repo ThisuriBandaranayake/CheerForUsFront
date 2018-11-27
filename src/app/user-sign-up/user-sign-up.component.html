@@ -1,6 +1,7 @@
 <!-- Default form login -->
 <div class="row">
     <br><br>
+    <br>
     </div>
     <div class="example z-depth-5">
       <div class="row">
@@ -75,7 +76,7 @@
         <!-- Password -->
         <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"  name="password" required [(ngModel)]="password" #pw="ngModel">
         <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-          At least 8 characters and 1 digit
+          At least 6 characters.
         </small>
         <div *ngIf="pw.invalid && (pw.dirty || pw.touched)"
       class="alert alert-danger">
@@ -93,7 +94,7 @@
           
       
       
-  <div *ngIf="pwc.invalid && (pwc.dirty || pwc.touched)"
+  <!-- <div *ngIf="pwc.invalid && (pwc.dirty || pwc.touched)"
   class="alert alert-danger">
   <div *ngIf="pwc.errors.required">
  Password Confirmation Required.
@@ -101,7 +102,7 @@
   <div *ngIf="pwc.errors.minlength">
   Password doesn't match.
 </div>
-</div>
+</div> -->
         <!-- Phone number -->
        
   

@@ -4,12 +4,21 @@
 <div class="row">
   <br>
   <br>
-  <br>
+  
 </div>
     <div class="row" >
         <!-- Table -->
-        <div class="col-md-1"></div>
-        <div class="col-md-7">
+        <div class="col-md-2  z-depth-5">
+          <ul class="nav flex-column  py-4 mb-r">
+            <li  class="nav-item"><a class="nav-link white-text" href="#">Payment details </a></li>
+            <li  class="nav-item"> <a class="nav-link white-text" href="#">Change password</a></li>
+            <li  class="nav-item"><a class="nav-link white-text" href="#">Find an institute</a></li>
+            <li  class="nav-item"><a class="nav-link white-text" href="#">Join to forum</a></li>
+            </ul>
+         
+        </div>
+        <div class="col-md-6">
+          <br>
        <table class="table">
   <thead class="black white-text">
     <tr>
@@ -37,11 +46,13 @@
 
 
       </div>
-      <div class="col-md-1"></div>
+      <div class="col-md-1">
+      
+      </div>
   <!-- end of table -->
   <div class="col-md-3">
      <!-- Card -->
-     
+     <br>
 
       <!-- Card -->
       <div class="card mb-6" *ngIf="user">
@@ -61,11 +72,11 @@
           <h6 class="card-title">User Name: {{user.name}}</h6>
           <!--Text-->
           <h6 class="card-title">E mail: {{user.email}}</h6>
-          <h6 class="card-title">Address:{{user.address}}</h6>
+          <h6 class="card-title">Contact number:{{user.phone_number}}</h6>
           <h6 class="card-title">Date of Birth:{{user.birthday}}</h6>
           <p class="card-text"></p>
           <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-          <button type="button" class="btn btn-light-blue btn-md">Edit Info</button>
+        <a href="/edit-profile">  <button type="button" class="btn btn-light-blue btn-md">Edit Info</button></a>
           <button type="button" class="btn btn-light-blue btn-md" (click)="logout()">Log Out</button>
     
         </div>
@@ -77,5 +88,5 @@
  
   <div class="row">
     
-    <br>
+   
     </div>

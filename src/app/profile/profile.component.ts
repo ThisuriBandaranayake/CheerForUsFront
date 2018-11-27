@@ -12,12 +12,14 @@ import { Router } from "@angular/router";
 })
 export class ProfileComponent implements OnInit {
  // usertype;
-  user;
-  customer;
-  usertype;
-  name:string;
-  email:string;
-  id;
+ user;
+ customer;
+ usertype;
+ name:string;
+ email:string;
+ contactnumber:string;
+ birthday;
+ id;
 
   avatar : string = "assets/images/avatar.png";
   constructor(private auth:AuthService,private http: HttpClient,private router: Router) { }
@@ -59,7 +61,7 @@ export class ProfileComponent implements OnInit {
   (
     response=>{
       console.log(response);
-      this.router.navigate([""]);
+      this.router.navigate(["/login"]);
         
     }
   );

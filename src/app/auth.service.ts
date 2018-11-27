@@ -41,6 +41,7 @@ export class AuthService {
       }
     );
   }
+  
 
   logOut(accessToken: string){
     let httpHeaders = new HttpHeaders({
