@@ -41,6 +41,7 @@ import { ParallaxDirective } from './parallax.directive';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { InstituteComponent } from './institute/institute.component';
+import { IsideNavComponent } from './iside-nav/iside-nav.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { InstituteComponent } from './institute/institute.component';
     EditProfileComponent,
     FooterComponent,
     InstituteComponent,
+    IsideNavComponent,
   
   ],
   imports: [
@@ -79,7 +81,6 @@ import { InstituteComponent } from './institute/institute.component';
     InputsModule,
     CheckboxModule,
     ParticlesModule,
-    
     
     //FormGroup, FormControl, Validators,
     ButtonsModule, WavesModule, IconsModule,

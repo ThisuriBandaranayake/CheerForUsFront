@@ -62,6 +62,8 @@ onSignUp(){
   input.append('postal_code',this.postalCode);
   input.append('password',this.password);
   input.append('confirm_password',this.cpassword);
+  input.append('latitude', '0.0');
+  input.append('longitude', '0.0');
   return this.http.post('http://127.0.0.1:8000/api/user/signup',input).subscribe(
     data=>{
       this.users=data;
