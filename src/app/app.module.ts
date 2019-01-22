@@ -176,6 +176,10 @@ import { ServicesComponent } from './forum/core/services/services.component';
         component:ForumComponent
       },
       {
+        path:'forumhome',
+        component:ForumComponent
+      },
+      {
         path:'forum/editor',
         component:EditorComponent
       },
