@@ -38,10 +38,21 @@ import { ISignUpComponent } from './isign-up/isign-up.component';
 import { AdminSignUpComponent } from './admin-sign-up/admin-sign-up.component';
 import { ForumComponent } from './forum/forum.component';
 import { ParallaxDirective } from './parallax.directive';
+<<<<<<< HEAD
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { InstituteComponent } from './institute/institute.component';
 import { IsideNavComponent } from './iside-nav/iside-nav.component';
+=======
+import { FitnessComponent } from './fitness/fitness.component';
+import { EditorComponent } from './forum/editor/editor.component';
+import { ArticleComponent } from './forum/article/article.component';
+import { AuthComponent } from './forum/auth/auth.component';
+import { SharedComponent } from './forum/shared/shared.component';
+//import { CoreComponent } from './forum/core/core.module';
+import { ModelsComponent } from './forum/core/models/models.component';
+import { ServicesComponent } from './forum/core/services/services.component';
+>>>>>>> 10782d490cdf69ba0e2dba056fe9ab58cfd75fa8
 
 @NgModule({
   declarations: [
@@ -65,10 +76,21 @@ import { IsideNavComponent } from './iside-nav/iside-nav.component';
     AdminSignUpComponent,
     ForumComponent,
     ParallaxDirective,
+<<<<<<< HEAD
     EditProfileComponent,
     FooterComponent,
     InstituteComponent,
     IsideNavComponent,
+=======
+    FitnessComponent,
+    EditorComponent,
+    ArticleComponent,
+    AuthComponent,
+    SharedComponent,
+    //CoreComponent,
+    ModelsComponent,
+    ServicesComponent,
+>>>>>>> 10782d490cdf69ba0e2dba056fe9ab58cfd75fa8
   
   ],
   imports: [
@@ -160,18 +182,25 @@ import { IsideNavComponent } from './iside-nav/iside-nav.component';
         component:ArticleFeedComponent
       },
       {
-        path:'edit-profile',
-        component:EditProfileComponent
+        path:'fitness',
+        component:FitnessComponent
       },
       {
-        path:'footer',
-        component:FooterComponent
+        path:'forum',
+        component:ForumComponent
       },
       {
-        path:'institute',
-        component:InstituteComponent
+        path:'forumhome',
+        component:ForumComponent
       },
-      
+      {
+        path:'forum/editor',
+        component:EditorComponent
+      },
+      {
+        path:'forum/article',
+        component:ArticleComponent
+      },
     ])
     
   ],
