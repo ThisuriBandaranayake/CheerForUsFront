@@ -1,13 +1,27 @@
 <app-profile-nav></app-profile-nav>
 <div class="row">
     <br><br>
-    <br>
+    
     </div>
-<div class="page">
+    <div   style="background-image: url(/assets/images/f3.jpg); background-attachment: fixed; background-size: cover; min-height: 700px">
+<!-- <div class="page"> -->
+    <br>
 <p class="top">Article Feed</p>
 <!--News card-->
+<div class="container">
+<div class="row">
+<div class="col-5">
+    <form class="form-inline md-form form-sm active-purple active-purple-2">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input class="form-control form-control-sm ml-3 w-75" name="searchArticle" [(ngModel)]="searchArticle" type="text" placeholder="Search" aria-label="Search"
+          mdbInputDirective>
+          <button mdbBtn type="button" color="primary" rounded="true" (click)="search()" mdbWavesEffect>Search</button>
+      </form>
+    </div>
+    </div>
+    </div>
 <div class="col-8" >
-<div class="card mb-3 text-center hoverable" *ngFor="let admin_article of admin_articles">
+<div class="card mb-3 text-center hoverable" *ngFor="let article of articles.articles.data">
     <div class="card-body" >
         <!--Grid row-->
         <div class="row">
@@ -16,7 +30,7 @@
             <div class="col-md-4 offset-md-1 mx-3 my-3">
                 <!--Featured image-->
                 <div class="view overlay">
-                    <img src="http://localhost:8000/storage/images/{{admin_article['img']}}" class="img-fluid" alt="Sample image for first version of blog listing">
+                    <img src="{{article.article_photo}}" class="img-fluid" alt="Sample image for first version of blog listing">
                     <a>
                         <div class="mask rgba-white-slight"></div>
                     </a>
@@ -30,8 +44,8 @@
                 <a href="" class="green-text">
                     <h6 class="font-bold pb-1"><i class="fa fa-desktop"></i> Work</h6>
                 </a>
-                <h4 class="mb-4"><strong>{{admin_article['caption']}}</strong></h4>
-                <p>{{admin_article['description']}}</p>
+                <h4 class="mb-4"><strong>{{article.title}}</strong></h4>
+                <p>{{article.content}}</p>
                 <!-- <p>by <a><strong>Carine Fox</strong></a>, 19/08/2016</p> -->
                 <a class="btn btn-success">Read more</a>
             </div>
@@ -41,5 +55,6 @@
     </div>
 </div>
 </div>
-<!--News card-->
 </div>
+<!--News card-->
+

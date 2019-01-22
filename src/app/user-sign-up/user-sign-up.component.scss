@@ -5,3 +5,22 @@
   .ng-invalid:not(form)  {
     border-left: 5px solid #a94442; /* red */
   }
+
+  label{
+    float: left;
+    font-weight: 400;
+    color: white;
+  }
+
+  
+form{
+  background-color: rgba(12, 12, 243, 0.199);
+  margin: auto;
+// background-image: url(/assets/images/f4.jpg);
+// background-repeat: no-repeat;
+// background-size: cover;
+}
+
+.body{
+  background-image: url(/assets/images/f3.jpg);
+}

@@ -5,3 +5,33 @@
   .ng-invalid:not(form)  {
     border-left: 5px solid #a94442; /* red */
   }
+
+  .card-body{
+    margin: auto
+ }
+ .col-md-5{
+     margin: auto;
+ }
+ .col-md-8{
+    margin: auto;
+}
+label{
+     font-weight: 500;
+     color: azure
+}
+
+.card{
+    background-color: rgba(12, 12, 243, 0.199);
+// background-image: url(/assets/images/f4.jpg);
+// background-repeat: no-repeat;
+// background-size: cover;
+}
+
+.body{
+    background-image: url(/assets/images/f3.jpg);
+    background-repeat: no-repeat
+}
+
+p{
+  color: white;
+}

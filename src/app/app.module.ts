@@ -80,6 +80,7 @@ import { InstituteComponent } from './institute/institute.component';
     CheckboxModule,
     ParticlesModule,
     
+    
     //FormGroup, FormControl, Validators,
     ButtonsModule, WavesModule, IconsModule,
     RouterModule.forRoot([

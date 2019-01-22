@@ -1,7 +1,7 @@
 
 .card-img-top{
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 200px;
     margin: auto
 }
 //  .table{
@@ -16,4 +16,19 @@
  }
  .col-md-8{
     margin: auto;
+}
+label{
+     font-weight: 500;
+     color: azure
+}
+
+.card{
+    background-color: rgba(12, 12, 243, 0.199);
+// background-image: url(/assets/images/f4.jpg);
+// background-repeat: no-repeat;
+// background-size: cover;
+}
+
+.body{
+    background-image: url(/assets/images/f3.jpg);
 }

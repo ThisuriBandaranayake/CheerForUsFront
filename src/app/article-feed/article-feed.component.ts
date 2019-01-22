@@ -6,17 +6,34 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
   styleUrls: ['./article-feed.component.scss']
 })
 export class ArticleFeedComponent implements OnInit {
-  admin_articles;
-  caption:string;
+  articles;
+  title:string;
   description:string;
   img:string;
+  searchArticle:string;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8000/api/articles').subscribe(data=>{
-  console.log(data);
-  this.admin_articles=data;
+    let httpHeaders = new HttpHeaders({
+      Authorization: "Bearer " + localStorage.getItem("access_token")
+    });
+   this.http.post('http://127.0.0.1:8000/api/article/get',{},{
+   headers: httpHeaders
+    }).subscribe(
+   data=>{
+   console.log(data);
+   this.articles=data; 
+  
 })
   }
+  search(){
+    this.http.post('http://127.0.0.1:8000/api/article/search',this.searchArticle,{}).subscribe(
+      data=>{
+        console.log(data);
+        this.articles=data;
+      }
+    );
+  }
+
 
 }

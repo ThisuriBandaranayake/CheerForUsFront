@@ -1,35 +1,42 @@
+<div class="body">
 <div class="row">
     <br><br>
     <br><br>
     </div>
     <div class="col-md-5">
-<div class="card mb-10" >
+      <div class="example z-depth-5">
+<div class="card mb-10 z-depth-5" >
     
   <!--Card image-->
-  <div class="view overlay">
-    <img class="card-img-top" src="{{avatar}}" alt="Card image cap"> 
-    <a href="#!">
-      <div class="mask rgba-white-slight"></div>
-    </a> 
+  <div class="col-md-8" *ngIf="user">
+    <form #profileEdit=ngForm (ngSubmit)="edit()" >
+  <div class="view overlay" style="margin-top: 10%">
+    <img class="card-img-top" src="{{imageUrl}}" alt="Card image cap" 
+    alt="Responsive image"> <br>
+    <input type="file" class="upload" #Image accept="image/*" (change)="handleFileInput($event.target.files)" name="image" [(ngModel)]="image">
   </div>
-
+<br>
   <!--Card content-->
  <!-- Default form login -->
- <div class="col-md-8" *ngIf="user">
-<form #profileEdit=ngForm (ngSubmit)="edit()" >
+ 
  
 <div>
-    <label  class="texts"> First name :</label>
+  <label>Username :</label>
+  <input type="text" class="form-control"  name="username" [(ngModel)]="username"  placeholder=""  required minlength="1"  >
+  
+</div>
+<div>
+    <label> First name :</label>
     <input type="text" class="form-control"  name="fname" [(ngModel)]="fname"  placeholder=""  required minlength="1"  >
     
 </div>
 <div>
-    <label  class="texts"> Last name :</label>
+    <label> Last name :</label>
     <input type="text" class="form-control"  name="lname" [(ngModel)]="lname"  placeholder=""  required minlength="1"  >
     
 </div>
 <div>
-    <label  class="texts"> Gender :</label>
+    <label> Gender :</label>
     <input type="text" class="form-control"  name="gender" [(ngModel)]="gender" placeholder=""  required minlength="1"  >
     
 </div>
@@ -54,7 +61,9 @@
 <!-- Card -->
 </div>
 </div>
+</div>
 <div class="row">
   <br><br>
   <br><br>
+  </div>
   </div>

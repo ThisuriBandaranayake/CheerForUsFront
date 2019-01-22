@@ -2,12 +2,33 @@
     margin: auto;
 }
 .top{
-    font-size: 40px;
-    font-style: oblique;
-    font-family: monospace;
+    font-size: 70px;
+    
+    font-family:'Calibri';
     font-weight: 200;
-    text-align: center
+    text-align: center;
+    color: azure
 }
-.page{
-    background-color: rgb(197, 191, 187)
-}
+
+
+    
+    .active-purple-2 input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #ffffff;
+    box-shadow: 0 1px 0 0 #ffffff;
+    }
+    
+    .active-purple input[type=text] {
+    border-bottom: 1px solid #ffffff;
+    box-shadow: 0 1px 0 0 #ffffff;
+    }
+    
+   
+    
+    .active-purple .fa,
+    .active-purple-2 .fa {
+    color: #ffffff;
+    }
+    .form-control{
+        color: #ffffff
+    }
+    

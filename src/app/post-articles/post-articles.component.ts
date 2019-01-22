@@ -20,7 +20,7 @@ export class PostArticlesComponent implements OnInit {
   
    
   }
-  admin_articles;
+  articles;
   error:null;
   caption:string;
   description:string;
@@ -28,17 +28,24 @@ export class PostArticlesComponent implements OnInit {
   id:number;
   imageUrl : string = "assets/images/upload.png";
   fileToUpload : File;
-  constructor(private http: HttpClient,
-    private location: Location,private router: Router
-    ) { }
+  constructor(private http: HttpClient, private location: Location,private router: Router) { }
 
-  ngOnInit() {
-this.http.get('http://localhost:8000/api/articles').subscribe(data=>{
-  console.log(data);
-  this.admin_articles=data; 
-  
-})
-  }
+      ngOnInit() {
+        let httpHeaders = new HttpHeaders({
+          Authorization: "Bearer " + localStorage.getItem("access_token")
+        });
+       this.http.post('http://127.0.0.1:8000/api/article/get',{},{
+       headers: httpHeaders
+        }).subscribe(
+       data=>{
+       console.log(data);
+       this.articles=data; 
+      
+      
+    })
+      }
+ 
+
 handleFileInput(file : FileList){
 this.fileToUpload = file.item(0);
 
@@ -51,55 +58,108 @@ reader.readAsDataURL(this.fileToUpload);
 }
 
 
-onSubmit() {
- 
+onSubmit(accessToken:string ) {
+  let httpHeaders = new HttpHeaders({
+    Authorization: "Bearer " + localStorage.getItem("access_token")
+  });
   let input = new FormData();
-input.append('caption',this.caption);
-input.append('img',this.fileToUpload);
-input.append('description',this.description);
-  return this.http.post('http://localhost:8000/api/articleStore',input).subscribe(
+  
+input.append('title',this.caption);
+input.append('article_photo',this.fileToUpload);
+input.append('content',this.description);
+input.append('is_published','0');
+  return this.http.post('http://127.0.0.1:8000/api/article/create',input,{ 
+    headers: httpHeaders
+  }).subscribe(
     data => {
-      this.admin_articles = data;
+      this.articles = data;
       this.caption=null;
       this.imageUrl="assets/images/upload.png";
       this.description=null;
+      
+      
     },
 error => console.log(error)
   );
  
 } 
 
+publish(accessToken:string ) {
+  let httpHeaders = new HttpHeaders({
+    Authorization: "Bearer " + localStorage.getItem("access_token")
+  });
+  let input = new FormData();
+  
+input.append('title',this.caption);
+input.append('article_photo',this.fileToUpload);
+input.append('content',this.description);
+input.append('is_published','1');
+  return this.http.post('http://127.0.0.1:8000/api/article/create',input,{
+    headers: httpHeaders
+  }).subscribe(
+    data => {
+      this.articles = data;
+      this.caption=null;
+      this.imageUrl="assets/images/upload.png";
+      this.description=null;
+      window.location.reload()
+    },
+error => console.log(error)
+
+  );
+  
+ 
+} 
+
+
 // goBack(): void {
 //   this.location.back();
 // }
 
 
-delete(id){
+delete(id){ 
+  let httpHeaders = new HttpHeaders({
+    Authorization: "Bearer " + localStorage.getItem("access_token")
+  });
+  console.log(localStorage.getItem("access_token"));
 var response = confirm("Are you sure you want to delete this article?");
 
 if(response == true){
-  this.http.get('http://localhost:8000/api/deleteArticles/'+id).subscribe(response =>{
+  return this.http.post('http://localhost:8000/api/article/delete',{id},{
+    headers: httpHeaders 
+  }).subscribe(response =>{ 
 console.log(response);
+window.location.reload()
 
   })
-  this.http.get('http://localhost:8000/api/articles').subscribe(data=>{
-  console.log(data);
-  this.admin_articles=data;
-})
+ 
 }
 else{
 }
 }
+
+
 edit(id){
-  return this.http.get(`http://localhost:8000/api/articleDetails/${id}`).subscribe(data =>{
+  let httpHeaders = new HttpHeaders({
+    Authorization: "Bearer" + localStorage.getItem("access_token")
+  }); 
+  return this.http.post(`http://localhost:8000/api/article/get/${id}`,{},{
+    headers: httpHeaders
+  }).subscribe(data =>{
     console.log(data);
-    this.admin_articles=data;
-    this.router.navigate(["/edit-article/{{admin_article.id}}"]);
+    this.articles=data;
+    this.router.navigate(["/edit-article/{{article.id}}"]);
     // this.admin_article=this.admin_article[0];
     // this.admin_article.id=id;
     // this.admin_article.caption=this.caption;
     // this.admin_article.description=this.description;
    })
   }
+
+  search(){
+    
+  }
+
+  
 
 }

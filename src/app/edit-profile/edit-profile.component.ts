@@ -18,6 +18,7 @@ export class EditProfileComponent implements OnInit {
     contactno:null,
     birthday:null,
     gender:null,
+    image:null,
   }
   user;
   //customer;
@@ -29,10 +30,23 @@ export class EditProfileComponent implements OnInit {
   fname;
   lname;
   gender;
-  
   id;
-  avatar : string = "assets/images/avatar.png";
+  
+  image:string;
+  imageUrl : string = "assets/images/avatar.png";
+  fileToUpload:File;
   constructor(private auth:AuthService,private http: HttpClient,private router: Router) { }
+
+  handleFileInput(file : FileList){
+    this.fileToUpload = file.item(0);
+    
+    //show image preview
+    var reader = new FileReader();
+    reader.onload=(event:any)=>{
+    this.imageUrl=event.target.result;
+    }
+    reader.readAsDataURL(this.fileToUpload);
+    }
 
   ngOnInit() {
     this.auth
@@ -45,13 +59,15 @@ export class EditProfileComponent implements OnInit {
           console.log(response);
          // this.username= response["body"].name;
          //this.users.id= response['0'].id;
-          this.fname= response['0'].first_name;
-          this.lname= response['0'].last_name;
-          this.gender= response['0'].gender;
-          this.email= response['0'].email;
-          this.contactnumber= response['0'].phone_number;
-          this.birthday= response['0'].birthday;
-        
+         this.username=response['body']['name']; 
+          this.fname= response['body']['first_name'];
+          this.lname= response['body']['last_name'];
+          this.gender= response['body']['gender'];
+          this.email= response['body']['email'];
+          this.contactnumber= response['body']['phone_number']; 
+          this.birthday= response['body']['birthday'];
+          this.imageUrl=response['body']['avatar'];
+         this.image=response['body']['avatar'];
       });
   }
   edit(accessToken: string){
@@ -66,6 +82,8 @@ export class EditProfileComponent implements OnInit {
   input.append('gender',this.gender);
   input.append('phone_number',this.contactnumber);
   input.append('birthday',this.birthday);
+  input.append('change_avatar','1');
+  input.append('avatar',this.fileToUpload);
   
     return this.http.post("http://localhost:8000/api/user/edit",input,{
       headers: httpHeaders
@@ -73,6 +91,7 @@ export class EditProfileComponent implements OnInit {
     data=>{
       this.user=data;
       console.log(data);
+      this.router.navigate(["/profile"]);
     }
     );
   }

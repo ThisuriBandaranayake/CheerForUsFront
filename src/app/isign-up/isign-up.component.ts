@@ -49,6 +49,7 @@ export class ISignUpComponent implements OnInit {
 onSignUp(){
   let input=new FormData();
  // input.append('name',this.username);
+ input.append('name',this.username)
   input.append('institute_name',this.name);
   input.append('email',this.email);
   input.append('address_line1',this.address1);

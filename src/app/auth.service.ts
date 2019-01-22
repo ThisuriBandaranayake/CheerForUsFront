@@ -12,7 +12,7 @@ export class AuthService {
   sendLoginRequest(email: string, password: string) {
     let httpHeaders = new HttpHeaders({
       "Content-Type": "application/json",
-      "X-Requested-With": "XMLHttpRequest"
+      "Accept": "application/json"
     });
     let body = {
       email: email,
