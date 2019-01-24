@@ -46,6 +46,7 @@ import { SharedComponent } from './forum/shared/shared.component';
 //import { CoreComponent } from './forum/core/core.module';
 import { ModelsComponent } from './forum/core/models/models.component';
 import { ServicesComponent } from './forum/core/services/services.component';
+import { InstituteDetailsComponent } from './fitness/institute-details/institute-details.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { ServicesComponent } from './forum/core/services/services.component';
     //CoreComponent,
     ModelsComponent,
     ServicesComponent,
+    InstituteDetailsComponent,
   
   ],
   imports: [
@@ -170,6 +172,10 @@ import { ServicesComponent } from './forum/core/services/services.component';
       {
         path:'fitness',
         component:FitnessComponent
+      },
+      {
+        path:'fitness/institute-details',
+        component:InstituteDetailsComponent
       },
       {
         path:'forum',
