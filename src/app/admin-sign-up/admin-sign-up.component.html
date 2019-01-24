@@ -43,7 +43,7 @@
         <div *ngIf="pword.errors.minlength"><small>Password should be minimum 6 characters.</small></div>
       </div>
 <!-- confirm Password -->
-      <input formControlName="cpword" type="cpword" id="cpword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="cpassowrd" [(ngModel)]="cpassword" >
+      <input formControlName="cpword" type="password" id="cpword" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="cpassowrd" [(ngModel)]="cpassword" >
       <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
           Retype your password.
         </small>

@@ -6,10 +6,10 @@
   </div>
   <div class="col-md-5">
       <div class="example z-depth-5">
-<div class="card mb-10 z-depth-5" >
+
     
   <!--Card image-->
-  <div class="col-md-12">
+  
           <form class="text-center border border-light p-5" #login=ngForm (ngSubmit)="onSubmit()">
 
             <p class="h4 mb-4"> Login</p>
@@ -34,9 +34,9 @@
   <div *ngIf="pword.errors.required">
    Password Required.
   </div>
-  <div *ngIf="pword.errors.minlength">
+  <!-- <div *ngIf="pword.errors.minlength">
    Password must contain atleast 6 characters.
-  </div>
+  </div> -->
 </div>
             <div class="d-flex justify-content-around">
               <div> 
@@ -54,7 +54,7 @@
             
             <!-- Register -->
             <p>Not a member?
-              <a href="">Register</a>
+              <a href="user-sign-up">Register</a>
             </p>
           
             <!-- Social login -->
@@ -74,11 +74,11 @@
           </form>
           <!-- Default form login -->
   
-        </div>
+        
         <!-- Default form login -->
            
         <!-- Card -->
-        </div>
+      
         </div>
         </div>
         <div class="row">

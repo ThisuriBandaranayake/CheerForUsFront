@@ -23,4 +23,32 @@ li{
 img{
     width: 60%;
     height: 70%;
+    margin: auto
 }
+
+h4{
+    margin: auto
+}
+
+.grad1 {
+    height: 200px;
+    background-color: red; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, rgb(28, 4, 117), rgb(220, 232, 248)); /* Standard syntax (must be last) */
+  }
+  mdb-card{
+      height: 100px;
+     
+  }
+
+  .card-img-top{
+    width: 200px;
+    height: 200px;
+    margin: auto
+}
+//  .table{
+//      margin: auto;
+//      float: left;
+//  }
+ .card-body{
+    margin: auto
+ }
