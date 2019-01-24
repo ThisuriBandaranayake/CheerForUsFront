@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-fitness',
@@ -7,25 +7,45 @@ import { HttpClient} from '@angular/common/http';
   styleUrls: ['./fitness.component.scss']
 })
 export class FitnessComponent implements OnInit {
-public form={
-location:null,
-}
-institutecategoryplace;
-location:string;
-  constructor(private http:HttpClient) { }
+  searchResults: any;
+  search_query:any;
+
+  public form = {
+    location: null,
+  }
+  institutecategoryplace;
+  location: string;
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    console.log(this.search_query)
+    return this.http.post('http://localhost:8000/api/place/search', {
+      'search_query': this.search_query
+    }).subscribe(
+      data => {
+        this.searchResults = data;
+        this.institutecategoryplace = data;
+        console.log(data);
+      }
+    )
   }
 
-  onSubmit(){
-return this.http.post('http://127.0.0.1:8000/api/place/search',location).subscribe(
-  data=>{
-    this.institutecategoryplace=data;
-    console.log(data);
+  onSubmit() {
+    console.log(this.search_query)
+    return this.http.post('http://localhost:8000/api/place/search', {
+      'search_query': this.search_query
+    }).subscribe(
+      data => {
+        this.searchResults = data;
+        this.institutecategoryplace = data;
+        console.log(data);
+      }
+    )
   }
-  
-) 
+
+  localImageUrl(str: string): string {
+    return 'http://localhost:8000' + str.substring(16, str.length)
   }
-  
+
 
 }

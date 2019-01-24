@@ -37,7 +37,7 @@
     </div>  
      </div>
      <label>Last Name :</label>
-        <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" placeholder="Last Name"  name="lname" required [(ngModel)]="laname" #ln="ngModel">
+        <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" placeholder="Last Name"  name="lname" required [(ngModel)]="lname" #ln="ngModel">
         <div *ngIf="ln.invalid && (ln.dirty || ln.touched)"
   class="alert alert-danger">
   <div *ngIf="ln.errors.required">
@@ -59,6 +59,7 @@
       <option value="1">female</option>
       
    </select>
+   
       <br><br>
     <!-- 
         <input type="text" id="defaultRegisterFormGender" class="form-control mb-4" placeholder="Gender"  name="gender" required [(ngModel)]="gender" #gen="ngModel"> -->
@@ -94,7 +95,7 @@
         <!-- Password -->
         
   <label>Password :</label>
-        <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"  name="password" required [(ngModel)]="password" #pw="ngModel">
+        <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"  name="password" required minlength="6" [(ngModel)]="password" #pw="ngModel">
         <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
           At least 6 characters.
         </small>
@@ -109,11 +110,22 @@
       </div>
       
   <label>Confirm Password :</label>
-        <input type="password"  class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="cpassword" required [(ngModel)]="cpassword" #cpw="ngModel">
+        <input type="password"  class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="cpassword" required minlength="6" [(ngModel)]="cpassword" #cpw="ngModel">
         <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
             Retype your password.
           </small>
-          
+          <div *ngIf="cpw.invalid && (cpw.dirty || cpw.touched)"
+          class="alert alert-danger">
+          <div *ngIf="cpw.errors.required">
+           <small>Password Required.</small>
+          </div>
+          <div *ngIf="cpw.errors.minlength">
+          <small> Password must contain atleast 6 characters.</small>
+          </div>
+          <div *ngIf="cpw != pw">
+              <small> Doesn't match with password.</small>
+              </div>
+          </div>
       
       
   <!-- <div *ngIf="pwc.invalid && (pwc.dirty || pwc.touched)"

@@ -27,7 +27,10 @@ export class ArticleFeedComponent implements OnInit {
 })
   }
   search(){
-    this.http.post('http://127.0.0.1:8000/api/article/search',this.searchArticle,{}).subscribe(
+ 
+    let input = new FormData();
+    input.append('search_query',this.searchArticle);
+    this.http.post('http://127.0.0.1:8000/api/article/search',input).subscribe(
       data=>{
         console.log(data);
         this.articles=data;

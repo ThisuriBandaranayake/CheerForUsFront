@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
        console.log(error['error']['message']);
        console.log(error['error']['error']);
        this.errormsg=error['error']['error'];
-        alert(this.getDialogMessage(error));
+        alert(this.errormsg );
       }
     );
   }

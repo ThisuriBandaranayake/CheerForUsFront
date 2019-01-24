@@ -1,4 +1,4 @@
-
+<div class="body">
 <!-- Default form login -->
 <div class="row">
   <br><br><br>
@@ -15,74 +15,133 @@
 
       <div>
         <label  class="texts">  Username :</label>
-      <input type="text" class="form-control mb-4" placeholder="Username" name="username" [(ngModel)]="username">   
+      <input type="text" class="form-control mb-4" placeholder="Username" name="username" required [(ngModel)]="username" #uname="ngModel">  
+      <div *ngIf="uname.invalid && (uname.dirty || uname.touched)"
+      class="alert alert-danger">
+      <div *ngIf="uname.errors.required">
+         <small>  Username Required.</small>
+          </div>
+      </div>
       </div>
      <div>
         <label  class="texts"> Institute name :</label>
-      <input type="text" class="form-control mb-4" placeholder="Institute name" name="name" [(ngModel)]="name">   
+      <input type="text" class="form-control mb-4" placeholder="Institute name" name="name" required [(ngModel)]="name" #iname="ngModel">   
+    <div *ngIf="iname.invalid && (iname.dirty || iname.touched)"
+    class="alert alert-danger">  
+    <div *ngIf="iname.errors.required">
+      <small>Institute name is required.</small>
       </div>
+    </div>
+    </div>
       <div>       
           <label  class="texts"> Address line1 :</label>   
-      <input type="text"  class="form-control mb-4" placeholder="Address Line 1 " name="address1" [(ngModel)]="address1">
+      <input type="text"  class="form-control mb-4" placeholder="Address Line 1 " name="address1" required [(ngModel)]="address1" #ad1="ngModel">
+      <div *ngIf="ad1.invalid && (ad1.dirty || ad1.touched)"
+      class="alert alert-danger">
+      <div *ngIf="ad1.errors.required">
+         <small>   Required.</small>
+          </div>
+      </div>
       </div>
       <div>
           <label  class="texts"> Address line2 :</label>
-      <input type="text" class="form-control mb-4" placeholder=" Address Line 2" name="address2" [(ngModel)]="address2">
-      </div>
-      <div>
-          <label  class="texts"> Country:</label>
-      <input type="text" class="form-control mb-4" placeholder=" Country" name="country" [(ngModel)]="country">
-      </div>
+      <input type="text" class="form-control mb-4" placeholder=" Address Line 2" name="address2" required [(ngModel)]="address2" #ad2="ngModel">
+      <div *ngIf="ad2.invalid && (ad2.dirty || ad2.touched)"
+      class="alert alert-danger">
+      <div *ngIf="ad2.errors.required">
+         <small>   Required.</small>
+          </div>
+      </div>  
+    </div>
+      
       <div class="form-row mb-4">
         <div class="col">
           <!-- First name -->
           <label  class="texts"> City :</label>
-          <input type="text"  class="form-control" placeholder="City " name="city" [(ngModel)]="city">
+          <input type="text"  class="form-control" placeholder="City " name="city" required [(ngModel)]="city" #cit="ngModel">
+          <div *ngIf="cit.invalid && (cit.dirty || cit.touched)"
+          class="alert alert-danger">
+          <div *ngIf="cit.errors.required">
+             <small>   Required.</small>
+              </div>
+          </div>
         </div>
         <div class="col">
           <!-- Last name -->
           <label  class="texts"> Province :</label>
-          <input type="text"  class="form-control" placeholder="Province" name="province" [(ngModel)]="province">
+          <input type="text"  class="form-control" placeholder="Province" name="province" required [(ngModel)]="province" #pro="ngModel">
+          <div *ngIf="pro.invalid && (pro.dirty || pro.touched)"
+          class="alert alert-danger">
+          <div *ngIf="pro.errors.required">
+             <small>   Required.</small>
+              </div>
+          </div>
         </div>
       </div>
       <div class="form-row mb-4">
         <div class="col">
           <!-- First name -->
           <label  class="texts"> Contact number:</label>
-          <input type="text"  class="form-control" placeholder="Contact Number" name="tpno" [(ngModel)]="tpno">
+          <input type="text"  class="form-control" placeholder="Contact Number" name="tpno" required [(ngModel)]="tpno" #tp="ngModel">
+          <div *ngIf="tp.invalid && (tp.dirty || tp.touched)"
+          class="alert alert-danger">
+          <div *ngIf="tp.errors.required">
+             <small>   Required.</small>
+              </div>
+          </div> 
         </div>
         <div class="col">
           <!-- Last name -->
           <label  class="texts"> Postal code :</label>
-          <input type="text"  class="form-control" placeholder="Postal code" name="postalCode" [(ngModel)]="postalCode">
+          <input type="text"  class="form-control" placeholder="Postal code" name="postalCode" required [(ngModel)]="postalCode" #pc="ngModel">
+          <div *ngIf="pc.invalid && (pc.dirty || pc.touched)"
+          class="alert alert-danger">
+          <div *ngIf="pc.errors.required">
+             <small>   Required.</small>
+              </div>
+          </div>
         </div>
       </div>
       <!-- E-mail -->
       <div>
           <label  class="texts"> Email :</label>
-      <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="email" [(ngModel)]="email">
-      </div>
+      <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="email" required [(ngModel)]="email" #em="ngModel">
+      <div *ngIf="em.invalid && (em.dirty || em.touched)"
+      class="alert alert-danger">
+      <div *ngIf="em.errors.required">
+         <small>   Required.</small>
+          </div>
+      </div> 
+    </div>
       <!-- Password -->
       <div>
           <label  class="texts"> Password :</label>
-      <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="password" [(ngModel)]="password">
+      <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="password" required [(ngModel)]="password" #pword="ngModel">
       <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
         At least 6 characters 
       </small>
+      <div *ngIf="pword.invalid && (pword.dirty || pword.touched)"
+      class="alert alert-danger">
+      <div *ngIf="pword.errors.required">
+         <small>   Required.</small>
+          </div>
+      </div>
       </div>
       <div>
           <label  class="texts"> Confirm password :</label>
-      <input type="password"  class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="cpassword" [(ngModel)]="cpassword">
+      <input type="password"  class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="cpassword" required [(ngModel)]="cpassword" #cpword="ngModel">
       <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
           Retype your password.
         </small>
+        <div *ngIf="cpword.invalid && (cpword.dirty || cpword.touched)"
+      class="alert alert-danger">
+      <div *ngIf="cpword.errors.required">
+         <small>   Required.</small>
+          </div>
+      </div>
         </div>
       <!-- Newsletter -->
-      <div class="row">
-        <div class="col-md-6 mx-auto d-flex justify-content-center">
-          <mdb-checkbox [default]="true">Subscribe to out wesite</mdb-checkbox>
-        </div>
-      </div>
+     
 
       <!-- Sign up button -->
       <button mdbBtn color="info"  class="my-4" type="submit">Send registration request</button>
@@ -120,6 +179,5 @@
 <br><br>
 
     </div>
-    
-
+  </div>
 

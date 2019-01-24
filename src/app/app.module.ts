@@ -51,9 +51,17 @@ import { SharedComponent } from './forum/shared/shared.component';
 //import { CoreComponent } from './forum/core/core.module';
 import { ModelsComponent } from './forum/core/models/models.component';
 import { ServicesComponent } from './forum/core/services/services.component';
+<<<<<<< HEAD
 import { EditPlaceDetailsComponent } from './edit-place-details/edit-place-details.component';
 import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-place-details-form.component';
 
+=======
+import { InstituteDetailsComponent } from './fitness/institute-details/institute-details.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FooterComponent } from './footer/footer.component';
+import { InstituteComponent } from './institute/institute.component';
+import { AdminEditComponent } from './admin-edit/admin-edit.component';
+>>>>>>> 027084158ab75c33e0da6009dc39957d57edd304
 
 @NgModule({
   declarations: [
@@ -90,9 +98,17 @@ import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-pl
     //CoreComponent,
     ModelsComponent,
     ServicesComponent,
+<<<<<<< HEAD
     EditPlaceDetailsComponent,
     EditPlaceDetailsFormComponent,
   
+=======
+    InstituteDetailsComponent,
+    EditProfileComponent,
+    FooterComponent,
+    InstituteComponent,
+    AdminEditComponent,
+>>>>>>> 027084158ab75c33e0da6009dc39957d57edd304
   
   ],
   imports: [
@@ -117,6 +133,11 @@ import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-pl
       {
         path:'admin-sign-up',
         component:AdminSignUpComponent
+
+      },
+      {
+        path:'admin-edit',
+        component: AdminEditComponent
 
       },
       {
@@ -180,6 +201,10 @@ import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-pl
       {
         path:'fitness',
         component:FitnessComponent
+      },
+      {
+        path:'fitness/institute-details',
+        component:InstituteDetailsComponent
       },
       {
         path:'forum',

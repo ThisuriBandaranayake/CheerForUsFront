@@ -143,7 +143,7 @@ edit(id){
   let httpHeaders = new HttpHeaders({
     Authorization: "Bearer" + localStorage.getItem("access_token")
   }); 
-  return this.http.post(`http://localhost:8000/api/article/get/${id}`,{},{
+  return this.http.post('http://localhost:8000/api/article/get',{id},{
     headers: httpHeaders
   }).subscribe(data =>{
     console.log(data);

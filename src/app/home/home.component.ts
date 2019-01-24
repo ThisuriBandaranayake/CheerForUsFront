@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 //import { WOW } from 'wowjs/dist/wow.min';
 //import { ParallaxDirective } '../parallax.directive';
 import { ParticlesModule } from 'angular-particle';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -30,8 +32,18 @@ export class HomeComponent implements OnInit {
     { img: "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(133).jpg", thumb:
     "https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(133).jpg", description: 'Image 9' }
     ];
+
+
+    searchResults: any;
+    search_query:any;
+  
+    public form = {
+      location: null,
+    }
+    institutecategoryplace;
+    location: string;
   particlesJS: any;
-  constructor() { }
+  constructor(private http: HttpClient,private router: Router) { }
 
   ngOnInit() {
 
@@ -43,6 +55,10 @@ export class HomeComponent implements OnInit {
   //   new WOW().init();
     
   // }
+  gym(){
+    this.router.navigate(["/fitness"]);
+   this.search_query="gym";
+  }
   
 
 }

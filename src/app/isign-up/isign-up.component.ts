@@ -22,7 +22,7 @@ export class ISignUpComponent implements OnInit {
     username:null,
     country:null,
   }
-
+  errormsg:string;
   users;
   id:number;
   name:string;
@@ -54,7 +54,7 @@ onSignUp(){
   input.append('email',this.email);
   input.append('address_line1',this.address1);
   input.append('address_line2',this.address2);
-  input.append('country',this.country);
+  input.append('country','Sri Lanka');
   input.append('city',this.city);
   input.append('user_type',"institute");
   input.append('province',this.province);
@@ -85,8 +85,8 @@ onSignUp(){
       console.log(error);
      console.log(error['error']['message']);
      console.log(error['error']['error']);
-     //this.errormsg=error['error']['error'];
-      alert(this.getDialogMessage(error));
+     this.errormsg=error['error']['error'];
+      alert(this.errormsg);
     }
   );
 }
