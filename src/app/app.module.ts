@@ -38,12 +38,11 @@ import { ISignUpComponent } from './isign-up/isign-up.component';
 import { AdminSignUpComponent } from './admin-sign-up/admin-sign-up.component';
 import { ForumComponent } from './forum/forum.component';
 import { ParallaxDirective } from './parallax.directive';
-<<<<<<< HEAD
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { InstituteComponent } from './institute/institute.component';
 import { IsideNavComponent } from './iside-nav/iside-nav.component';
-=======
+import { AddPlaceComponent } from './add-place/add-place.component';
 import { FitnessComponent } from './fitness/fitness.component';
 import { EditorComponent } from './forum/editor/editor.component';
 import { ArticleComponent } from './forum/article/article.component';
@@ -52,7 +51,6 @@ import { SharedComponent } from './forum/shared/shared.component';
 //import { CoreComponent } from './forum/core/core.module';
 import { ModelsComponent } from './forum/core/models/models.component';
 import { ServicesComponent } from './forum/core/services/services.component';
->>>>>>> 10782d490cdf69ba0e2dba056fe9ab58cfd75fa8
 
 @NgModule({
   declarations: [
@@ -76,12 +74,11 @@ import { ServicesComponent } from './forum/core/services/services.component';
     AdminSignUpComponent,
     ForumComponent,
     ParallaxDirective,
-<<<<<<< HEAD
     EditProfileComponent,
     FooterComponent,
     InstituteComponent,
     IsideNavComponent,
-=======
+    AddPlaceComponent,
     FitnessComponent,
     EditorComponent,
     ArticleComponent,
@@ -90,7 +87,6 @@ import { ServicesComponent } from './forum/core/services/services.component';
     //CoreComponent,
     ModelsComponent,
     ServicesComponent,
->>>>>>> 10782d490cdf69ba0e2dba056fe9ab58cfd75fa8
   
   ],
   imports: [
@@ -201,6 +197,11 @@ import { ServicesComponent } from './forum/core/services/services.component';
         path:'forum/article',
         component:ArticleComponent
       },
+      {
+        path:'institute dash board/add place',
+        component:AddPlaceComponent
+      }
+       
     ])
     
   ],
