@@ -20,8 +20,7 @@ export class ProfileComponent implements OnInit {
  contactnumber:string;
  birthday;
  id;
-
-  avatar : string = "assets/images/avatar.png";
+ avatar : string = "assets/images/avatar.png";
   constructor(private auth:AuthService,private http: HttpClient,private router: Router) { }
 
   ngOnInit() {

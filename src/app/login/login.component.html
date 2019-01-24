@@ -1,13 +1,16 @@
 <!-- Default form login -->
+<div class="body">
 <div class="row">
   <br><br>
   <br>
   </div>
-  <div class="example z-depth-5">
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-5">
-        <div class="example z-depth-5"><form class="text-center border border-light p-5" #login=ngForm (ngSubmit)="onSubmit()">
+  <div class="col-md-5">
+      <div class="example z-depth-5">
+
+    
+  <!--Card image-->
+  
+          <form class="text-center border border-light p-5" #login=ngForm (ngSubmit)="onSubmit()">
 
             <p class="h4 mb-4"> Login</p>
           
@@ -31,14 +34,14 @@
   <div *ngIf="pword.errors.required">
    Password Required.
   </div>
-  <div *ngIf="pword.errors.minlength">
+  <!-- <div *ngIf="pword.errors.minlength">
    Password must contain atleast 6 characters.
-  </div>
+  </div> -->
 </div>
             <div class="d-flex justify-content-around">
               <div> 
                 <!-- Remember me -->
-                <mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+                <mdb-checkbox [default]="true" style="color: white">Remember me</mdb-checkbox>
               </div>
               <div>
                 <!-- Forgot password -->
@@ -51,7 +54,7 @@
             
             <!-- Register -->
             <p>Not a member?
-              <a href="">Register</a>
+              <a href="user-sign-up">Register</a>
             </p>
           
             <!-- Social login -->
@@ -65,23 +68,27 @@
               <!-- <i class="fa fa-twitter"></i> -->
               <mdb-icon icon="twitter"></mdb-icon>
             </a>
-            <a type="button" class="light-blue-text mx-2">
-              <!-- <i class="fa fa-linkedin"></i> -->
-              <mdb-icon icon="linkedin"></mdb-icon>
-            </a>
-            <a type="button" class="light-blue-text mx-2">
-              <!-- <i class="fa fa-github"></i> -->
-              <mdb-icon icon="github"></mdb-icon>
-            </a>
+            
+            
           
           </form>
-          <!-- Default form login --></div>
+          <!-- Default form login -->
+  
+        
+        <!-- Default form login -->
+           
+        <!-- Card -->
+      
+        </div>
+        </div>
+        <div class="row">
+          <br><br>
+          <br><br>
           </div>
-        <div class="col-md-3"></div>
-    </div>
-    <div class="row">
-<br><br>
+          </div>
 
-    </div>
+   
+ 
+
     
 

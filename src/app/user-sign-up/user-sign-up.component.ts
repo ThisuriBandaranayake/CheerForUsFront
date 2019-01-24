@@ -21,6 +21,7 @@ export class UserSignUpComponent implements OnInit {
     contactno:null,
     birthday:null,
   }
+  errormsg:string;
   users;
   id:number;
   username:string;
@@ -38,32 +39,7 @@ export class UserSignUpComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
- 
-  let input = new FormData();
-  input.append('name',this.username);
-  input.append('email',this.email);
-  input.append('password',this.password);
-  input.append('confirm_password',this.cpassword);
-    return this.http.post('http://127.0.0.1:8000/api/customer',input).subscribe(
-      data => {
-        this.users = data;
-        console.log(data);
-        this.username=null;
-        this.email=null;
-        this.password=null;
-        this.cpassword=null;
-      },
-      error => {
-        console.log(error);
-       console.log(error['error']['message']);
-       console.log(error['error']['error']);
-      // this.errormsg=error['error']['error'];
-        alert(this.getDialogMessage(error));
-      }
-    );
-   
-  } 
+  
   getDialogMessage(data) {
     let msg: string;
     console.log(data.status != null);
@@ -116,8 +92,9 @@ export class UserSignUpComponent implements OnInit {
           console.log(error);
          console.log(error['error']['message']);
          console.log(error['error']['error']);
-        // this.errormsg=error['error']['error'];
-          alert(this.getDialogMessage(error));
+        this.errormsg=error['error']['errors'];
+        
+          alert(this.errormsg);
         }
       );
      

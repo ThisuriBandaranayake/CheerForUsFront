@@ -5,7 +5,7 @@
               <div class="row"><br></div>
               <div class="row"><br></div>
             <ul class="nav flex-column  py-4 mb-r">
-<!-- Sidebar navigation -->
+
 
         <li class="nav-item"><a class="nav-link white-text" href="#">Post an article</a></li>
         <li class="nav-item"><a class="nav-link white-text" href="#">Post a video </a></li>
@@ -16,7 +16,190 @@
     </ul>
 
       </div>
-      <div class="col-8">
+      <div class="col-7">
+         
+          <div class="row"><br></div>
+          <div class="row"><br></div>
+          <div class="row"><br></div>
+          <div class="row"><br></div>
+          <div class="row"><br></div>
+          <div class="card-deck">
+              <!-- Card -->
+              <mdb-card>
+                <div class="view overlay waves-light" mdbWavesEffect>
+                  <!-- Card img -->
+                  <div class="grad1"></div>
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <mdb-card-body>
+                  <!--Title-->
+                  <a href="#">
+                  <mdb-card-title>
+                    <h4>Profile details</h4>
+                  </mdb-card-title>
+            </a>
+                  <!--Text-->
+                 
+            
+                </mdb-card-body>
+              </mdb-card>
+            
+              <!-- Card -->
+              <mdb-card>
+                <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                  <!-- Card img -->
+                  <div class="grad1"></div>
+                  <a>
+                    <div class="mask"></div>
+                  </a>
+                </div>
+                <!--Card content-->
+                <mdb-card-body>
+                  <!--Title-->
+                  <a href="#">
+                  <mdb-card-title>
+                    <h4>Payment details</h4>
+                  </mdb-card-title>
+            </a>
+                  <!--Text-->
+               
+            
+                 
+                </mdb-card-body>
+              </mdb-card>
+            
+              <!-- Card -->
+              <mdb-card>
+                  <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                    <!-- Card img -->
+                    <div class="grad1"></div>
+                    <a>
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+                  <!--Card content-->
+                  <mdb-card-body>
+                    <!--Title-->
+                    <a href="post-articles">
+                    <mdb-card-title >
+                      <h4 >Post an article</h4>
+                    </mdb-card-title>
+              </a>
+                    <!--Text-->
+                 
+              
+                   
+                  </mdb-card-body>
+                </mdb-card>
+            </div>
+            <div class="row"><br></div>
+            <div class="row"><br></div>
+            <div class="card-deck">
+                <!-- Card -->
+                <mdb-card>
+                  <div class="view overlay waves-light" mdbWavesEffect>
+                    <!-- Card img -->
+                    <div class="grad1"></div>
+                    <a>
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
+                  </div>
+                  <!--Card content-->
+                  <mdb-card-body>
+                    <!--Title-->
+                    <mdb-card-title>
+                      <h4>Card Title</h4>
+                    </mdb-card-title>
+              
+                    <!--Text-->
+                   
+              
+                  </mdb-card-body>
+                </mdb-card>
+              
+                <!-- Card -->
+                <mdb-card>
+                  <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                    <!-- Card img -->
+                    <div class="grad1"></div>
+                    <a>
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+                  <!--Card content-->
+                  <mdb-card-body>
+                    <!--Title-->
+                    <mdb-card-title>
+                      <h4 href="">Card Title</h4>
+                    </mdb-card-title>
+              
+                    <!--Text-->
+                   
+              
+                   
+                  </mdb-card-body>
+                </mdb-card>
+              
+                <!-- Card -->
+                <mdb-card>
+                  <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                    <!-- Card img -->
+                    <div class="grad1"></div>
+                    <a>
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+                  <!--Card content-->
+                  <mdb-card-body>
+                    <!--Title-->
+                    <mdb-card-title>
+                      <h4>Card Title</h4>
+                    </mdb-card-title>
+              
+                    <!--Text-->
+                   
+              
+                   
+                  </mdb-card-body>
+                </mdb-card>
+              </div>
+              <div class="row"><br></div>
+              <div class="row"><br></div>
+        </div>
+        <div class="col-md-3">
+            <div class="row"><br></div>
+            <div class="row"><br></div>
+            <div class="row"><br></div>
+            <div class="card">
+  
+               
+                <div class="view overlay">
+                <img class="card-img-top" src="{{user.avatar}}" alt="Card image cap">
+            </div>
+                
+                <div class="card-body">
+
+              
+                    <h6 class="card-title">User Name: {{user.name}}</h6>
+                 
+                    <h6 class="card-title">E mail: {{user.email}}</h6>
+                   
+                    
+              <row>
+                  <a href="/admin-edit">  <button type="button" class="btn btn-light-blue btn-md">Edit Info</button></a>
+                  
+                    <button type="button" class="btn btn-light-blue btn-md" (click)="logout()">Log Out</button>
+              </row>
+              
+                </div>
+              
+              </div>
+       
+    </div>
+      <!-- <div class="col-8">
           <div class="row"><br></div>
           <div class="row"><br></div>
           <div class="row"><br></div>
@@ -26,17 +209,17 @@
               <div class="col-6 col-md-3">
                   <div class="card">
 
-                      <!-- Card image -->
+                      
                       <img class="card-img-top" src="./assets/images/article.jpg" alt="Card image cap">
                     
-                      <!-- Card content -->
+                     
                       <div class="card-body">
                     
-                        <!-- Title -->
+                        
                         <h4 class="card-title"><a>Post an article</a></h4>
-                        <!-- Text -->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- Button -->
+                       
+                        <p class="card-text"></p>
+                        
                         <a href="post-articles" class="btn btn-primary">Enter here...</a>
                     
                       </div>
@@ -46,17 +229,17 @@
               <div class="col-6 col-md-3">
                   <div class="card">
 
-                      <!-- Card image -->
+                  
                       <img class="card-img-top" src="./assets/images/v.jpg" alt="Card image cap">
                     
-                      <!-- Card content -->
+                    
                       <div class="card-body">
                     
-                        <!-- Title -->
+                    
                         <h4 class="card-title"><a>Post a video</a></h4>
-                        <!-- Text -->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- Button -->
+                      
+                        <p class="card-text"></p>
+                      
                         <a href="#" class="btn btn-primary">Enter here...</a>
                     
                       </div>
@@ -66,17 +249,17 @@
               <div class="col-6 col-md-3">
                   <div class="card">
 
-                      <!-- Card image -->
+                  
                       <img class="card-img-top" src="./assets/images/details.jpg" alt="Card image cap">
                     
-                      <!-- Card content -->
+                
                       <div class="card-body">
                     
-                        <!-- Title -->
+                  
                         <h4 class="card-title"><a>Institute details</a></h4>
-                        <!-- Text -->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <!-- Button -->
+                  
+                        <p class="card-text"></p>
+                  
                         <a href="#" class="btn btn-primary">Enter here...</a>
                     
                       </div>
@@ -91,18 +274,16 @@
                   </div>
                 <div class="col-6 col-md-3">
                     <div class="card">
-
-                        <!-- Card image -->
                         <img class="card-img-top" src="./assets/images/forum.jpg" alt="Card image cap"  width="90px" height="250px">
                       
-                        <!-- Card content -->
+                  
                         <div class="card-body">
                       
-                          <!-- Title -->
+                    
                           <h4 class="card-title"><a>Forum....</a></h4>
-                          <!-- Text -->
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <!-- Button -->
+                    
+                          <p class="card-text"></p>
+                  
                           <a href="#" class="btn btn-primary">Enter here...</a>
                       
                         </div>
@@ -112,17 +293,17 @@
                 <div class="col-6 col-md-3">
                     <div class="card">
 
-                        <!-- Card image -->
+                        
                         <img class="card-img-top" src="./assets/images/admin.jpg" alt="Card image cap" width="90px" height="250px">
                       
-                        <!-- Card content -->
+                        
                         <div class="card-body">
                       
-                          <!-- Title -->
+                         
                           <h4 class="card-title"><a>Add an admin...</a></h4>
-                          <!-- Text -->
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <!-- Button -->
+                          
+                          <p class="card-text"></p>
+                        
                           <a href="/admin-sign-up" class="btn btn-primary">Enter here...</a>
                       
                         </div>
@@ -132,17 +313,17 @@
                 <div class="col-6 col-md-3">
                     <div class="card">
 
-                        <!-- Card image -->
+                        
                         <img class="card-img-top" src="./assets/images/admin.jpg" alt="Card image cap" width="90px" height="250px">
                       
-                        <!-- Card content -->
+                       
                         <div class="card-body">
                       
-                          <!-- Title -->
+                         
                           <h4 class="card-title"><a>Add an admin...</a></h4>
-                          <!-- Text -->
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <!-- Button -->
+                         
+                          <p class="card-text"></p>
+                         
                           <a href="/admin-sign-up" class="btn btn-primary">Enter here...</a>
                       
                         </div>
@@ -160,19 +341,19 @@
           <div class="row"><br></div>
           <div class="card">
 
-              <!-- Card image -->
+             
               <div class="view overlay">
               <img class="card-img-top" src="./assets/images/avatar.png" alt="Card image cap">
           </div>
-              <!-- Card content -->
+              
               <div class="card-body">
             
                   <h6 class="card-title">User Name: {{user.name}}</h6>
-                  <!--Text-->
+               
                   <h6 class="card-title">E mail: {{user.email}}</h6>
                  
                   <p class="card-text"></p>
-                  <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+             
                 <a href="/edit-profile">  <button type="button" class="btn btn-light-blue btn-md">Edit Info</button></a>
                   <button type="button" class="btn btn-light-blue btn-md" (click)="logout()">Log Out</button>
             
@@ -193,4 +374,4 @@
 
 
 
- 
+   --> 

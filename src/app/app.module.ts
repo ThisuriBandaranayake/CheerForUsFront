@@ -47,6 +47,10 @@ import { SharedComponent } from './forum/shared/shared.component';
 import { ModelsComponent } from './forum/core/models/models.component';
 import { ServicesComponent } from './forum/core/services/services.component';
 import { InstituteDetailsComponent } from './fitness/institute-details/institute-details.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FooterComponent } from './footer/footer.component';
+import { InstituteComponent } from './institute/institute.component';
+import { AdminEditComponent } from './admin-edit/admin-edit.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +83,10 @@ import { InstituteDetailsComponent } from './fitness/institute-details/institute
     ModelsComponent,
     ServicesComponent,
     InstituteDetailsComponent,
+    EditProfileComponent,
+    FooterComponent,
+    InstituteComponent,
+    AdminEditComponent,
   
   ],
   imports: [
@@ -92,6 +100,7 @@ import { InstituteDetailsComponent } from './fitness/institute-details/institute
     CheckboxModule,
     ParticlesModule,
     
+    
     //FormGroup, FormControl, Validators,
     ButtonsModule, WavesModule, IconsModule,
     RouterModule.forRoot([
@@ -103,6 +112,11 @@ import { InstituteDetailsComponent } from './fitness/institute-details/institute
       {
         path:'admin-sign-up',
         component:AdminSignUpComponent
+
+      },
+      {
+        path:'admin-edit',
+        component: AdminEditComponent
 
       },
       {

@@ -46,13 +46,16 @@
               <div class="col-10">
                   <div class="form-group shadow-textarea">
                       <label for="description" class="texts">Add the description.....</label>
+                      <pre>
                       <textarea class="form-control z-depth-1" name="description" [(ngModel)]="description" id="description" rows="10" placeholder="Write something here..."  required></textarea>
+                      </pre>
                   </div>
               </div>
              
             </div>
             <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-            <button type="submit" class="btn btn-primary" [disabled]="!imageForm.valid" > Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!imageForm.valid" > Save</button>
+            <button type="button" class="btn btn-primary" [disabled]="!imageForm.valid" (click)="publish()"> Publish</button>
             </form>
         
         
@@ -64,18 +67,18 @@
     <!-- Article panel starts here -->
     <div class="articlePanel">
         <h2>Articles details</h2>
-        <div class="card w-100" *ngFor="let admin_article of admin_articles">
+        <div class="card w-100" *ngFor="let article of articles.articles.data"> 
           
-            <div class="card-body" >
-                <h3 class="card-title">{{admin_article['caption']}}</h3>
-                <p> <img src="http://localhost:8000/storage/images/{{admin_article.img}}" height="50px" width="50px"> </p>
-                <p class="card-text">{{admin_article['description']}}</p>
-                <button class="btn btn-primary" (click)="delete(admin_article.id)">Delete</button>
-                <button class="btn btn-primary" routerLink="/edit-article/{{admin_article.id}}" >Edit</button>
-            </div>
+            <div class="card-body">
+                <h3 class="card-title">{{article.title}}</h3>
+                <p> <img src="{{article.article_photo}}" height="50px" width="50px"> </p>
+                <p class="card-text">{{article.content}}</p>
+                <button class="btn btn-primary" (click)="delete(article.id)">Delete</button>
+                <button class="btn btn-primary" (click)="edit(article.id)" >Edit</button>
+            <!-- </div> -->
            
         </div>
-        
+          
 <!-- another panel -->
         
 

@@ -20,7 +20,7 @@ export class EditArticleComponent implements OnInit {
   }
 
   
-  admin_articles;
+  articles;
  
   error:null;
   caption:string;
@@ -44,16 +44,19 @@ export class EditArticleComponent implements OnInit {
     }
 
   ngOnInit() { 
+    let httpHeaders = new HttpHeaders({
+      Authorization: "Bearer " + localStorage.getItem("access_token")
+    });
     var id=this.route.snapshot.params['id'];
     
     
-    return this.http.get(`http://localhost:8000/api/articleDetails/${id}`).subscribe(
+    return this.http.post('http://127.0.0.1:8000/api/article/get',{id},).subscribe(
       data =>{
      
-      this.admin_articles=data;
+      this.articles=data;
       console.log(data);
       //this.admin_articles=this.admin_articles[0];
-      this.admin_articles.id=data['0'].id;    
+      this.articles.id=data['0'].id;    
       this.caption= data['0'].caption;
       this.imageUrl= 'http://localhost:8000/storage/images/' + data['0'].img;
       this.fileToUpload= data['0'].img;
@@ -76,7 +79,7 @@ export class EditArticleComponent implements OnInit {
     var id=this.route.snapshot.params['id'];
     return this.http.post(`http://localhost:8000/api/updateArticle/${id}`,input).subscribe(
     data=>{
-      this.admin_articles=data;
+      this.articles=data;
       console.log(data);
     }
     );

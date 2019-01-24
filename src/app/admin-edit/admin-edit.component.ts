@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from '../auth.service';
 import { HttpClient } from "@angular/common/http";
 import { HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
+import {AuthService} from '../auth.service';
 @Component({
-  selector: 'app-edit-profile',
-  templateUrl: './edit-profile.component.html',
-  styleUrls: ['./edit-profile.component.scss']
+  selector: 'app-admin-edit',
+  templateUrl: './admin-edit.component.html',
+  styleUrls: ['./admin-edit.component.scss']
 })
-export class EditProfileComponent implements OnInit {
+export class AdminEditComponent implements OnInit {
   public form ={
     id:null,
     username:null,
@@ -92,7 +92,7 @@ export class EditProfileComponent implements OnInit {
     data=>{
       this.user=data;
       console.log(data);
-      this.router.navigate(["/profile"]);
+      this.router.navigate(["/admin-dashboard"]);
     },
     error => {
       console.log(error);
@@ -125,4 +125,3 @@ export class EditProfileComponent implements OnInit {
   }
 
 }
- 

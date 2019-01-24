@@ -1,46 +1,101 @@
+<div class="body">
 <div class="row">
     <br><br>
     <br><br>
     </div>
     <div class="col-md-5">
-<div class="card mb-10" >
+      <div class="example z-depth-5">
+<div class="card mb-10 z-depth-5" >
     
   <!--Card image-->
-  <div class="view overlay">
-    <img class="card-img-top" src="{{avatar}}" alt="Card image cap"> 
-    <a href="#!">
-      <div class="mask rgba-white-slight"></div>
-    </a> 
+  <div class="col-md-8" *ngIf="user">
+    <form #profileEdit=ngForm (ngSubmit)="edit()" >
+  <div class="view overlay" style="margin-top: 10%">
+    <img class="card-img-top" src="{{imageUrl}}" alt="Card image cap" 
+    alt="Responsive image"> <br>
+    <input type="file" class="upload" #Image accept="image/*" (change)="handleFileInput($event.target.files)" name="image" [(ngModel)]="imageUrl">
   </div>
-
+<br>
   <!--Card content-->
  <!-- Default form login -->
- <div class="col-md-8" *ngIf="user">
-<form #profileEdit=ngForm (ngSubmit)="edit()" >
+ 
  
 <div>
-    <label  class="texts"> First name :</label>
-    <input type="text" class="form-control"  name="fname" [(ngModel)]="fname"  placeholder=""  required minlength="1"  >
-    
+  <label>Username :</label>
+  <input type="text" class="form-control"  name="username" [(ngModel)]="username"  placeholder=""  required  #uname="ngModel">
+  <div *ngIf="uname.invalid && (uname.dirty || uname.touched)"
+  class="alert alert-danger">
+  <div *ngIf="uname.errors.required">
+ <small>  Username Required.</small>
+  </div>
+</div>
 </div>
 <div>
-    <label  class="texts"> Last name :</label>
-    <input type="text" class="form-control"  name="lname" [(ngModel)]="lname"  placeholder=""  required minlength="1"  >
-    
+    <label> First name :</label>
+    <input type="text" class="form-control"  name="fname" [(ngModel)]="fname"  placeholder=""  required #fn="ngModel">
+    <div *ngIf="fn.invalid && (fn.dirty || fn.touched)"
+    class="alert alert-danger">
+  <div *ngIf="fn.errors.required">
+  <small> First name required.</small>
+  </div>  
+   </div>
 </div>
 <div>
-    <label  class="texts"> Gender :</label>
-    <input type="text" class="form-control"  name="gender" [(ngModel)]="gender" placeholder=""  required minlength="1"  >
-    
+    <label> Last name :</label>
+    <input type="text" class="form-control"  name="lname" [(ngModel)]="lname"  placeholder=""  required #ln="ngModel">
+    <div *ngIf="ln.invalid && (ln.dirty || ln.touched)"
+    class="alert alert-danger">
+    <div *ngIf="ln.errors.required">
+     <small> Last name required.</small>
+    </div>
+    </div>
+</div>
+<div>
+  <label>Gender :</label>
+  <select class="browser-default custom-select" name="gender" required [(ngModel)]="gender" required #gen="ngModel">
+      <option selected>male</option>
+      <option value="1">female</option>
+      
+   </select>
+   
+      <br><br>
+    <!-- 
+        <input type="text" id="defaultRegisterFormGender" class="form-control mb-4" placeholder="Gender"  name="gender" required [(ngModel)]="gender" #gen="ngModel"> -->
+        
+  <div *ngIf="gen.invalid && (gen.dirty || gen.touched)"
+  class="alert alert-danger">
+  <div *ngIf="gen.errors.required">
+  <small>  Gender required.</small>
+  </div>
+  </div>
 </div>
   <!-- Email -->
   <label>Email:</label>
-  <input type="email" name="email" class="form-control mb-4" [(ngModel)]="email"  placeholder="" >
+  <input type="email" name="email" class="form-control mb-4" [(ngModel)]="email"  placeholder="" required #em="ngModel">
+  
+  <div *ngIf="em.invalid && (em.dirty || em.touched)"
+  class="alert alert-danger">
+  <div *ngIf="em.errors.required">
+   <small> Email required.</small>
+  </div>
+  </div>
+
   <label>Contact number:</label>
-  <input type="string" class="form-control mb-4" name="contactnumber" [(ngModel)]="contactnumber"  placeholder="" > 
+  <input type="string" class="form-control mb-4" name="contactnumber" [(ngModel)]="contactnumber"  placeholder="" required #contact="ngModel"> 
+  <div *ngIf="contact.invalid && (contact.dirty || contact.touched)"
+  class="alert alert-danger">
+  <div *ngIf="contact.errors.required">
+   <small> Contact number required.</small>
+  </div>
+  </div>
   <label>Date of birth:</label>
-  <input type="date" class="form-control mb-4" name="birthday" [(ngModel)]="birthday"  placeholder="" >
- 
+  <input type="date" class="form-control mb-4" name="birthday" [(ngModel)]="birthday" required placeholder="" #bd="ngModel">
+  <div *ngIf="bd.invalid && (bd.dirty || bd.touched)"
+        class="alert alert-danger">
+        <div *ngIf="bd.errors.required">
+        <small>  Birthday required.</small>
+        </div>
+        </div>
 
   <!-- Sign in button -->
   <button mdbBtn color="info" block="true" class="my-4" type="submit">Update</button>
@@ -54,7 +109,9 @@
 <!-- Card -->
 </div>
 </div>
+</div>
 <div class="row">
   <br><br>
   <br><br>
+  </div>
   </div>

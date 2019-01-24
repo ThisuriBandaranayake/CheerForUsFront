@@ -59,26 +59,24 @@
     
         <!--Card image-->
         <div class="view overlay">
-          <img class="card-img-top" src="{{avatar}}" alt="Card image cap">
-          <a href="#!">
-            <div class="mask rgba-white-slight"></div>
-          </a>
+          <img class="card-img-top" src="{{user.avatar}}" alt="Card image cap">
+         
         </div>
     
         <!--Card content-->
         <div class="card-body" >
     
           <!--Title-->
-          <h6 class="card-title">User Name: {{user.name}}</h6>
+          <h6 class="card-title"><b>User Name:</b> {{user.name}}</h6>
           <!--Text-->
-          <h6 class="card-title">E mail: {{user.email}}</h6>
-          <h6 class="card-title">Contact number:{{user.phone_number}}</h6>
-          <h6 class="card-title">Date of Birth:{{user.birthday}}</h6>
+          <h6 class="card-title"><b> E-mail:</b> {{user.email}}</h6>
+          <h6 class="card-title"><b>Contact number:</b>{{user.phone_number}}</h6>
+          <h6 class="card-title"><b>Date of Birth:</b>{{user.birthday}}</h6>
           <p class="card-text"></p>
           <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-        <a href="/edit-profile">  <button type="button" class="btn btn-light-blue btn-md">Edit Info</button></a>
-          <button type="button" class="btn btn-light-blue btn-md" (click)="logout()">Log Out</button>
-    
+<row><a href="/edit-profile">  <button type="button" class="btn btn-light-blue btn-md">Edit Info</button></a>
+      <button type="button" class="btn btn-light-blue btn-md" (click)="logout()">Log Out</button>
+</row>
         </div>
          
 <!-- Card -->
