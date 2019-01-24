@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, Component } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule} from '@angular/common/http';
 import { Router } from "@angular/router";
@@ -51,6 +51,9 @@ import { SharedComponent } from './forum/shared/shared.component';
 //import { CoreComponent } from './forum/core/core.module';
 import { ModelsComponent } from './forum/core/models/models.component';
 import { ServicesComponent } from './forum/core/services/services.component';
+import { EditPlaceDetailsComponent } from './edit-place-details/edit-place-details.component';
+import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-place-details-form.component';
+
 
 @NgModule({
   declarations: [
@@ -87,6 +90,9 @@ import { ServicesComponent } from './forum/core/services/services.component';
     //CoreComponent,
     ModelsComponent,
     ServicesComponent,
+    EditPlaceDetailsComponent,
+    EditPlaceDetailsFormComponent,
+  
   
   ],
   imports: [
@@ -126,12 +132,6 @@ import { ServicesComponent } from './forum/core/services/services.component';
       {
         path:'login',
         component:LoginComponent
-
-      },
-
-      {
-        path:'idashboard',
-        component:IDashboardComponent
 
       },
       {
@@ -198,9 +198,21 @@ import { ServicesComponent } from './forum/core/services/services.component';
         component:ArticleComponent
       },
       {
-        path:'institute dash board/add place',
+        path:'institute-dash-board/add-place',
         component:AddPlaceComponent
-      }
+      },
+      {
+        path:'institute-dash-board/Edit-Place-Details',
+        component:EditPlaceDetailsComponent
+      },
+      {
+        path:'institute-dash-board/Edit-Place-Details/edit-place-details-form',
+        component:EditPlaceDetailsFormComponent
+      },
+      {
+        path:'institute-dash-board/present-status',
+        component:IDashboardComponent
+      },
        
     ])
     

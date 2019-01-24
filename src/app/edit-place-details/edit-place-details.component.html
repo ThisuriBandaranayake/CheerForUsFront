@@ -1,0 +1,67 @@
+<div class="row">
+
+    <br>
+    <app-iside-nav></app-iside-nav>
+
+<div class="Div2">
+<div   style="background-image: url(/assets/images/f3.jpg); background-attachment: fixed; background-size: cover; min-height: 700px">
+  <div class="full-bg-img mask rgba-purple-slight">
+      <div class="container">
+          <div class="d-flex align-items-center d-flex justify-content-center" style="height: 200px">
+
+                          <!-- <h3 class="h3 display-1 white-text mb-1 wow fadeInDown" data-wow-delay="0.3s">Category name</h3> -->
+   
+          </div>
+      </div>
+  </div>
+    <div class="full-bg-img mask rgba-pink-slight">
+     
+      <div class="container">
+        
+          <div class="row">
+            <div class="col-12 col-md-12 ">
+              <div class="card mb-3 text-center hoverable" *ngFor="let institute_category_place of institute_category_places.institute_category_places.data">
+              <div class="card-body" >
+                  <!--Grid row-->
+                  <div class="row">
+          
+                      <!--Grid column-->
+                      <div class="col-md-4 offset-md-1 mx-3 my-3">
+                          <!--Featured image-->
+                          <div class="view overlay">
+                              <img src="{{institute_category_place.photo}}" class="img-fluid" alt="Sample image for first version of blog listing" style="height:200px;width:500px">
+                              <a>
+                                  <div class="mask rgba-white-slight"></div>
+                              </a>
+                          </div>
+                      </div>
+                      <!--Grid column-->
+          
+                      <!--Grid column-->
+                      <div class="col-md-7 text-left ml-3 mt-3"  >
+                          <!--Excerpt-->
+                          <a href="" class="green-text">
+                              <h6 class="font-bold pb-1"><i class="fa fa-desktop"></i> Work</h6>
+                          </a>
+                          <h4 class="mb-4"><strong>{{institute_category_place.name}}</strong></h4>
+                          <p>{{institute_category_place.description}}</p>
+                          <!-- <p>by <a><strong>Carine Fox</strong></a>, 19/08/2016</p> -->
+                          <a class="btn btn-success">View more details</a>
+                          <a href="/institute-dash-board/Edit-Place-Details/edit-place-details-form" class="btn btn-success">Edit details</a>
+                      </div>
+                      <!--Grid column-->
+                  </div>
+                  <!--Grid row-->
+              </div>
+          </div></div>
+            
+          
+        </div>
+    </div>
+    <br>
+   
+</div>
+</div>
+</div>
+
+</div>

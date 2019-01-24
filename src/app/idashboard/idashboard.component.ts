@@ -6,9 +6,14 @@ import {AuthService} from '../auth.service';
   styleUrls: ['./idashboard.component.scss']
 })
 export class IDashboardComponent implements OnInit {
+
+
+  
   user;
   institutes;
   usertype;
+
+  
 
   constructor(private auth:AuthService) { }
 
