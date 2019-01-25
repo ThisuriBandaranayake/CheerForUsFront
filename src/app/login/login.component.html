@@ -27,7 +27,7 @@
   </div>
 </div>
             <!-- Password -->
-            <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" name="password" required minlength="6" [(ngModel)]="password"   #pword="ngModel" >
+            <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" name="password" required  [(ngModel)]="password"   #pword="ngModel" >
             <div *ngIf="pword.invalid && (pword.dirty || pword.touched)"
     class="alert alert-danger">
 
