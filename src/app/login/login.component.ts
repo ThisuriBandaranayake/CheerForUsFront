@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(["/admin-dashboard"]);
         }
         else if ((response['body']['user_type']) == "institute") {
-          this.router.navigate(["/idashboard"]);
+          this.router.navigate(["/institute-dash-board"]);
         }
         //alert(this.getDialogMessage(response));
         console.log(response);

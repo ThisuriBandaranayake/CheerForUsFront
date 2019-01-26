@@ -1,24 +1,23 @@
 
-header, main, footer {
-    padding-left: 240px;
-   }
-   
-   @media only screen and (max-width : 992px) {
-      header, main, footer {
-          padding-left: 0;
-         }
-     }
-
-
-
-
-.lineChart{
-    width:1000px;
-    height: 1000px;
-    margin-left: 20px;
-    margin-top: 20px;
+.background{
+    
+    width: 1240px;
+    background-image: url(/assets/images/f3.jpg);
 }
-h4{
-    margin-left: 30px;
-    color: rgb(76, 115, 141);
+
+
+.Total-CustomersDiv{
+    background-color: rgb(2, 2, 2);
+    width: 200px;
+    height: 200px;
+    margin-top: 95px;
+    margin-left: 10px;
+    color: antiquewhite;
+    opacity: 0.5;
+    text-align: center;
+    
 }
+h2{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+

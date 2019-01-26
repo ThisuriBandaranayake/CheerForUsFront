@@ -1,3 +1,72 @@
 .Div2{
     width: 1250px;
 }
+
+.view-overlay{
+    margin-top: 10px;
+    margin-left:25px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(168, 168, 212);
+    width: 300px;
+    height: 200px;
+    // border-radius: 50%;
+}
+.card-title{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 60px;
+    font-style: italic;
+    color: rgb(50, 35, 77);
+    margin: opx;
+}
+.P-description{
+    font-size: 20px;
+    // background-color: rgb(165, 198, 224);
+    width: 730px;
+    // margin-right:10px; 
+    // margin-left: 10px;
+    margin-bottom: 100px;
+    margin-top: 10px;
+
+}
+.card-body{
+    height: 100px;
+    // background-color:rgb(172, 134, 162);
+    
+}
+.btn-purple-gradient{
+    background: linear-gradient(to right,rgb(70, 24, 67),rgb(77, 3, 100),rgb(101, 16, 150),rgb(149, 58, 224),rgb(70, 24, 67));
+    color: aliceblue;
+    width: 150px;
+    height:50px;
+    opacity: 0.5;
+}
+.View-more-Details{
+    margin-left: 910px;
+    margin-top: -90px;
+    background-color:  rgb(32, 16, 16);
+    width: 150px;
+    height:50px;
+}
+.edit-place-Details{
+    margin-left: 750px;
+    margin-top: -50px;
+    background-color: rgb(32, 16, 16);
+    width: 150px;
+    height:50px;
+
+}
+.edit-package-Details{
+    margin-left: 590px;
+    margin-top: -50px;
+    background-color: rgb(32, 16, 16);
+    width: 150px;
+    height:50px;
+}
+.card{
+    width: 1075px;
+    opacity: 0.7;
+}
+.largest{
+    width: 1550px;
+}

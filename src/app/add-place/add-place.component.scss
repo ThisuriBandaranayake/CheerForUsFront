@@ -3,11 +3,13 @@
 .Idetails{
     margin: 30px;
     width: 1170px;
+    opacity: 0.8;
     
 }
 
 #submit1{
-    background: linear-gradient(to right,rgb(0, 25, 139),blue,rgb(58, 69, 224),rgb(126, 131, 196));
+    background: linear-gradient(to right,rgb(29, 26, 80),rgb(38, 7, 151),rgb(87, 46, 231),rgb(116, 85, 230),rgb(59, 90, 175));
+    float:right;
 }
 
 h5{
@@ -18,12 +20,10 @@ h5{
 }
 
 .background{
-    background-color: rgb(255, 255, 255);
-    width: 1240px;
     
+    width: 1240px;
+    background-image: url(/assets/images/f3.jpg);
 }
-#submit1{
-    float:right;
-}
+
 
 

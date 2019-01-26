@@ -51,17 +51,10 @@ import { SharedComponent } from './forum/shared/shared.component';
 //import { CoreComponent } from './forum/core/core.module';
 import { ModelsComponent } from './forum/core/models/models.component';
 import { ServicesComponent } from './forum/core/services/services.component';
-<<<<<<< HEAD
 import { EditPlaceDetailsComponent } from './edit-place-details/edit-place-details.component';
 import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-place-details-form.component';
+import { PresentStatusComponent } from './present-status/present-status.component';
 
-=======
-import { InstituteDetailsComponent } from './fitness/institute-details/institute-details.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
-import { FooterComponent } from './footer/footer.component';
-import { InstituteComponent } from './institute/institute.component';
-import { AdminEditComponent } from './admin-edit/admin-edit.component';
->>>>>>> 027084158ab75c33e0da6009dc39957d57edd304
 
 @NgModule({
   declarations: [
@@ -98,17 +91,10 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component';
     //CoreComponent,
     ModelsComponent,
     ServicesComponent,
-<<<<<<< HEAD
     EditPlaceDetailsComponent,
     EditPlaceDetailsFormComponent,
+    PresentStatusComponent,
   
-=======
-    InstituteDetailsComponent,
-    EditProfileComponent,
-    FooterComponent,
-    InstituteComponent,
-    AdminEditComponent,
->>>>>>> 027084158ab75c33e0da6009dc39957d57edd304
   
   ],
   imports: [
@@ -133,11 +119,6 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component';
       {
         path:'admin-sign-up',
         component:AdminSignUpComponent
-
-      },
-      {
-        path:'admin-edit',
-        component: AdminEditComponent
 
       },
       {
@@ -203,10 +184,6 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component';
         component:FitnessComponent
       },
       {
-        path:'fitness/institute-details',
-        component:InstituteDetailsComponent
-      },
-      {
         path:'forum',
         component:ForumComponent
       },
@@ -235,9 +212,13 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component';
         component:EditPlaceDetailsFormComponent
       },
       {
-        path:'institute-dash-board/present-status',
+        path:'institute-dash-board',
         component:IDashboardComponent
       },
+      // {
+      //   path:'institute-dash-board/institute-profile',
+      //   component:IDashboardComponent
+      // },
        
     ])
     

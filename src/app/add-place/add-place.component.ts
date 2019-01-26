@@ -10,9 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-place.component.scss']
 })
 export class AddPlaceComponent implements OnInit {
-
   model:any={};
-    
     public form = {
         categoryName: null,
         placeName: null,
@@ -27,7 +25,6 @@ export class AddPlaceComponent implements OnInit {
         placeLongitude: null,
         fileToUploadPP: null,
         fileToUploadCP:null,
-   
   };
 
   
@@ -109,12 +106,16 @@ handleFileInputCP(file:FileList){
     
 
     let input = new FormData();
-    input.append('category_name', this.categoryName);
+    let cat_id = 1;
+    input.append('category_id', cat_id.toString());
     input.append('name', this.placeName);
     input.append('description', this.placeDescription);
     input.append('address_line1', this.placeAddressLine1);
     input.append('address_line2', this.placeAddressLine2);
     input.append('city', this.placeCity);
+    console.log(this.placeCity);
+    console.log(this.placeProvince);
+    console.log(this.placeCountry);
     input.append('province', this.placeProvince);
     input.append('country', this.placeCountry);
     input.append('postal_code', this.placePostalCode);
@@ -124,11 +125,11 @@ handleFileInputCP(file:FileList){
     input.append('photo', this.fileToUploadPP);
     input.append('cover_photo', this.fileToUploadCP);
 
-    // let headers = {
-    //   'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImRiOWVkMzZmOTQxNTNmZTU0OGIwMmMwMTNhNWZhYjU4ZjY1NTYzYWY2ZjllYjI0ODAyZWIyNzQ0Yjk5NzVlMTRhOTFmYzQzYThjOTZhZjFhIn0.eyJhdWQiOiIxIiwianRpIjoiZGI5ZWQzNmY5NDE1M2ZlNTQ4YjAyYzAxM2E1ZmFiNThmNjU1NjNhZjZmOWViMjQ4MDJlYjI3NDRiOTk3NWUxNGE5MWZjNDNhOGM5NmFmMWEiLCJpYXQiOjE1NDUwNTgwODMsIm5iZiI6MTU0NTA1ODA4MywiZXhwIjoxNTc2NTk0MDgzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.wRZ7V6mpvY-EGvo2VIxFnVYgSgm3nZAhlrg4yQA0pHSepfPMVGJiaqPucVbUxpNAcv2MMBMxhyrAuOBPZZGideUgHvIzgs0VDnmdn20zytIii7Vl1GMXndTrTmu29VLXScotoJ7sW3RjJzwnBuBHr3m2bdVaubKUdKsYm7FAPvQ90lJgIR29o_vgmogUFpeF8WcU2FVQKhzaBQQXwS5Ohpu1PYHorMgN2gNb0sNRUrSWvOzB_6tpYMbF9oAUJHgYkwEu9druFgyui1YCYbRIVteErT8ANy1CfUGWHmybeh1HU70PouDqEpypg6LCUh0IGkV8io-sbJwZH-6TSkqO57iyrt6d2FwrjYdfdZyjcnUEjB4cobV5UNNbeKeX7kZIMakirx1SbxOYOA30Iu7ck6bsB4bqqoOFeNKaS8OOpA9C76m3KypxWbkaJQvsHQNEuUmxUkfrnsTRO-np3EN4SixbOoq05Wrz781SfFCXfTSa8XR0N-Zg5RDxlCQfKtmn1DT9NsI0oij4mt_GzRlXPAjc3PQZsRlgg8c4stGEB_LSnahoNyx9BhgU0tfMJLr44i3BgUXRgTA6sQ3ZVoU7FoWFap-3e3FmCqV3Hd6srsTe4zapFxJVp5jUrimhhF-xgnBah9GfwOz1if2-Zus3XfOn14XKZUTi8Ubf8A6YVGM'
-    // }
+    let headers = {
+      'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+    }
 
-    return this.http.post('http://127.0.0.1:8000/api/place/create', input, {}).subscribe(
+    return this.http.post('http://127.0.0.1:8000/api/place/create', input, {headers: headers}).subscribe(
       response => {
         this.response = response;
         console.log(this.response);
