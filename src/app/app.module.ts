@@ -51,6 +51,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { InstituteComponent } from './institute/institute.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { AdminEditComponent } from './admin-edit/admin-edit.component';
     FooterComponent,
     InstituteComponent,
     AdminEditComponent,
+    PasswordResetComponent,
   
   ],
   imports: [

@@ -14,19 +14,20 @@ import { FormControl } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   
- 
+ users;
   email;
   password;
+  uemail;
+  code;
+  newPassword;
+  newCPassword;
+  errorData:string;
+  emailRequest:string;
   response: string;
   error: string;
   errormsg:string;
-  //   users;
-  //     id:number;
-  //     email:string;
-  //     password:string;
-  // response :string;
+  errormsg2:string;
   
- // elegantForm: FormGroup;
   constructor(public fb: FormBuilder,
     private http: HttpClient,
     private router: Router,
@@ -34,11 +35,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.loginForm = this.fb.group({
-
-    //   email: ['', [Validators.required, Validators.email]],
-    //   password: ['', [Validators.required, Validators.minLength(6)]]
-    // });
+   
 
   }
 
@@ -63,53 +60,76 @@ export class LoginComponent implements OnInit {
         //alert(this.getDialogMessage(response));
         console.log(response);
       },
-      error => {
-        console.log(error);
-       console.log(error['error']['message']);
-       console.log(error['error']['error']);
-       this.errormsg=error['error']['error'];
-        alert(this.errormsg );
-      }
+      // error => {
+      //   console.log(error);
+      //  console.log(error['error']['message']);
+      //  console.log(error['error']['error']);
+      //  this.errormsg=error['error']['error'];
+      //   alert(this.errormsg );
+      // }
+      data => {
+        this.errorData = data;
+      //   console.log(data);
+      //  console.log(data.error.errors.birthday[0]);
+      //  console.log(data.error.errors.email[0]);
+      //  console.log(data.error.errors.gender[0]);
+      // // this.errormsg=error['errors']['errors'];
+      console.log(data.error.errors.message);
+      console.log(data.error.errors.email);
+      
+      console.log(data.error.errors.error);
+      this.errormsg=data.error.errors.email;
+     
+        alert(this.errormsg);
+        
+      },
     );
   }
 
-  getDialogMessage(data) {
-    let msg: string;
-    console.log(data.status != null);
-    if (data.status != null) {
-      msg = data.status;
-    }
-    if (data.message != null) {
-      msg = msg == null ? data.statusText : msg + '\n' + data.statusText;
-    }
-    // if (data.error != null) {
-    //   let errors: string = '';
-    //   let errs:Map<string, string[]> = data.error['errors'];
-    //   errs.forEach((v, k) => {
-    //     errors += '\n' + v;
-    //   });
-    //   msg = msg == null ? errors : msg + '\n' + errors;
-    // }
-    return msg;
+  resetRequest(){
+      let input=new FormData();
+      input.append('email',this.emailRequest);
+      return this.http.post('http://127.0.0.1:8000/api/user/password-reset-request',input).subscribe(
+        data => {
+          this.emailRequest=null;
+         // this.users = data;
+          console.log(data);
+          this.errormsg=data['message'];
+          alert(this.errormsg);
+          
+        },
+        error =>{
+          console.log(error);
+          this.errormsg=error['error']['message'];
+          alert(this.errormsg);
+        }
+    );
   }
 
-  // onSubmit(){
-  //  let  input=new FormData;
-  //  input.append('email',this.email);
-  //  input.append('password',this.password);
-  //  return this.http.post('http://127.0.0.1:8000/api/login',input).subscribe(
-  //    data=>{
-  //      this.users=data;
-  //      console.log(data);
+  reset(){
+    let input= new FormData();
+    input.append('email',this.uemail);
+    input.append('code',this.code);
+    input.append('password',this.newPassword);
+    input.append('confirm_password',this.newCPassword);
+    
+    return this.http.post('http://127.0.0.1:8000/api/user/password-reset',input).subscribe(
+      data => {
+       
+       // this.users = data;
+        console.log(data);
+        this.errormsg=data['message'];
+        alert(this.errormsg);
+        this.router.navigate(["/login"]);
+      },
+      error =>{
+        console.log(error);
+        this.errormsg=error['error']['message'];
+        alert(this.errormsg);
+      }
+  );
+  }
+ 
 
-  //       localStorage.setItem('access_token', data['body']['access_token']);
-  //       this.router.navigate(["/profile"]);
-
-  //      this.email=null;
-  //      this.password=null;
-  //     // this.router.navigate(["/profile"], { "queryParams": data });
-  //    }
-  //  )
-  // }
 
 }

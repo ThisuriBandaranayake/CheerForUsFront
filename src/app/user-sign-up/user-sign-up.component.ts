@@ -34,31 +34,14 @@ export class UserSignUpComponent implements OnInit {
     contactno:string;
     birthday:string;
 
+    errorData:any;
+
   constructor(private http:HttpClient,private router:Router) { }
 
   ngOnInit() {
   }
 
-  
-  getDialogMessage(data) {
-    let msg: string;
-    console.log(data.status != null);
-    if (data.status != null) {
-      msg = data.status;
-    }
-    if (data.message != null) {
-      msg = msg == null ? data.statusText : msg + '\n' + data.statusText;
-    }
-    // if (data.error != null) {
-    //   let errors: string = '';
-    //   let errs:Map<string, string[]> = data.error['errors'];
-    //   errs.forEach((v, k) => {
-    //     errors += '\n' + v;
-    //   });
-    //   msg = msg == null ? errors : msg + '\n' + errors;
-    // }
-    return msg;
-  }
+ 
 
   signup () {
  
@@ -67,7 +50,7 @@ export class UserSignUpComponent implements OnInit {
     input.append('email',this.email);
     input.append('first_name',this.fname);
     input.append('last_name',this.lname);
-    input.append('phone_number',this.contactno);
+    input.append('phone_number',this.contactno); 
     input.append('birthday',this.birthday);
     input.append('gender',this.gender);
     input.append('user_type',"customer");
@@ -77,25 +60,40 @@ export class UserSignUpComponent implements OnInit {
         data => {
           this.users = data;
           console.log(data);
-          this.username=null;
-          this.email=null;
-          this.password=null;
-          this.cpassword=null;
-          this.fname=null;
-          this.lname=null;
-          this.contactno=null;
-          this.birthday=null;
-          this.gender=null;
+          // this.username=null;
+          // this.email=null;
+          // this.password=null;
+          // this.cpassword=null;
+          // this.fname=null;
+          // this.lname=null;
+          // this.contactno=null;
+          // this.birthday=null;
+          // this.gender=null;
           this.router.navigate(["/login"]);
         },
-        error => {
-          console.log(error);
-         console.log(error['error']['message']);
-         console.log(error['error']['error']);
-        this.errormsg=error['error']['errors'];
+        data => {
+          this.errorData = data;
+        //   console.log(data);
+        //  console.log(data.error.errors.birthday[0]);
+        //  console.log(data.error.errors.email[0]);
+        //  console.log(data.error.errors.gender[0]);
+        // // this.errormsg=error['errors']['errors'];
+        console.log(data.error.errors.email);
+        console.log(data.error.errors.birthday);
+        console.log(data.error.errors.gender);
+        console.log(data.error.errors.name);
+        console.log(data.error.errors.phone_number);
+        console.log(data.error.errors.password);
+        console.log(data.error.errors.confirm_password);
+        console.log(data.error.errors.first_name);
+        console.log(data.error.errors.last_name);
+        console.log(data);
         
+          console.log(data.error.message);
+         this.errormsg=data.error.message;
           alert(this.errormsg);
-        }
+        },
+      
       );
      
     } 
