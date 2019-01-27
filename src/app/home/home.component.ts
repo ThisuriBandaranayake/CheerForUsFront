@@ -60,6 +60,22 @@ export class HomeComponent implements OnInit {
    this.search_query="gym";
   }
   
+  swim(){
+
+  }
+  yoga(){
+
+  }
+  karate()
+{
+
+}
+dancing(){
+
+}
+sports(){
+   
+}
 
 }
 

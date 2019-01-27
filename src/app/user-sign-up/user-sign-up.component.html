@@ -1,134 +1,145 @@
 <!-- Default form login -->
 <div class="body">
-<div class="row">
+  <div class="row">
     <br><br>
     <br>
-    </div>
-   
-      <div class="row">
-          <div class="col-md-3"></div>
-          <div class="col-md-5">
-          <div class="example z-depth-5">
-            <!-- Default form register -->
-    <form class="text-center border border-light p-5" #customerForm=ngForm (ngSubmit)="signup()" >
+  </div>
 
-        <p class="h4 mb-4" style="color: white">Sign up</p>
-  
-        <div class="form-row mb-4">
-          <div class="col">
-            <!-- First name -->
-            
-  <label>Username :</label>
-            <input type="text" id="defaultRegisterFormUserName" class="form-control" placeholder="User name" name="username" required [(ngModel)]="username"  #uname="ngModel">
-            <div *ngIf="uname.invalid && (uname.dirty || uname.touched)"
-          class="alert alert-danger">
-          <div *ngIf="uname.errors.required">
-         <small>  Username Required.</small>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-5">
+      <div class="example z-depth-5">
+        <!-- Default form register -->
+        <form class="text-center border border-light p-5" #customerForm=ngForm (ngSubmit)="signup()">
+
+          <p class="h4 mb-4" style="color: white">Sign up</p>
+
+         
+              <!-- First name -->
+
+              <label>Username :</label>
+              <input type="text" id="defaultRegisterFormUserName" class="form-control mb-4" placeholder="User name" name="username"
+                required [(ngModel)]="username" #uname="ngModel">
+              <div *ngIf="uname.invalid && (uname.dirty || uname.touched)" class="alert alert-danger">
+                <div *ngIf="uname.errors.required">
+                  <small> Username Required.</small>
+                </div>
+              </div>
+              <small>{{errorData.error.errors.name}}</small>
+          <label>First Name :</label>
+          <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" placeholder="First Name" name="fname"
+            required [(ngModel)]="fname" #fn="ngModel">
+          <div *ngIf="fn.invalid && (fn.dirty || fn.touched)" class="alert alert-danger">
+            <div *ngIf="fn.errors.required">
+              <small> First name required.</small>
+            </div>
           </div>
-      </div>
+          <small>{{errorData.error.errors.first_name}}</small>
+          <label>Last Name :</label>
+          <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" placeholder="Last Name" name="lname"
+            required [(ngModel)]="lname" #ln="ngModel">
+          <div *ngIf="ln.invalid && (ln.dirty || ln.touched)" class="alert alert-danger">
+            <div *ngIf="ln.errors.required">
+              <small> Last name required.</small>
+            </div>
           </div>
-        </div>
-        <label>First Name :</label>
-        <input type="text" id="defaultRegisterFormFirstName" class="form-control mb-4" placeholder="First Name"  name="fname" required [(ngModel)]="fname" #fn="ngModel">
-        <div *ngIf="fn.invalid && (fn.dirty || fn.touched)"
-      class="alert alert-danger">
-    <div *ngIf="fn.errors.required">
-    <small> First name required.</small>
-    </div>  
-     </div>
-     <label>Last Name :</label>
-        <input type="text" id="defaultRegisterFormLastName" class="form-control mb-4" placeholder="Last Name"  name="lname" required [(ngModel)]="lname" #ln="ngModel">
-        <div *ngIf="ln.invalid && (ln.dirty || ln.touched)"
-  class="alert alert-danger">
-  <div *ngIf="ln.errors.required">
-   <small> Last name required.</small>
-  </div>
-  </div>
-  <label>Contact No :</label>
-        <input type="text" id="defaultRegisterFormContactNo" class="form-control mb-4" placeholder="Contact No"  name="contactno" required [(ngModel)]="contactno" #contact="ngModel">
-        
-  <div *ngIf="contact.invalid && (contact.dirty || contact.touched)"
-  class="alert alert-danger">
-  <div *ngIf="contact.errors.required">
-   <small> Contact number required.</small>
-  </div>
-  </div>
-  <label>Gender :</label>
-  <select class="browser-default custom-select" name="gender" required [(ngModel)]="gender" #gen="ngModel">
-      <option selected>male</option>
-      <option value="1">female</option>
-      
-   </select>
-   
-      <br><br>
-    <!-- 
+          <small>{{errorData.error.errors.last_name}}</small>
+          <label>Contact No :</label>
+          <input type="text" id="defaultRegisterFormContactNo" class="form-control mb-4" placeholder="Contact No" name="contactno"
+            required [(ngModel)]="contactno" #contact="ngModel">
+
+          <div *ngIf="contact.invalid && (contact.dirty || contact.touched)" class="alert alert-danger">
+            <div *ngIf="contact.errors.required">
+              <small> Contact number required.</small>
+            </div>
+          </div>
+          <small>{{errorData.error.errors.phone_number}}</small>
+          <label>Gender :</label>
+          <select class="browser-default custom-select" name="gender" required [(ngModel)]="gender" #gen="ngModel">
+            <option selected>male</option>
+            <option value="female">female</option>
+
+          </select>
+
+          <br><br>
+          <!-- 
         <input type="text" id="defaultRegisterFormGender" class="form-control mb-4" placeholder="Gender"  name="gender" required [(ngModel)]="gender" #gen="ngModel"> -->
-        
-  <div *ngIf="gen.invalid && (gen.dirty || gen.touched)"
-  class="alert alert-danger">
-  <div *ngIf="gen.errors.required">
-  <small>  Gender required.</small>
-  </div>
-  </div>
-  
-  <label>Birthday :</label>
-        <input type="date" id="defaultRegisterFormBirthday" class="form-control mb-4" placeholder="Birthday"  name="birthday" required [(ngModel)]="birthday" #bd="ngModel">
-  
-        <div *ngIf="bd.invalid && (bd.dirty || bd.touched)"
-        class="alert alert-danger">
-        <div *ngIf="bd.errors.required">
-        <small>  Birthday required.</small>
-        </div>
-        </div>
-        
-        <!-- E-mail -->
-        
-  <label>Email :</label>
-        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail"  name="email" required [(ngModel)]="email" #em="ngModel">
-  
-        <div *ngIf="em.invalid && (em.dirty || em.touched)"
-        class="alert alert-danger">
-        <div *ngIf="em.errors.required">
-         <small> Email required.</small>
-        </div>
-        </div>
-        <!-- Password -->
-        
-  <label>Password :</label>
-        <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"  name="password" required minlength="6" [(ngModel)]="password" #pw="ngModel">
-        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-          At least 6 characters.
-        </small>
-        <div *ngIf="pw.invalid && (pw.dirty || pw.touched)"
-      class="alert alert-danger">
-      <div *ngIf="pw.errors.required">
-       <small>Password Required.</small>
-      </div>
-      <div *ngIf="pw.errors.minlength">
-      <small> Password must contain atleast 6 characters.</small>
-      </div>
-      </div>
-      
-  <label>Confirm Password :</label>
-        <input type="password"  class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock" name="cpassword" required minlength="6" [(ngModel)]="cpassword" #cpw="ngModel">
-        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+
+          <!-- <div *ngIf="errorData.error.errors.gender" class="alert alert-danger">
+            <div *ngFor="let err of errorData.error.errors.gender">
+              <small>{{err}}</small>
+            </div>
+          </div> -->
+          <div *ngIf="gen.invalid && (gen.dirty || gen.touched)" class="alert alert-danger">
+            <div *ngIf="gen.errors.required">
+              <small> Gender required.</small>
+            </div>
+          </div>
+          <small>{{errorData.error.errors.gender}}</small>
+
+          <label>Birthday :</label>
+          <input type="date" id="defaultRegisterFormBirthday" class="form-control mb-4" placeholder="Birthday" name="birthday"
+            required [(ngModel)]="birthday" #bd="ngModel">
+
+          <div *ngIf="bd.invalid && (bd.dirty || bd.touched)" class="alert alert-danger">
+            <div *ngIf="bd.errors.required">
+              <small> Birthday required.</small>
+            </div>
+          </div>
+          <small>{{errorData.error.errors.birthday}}</small>
+          <!-- E-mail -->
+
+          <label>Email :</label>
+          <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="email"
+            required [(ngModel)]="email" #em="ngModel">
+
+          <div *ngIf="em.invalid && (em.dirty || em.touched)" class="alert alert-danger">
+            <div *ngIf="em.errors.required">
+              <small> Email required.</small>
+            </div>
+          </div>
+          <small>{{errorData.error.errors.email}}</small>
+          <!-- Password -->
+
+          <label>Password :</label>
+          <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password"
+            aria-describedby="defaultRegisterFormPasswordHelpBlock" name="password" required minlength="6" [(ngModel)]="password"
+            #pw="ngModel">
+          <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+            At least 6 characters.
+          </small>
+          <div *ngIf="pw.invalid && (pw.dirty || pw.touched)" class="alert alert-danger">
+            <div *ngIf="pw.errors.required">
+              <small>Password Required.</small>
+            </div>
+            <div *ngIf="pw.errors.minlength">
+              <small> Password must contain atleast 6 characters.</small>
+            </div>
+          </div>
+          <small>{{errorData.error.errors.password}}</small>
+
+          <label>Confirm Password :</label>
+          <input type="password" class="form-control" placeholder="Confirm Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"
+            name="cpassword" required minlength="6" [(ngModel)]="cpassword" #cpw="ngModel">
+          <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
             Retype your password.
           </small>
-          <div *ngIf="cpw.invalid && (cpw.dirty || cpw.touched)"
-          class="alert alert-danger">
-          <div *ngIf="cpw.errors.required">
-           <small>Password Required.</small>
-          </div>
-          <div *ngIf="cpw.errors.minlength">
-          <small> Password must contain atleast 6 characters.</small>
-          </div>
-          <div *ngIf="cpw != pw">
+          <small>{{errorData.error.errors.confirm_password}}</small>
+          <div *ngIf="cpw.invalid && (cpw.dirty || cpw.touched)" class="alert alert-danger">
+            <div *ngIf="cpw.errors.required">
+              <small>Password Required.</small>
+            </div>
+            <div *ngIf="cpw.errors.minlength">
+              <small> Password must contain atleast 6 characters.</small>
+            </div>
+            <div *ngIf="cpw != pw">
               <small> Doesn't match with password.</small>
-              </div>
+            </div>
           </div>
-      
-      
-  <!-- <div *ngIf="pwc.invalid && (pwc.dirty || pwc.touched)"
+          
+
+
+          <!-- <div *ngIf="pwc.invalid && (pwc.dirty || pwc.touched)"
   class="alert alert-danger">
   <div *ngIf="pwc.errors.required">
  Password Confirmation Required.
@@ -137,60 +148,49 @@
   Password doesn't match.
 </div>
 </div> -->
-        <!-- Phone number -->
-       
-  
-        <!-- Newsletter -->
-       
-  
-        <!-- Sign up button -->
-        <button mdbBtn color="info"  class="my-4" type="submit">Sign in</button>
-  
-        <!-- Social register -->
-        <p>or sign up with:</p>
-  
-        <a type="button" class="light-blue-text mx-2">
-          <mdb-icon icon="facebook"></mdb-icon>
-        </a>
-        <a type="button" class="light-blue-text mx-2">
-          <mdb-icon icon="twitter"></mdb-icon>
-        </a>
-        <a type="button" class="light-blue-text mx-2">
-          <mdb-icon icon="linkedin"></mdb-icon>
-        </a>
-        <a type="button" class="light-blue-text mx-2">
-          <mdb-icon icon="github"></mdb-icon>
-        </a>
-  
-        <hr>
-  
-        <!-- Terms of service -->
-        <p>By clicking
-          <em>Sign up</em> you agree to our
-          <a href="" target="_blank">terms of service</a> and
-          <a href="" target="_blank">terms of service</a>. </p>
-  
-      </form>
-      <!-- Default form register --></div>
-            </div>
-          <div class="col-md-3"></div>
+          <!-- Phone number -->
+
+
+          <!-- Newsletter -->
+
+
+          <!-- Sign up button -->
+          <button mdbBtn color="indigo" class="my-4" type="submit">Sign in</button>
+
+          <!-- Social register -->
+          <p>or sign up with:</p>
+
+          <a type="button" class="light-blue-text mx-2">
+            <mdb-icon icon="facebook"></mdb-icon>
+          </a>
+          <a type="button" class="light-blue-text mx-2">
+            <mdb-icon icon="twitter"></mdb-icon>
+          </a>
+          <a type="button" class="light-blue-text mx-2">
+            <mdb-icon icon="linkedin"></mdb-icon>
+          </a>
+          <a type="button" class="light-blue-text mx-2">
+            <mdb-icon icon="github"></mdb-icon>
+          </a>
+
+          <hr>
+
+          <!-- Terms of service -->
+          <p>By clicking
+            <em>Sign up</em> you agree to our
+            <a href="" target="_blank">terms of service</a> and
+            <a href="" target="_blank">terms of service</a>. </p>
+
+        </form>
+        <!-- Default form register -->
       </div>
-      <div class="row">
-  <br><br>
-  
-      </div>
-     
-     
-      </div>
-        
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <div class="row">
+    <br><br>
 
-      
-
-  
+  </div>
 
 
-
-
-      
-
-  
+</div>

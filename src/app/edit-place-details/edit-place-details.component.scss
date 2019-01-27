@@ -36,11 +36,11 @@
     
 }
 .btn-purple-gradient{
-    background: linear-gradient(to right,rgb(70, 24, 67),rgb(77, 3, 100),rgb(101, 16, 150),rgb(149, 58, 224),rgb(70, 24, 67));
-    color: aliceblue;
+    background: linear-gradient(to right,rgba(70, 24, 67,0.2),rgba(77, 3, 100,0.2),rgba(101, 16, 150,0.2),rgba(149, 58, 224,0.2),rgba(70, 24, 67,0.999));
+    color: rgb(221, 193, 247);
     width: 150px;
     height:50px;
-    opacity: 0.5;
+    // opacity: 0.5;
 }
 .View-more-Details{
     margin-left: 910px;
@@ -63,6 +63,14 @@
     background-color: rgb(32, 16, 16);
     width: 150px;
     height:50px;
+}
+.delete-place{
+    margin-left: 425px;
+    margin-top: -50px;
+    background-color: rgb(85, 3, 30);
+    width: 150px;
+    height:50px;
+
 }
 .card{
     width: 1075px;
@@ -105,7 +113,21 @@
 
 .Time-price{
     // background-color: aqua;
-    width: 320px;
+    width: 330px;
+    height: 80px;
+}
+.registerB{
+    width: 120px;
+    height: 30px;
+    font-size: 10px;
+    
+}
+.registerc{
+    width: 120px;
+    height: 30px;
+    font-size: 10px;
+    margin-top: -15px;
+    
 }
 
 

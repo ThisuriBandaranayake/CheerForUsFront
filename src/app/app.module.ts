@@ -38,9 +38,9 @@ import { ISignUpComponent } from './isign-up/isign-up.component';
 import { AdminSignUpComponent } from './admin-sign-up/admin-sign-up.component';
 import { ForumComponent } from './forum/forum.component';
 import { ParallaxDirective } from './parallax.directive';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
-import { FooterComponent } from './footer/footer.component';
-import { InstituteComponent } from './institute/institute.component';
+// import { EditProfileComponent } from './edit-profile/edit-profile.component';
+// import { FooterComponent } from './footer/footer.component';
+// import { InstituteComponent } from './institute/institute.component';
 import { IsideNavComponent } from './iside-nav/iside-nav.component';
 import { AddPlaceComponent } from './add-place/add-place.component';
 import { FitnessComponent } from './fitness/fitness.component';
@@ -51,11 +51,18 @@ import { SharedComponent } from './forum/shared/shared.component';
 //import { CoreComponent } from './forum/core/core.module';
 import { ModelsComponent } from './forum/core/models/models.component';
 import { ServicesComponent } from './forum/core/services/services.component';
+import { InstituteDetailsComponent } from './fitness/institute-details/institute-details.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FooterComponent } from './footer/footer.component';
+import { InstituteComponent } from './institute/institute.component';
+import { AdminEditComponent } from './admin-edit/admin-edit.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
+
 import { EditPlaceDetailsComponent } from './edit-place-details/edit-place-details.component';
 import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-place-details-form.component';
 import { PresentStatusComponent } from './present-status/present-status.component';
 import { EditPackageComponent } from './edit-package/edit-package.component';
-
+import { AddNewPackageComponent } from './add-new-package/add-new-package.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +104,13 @@ import { EditPackageComponent } from './edit-package/edit-package.component';
     PresentStatusComponent,
     EditPackageComponent,
   
+    InstituteDetailsComponent,
+    EditProfileComponent,
+    FooterComponent,
+    InstituteComponent,
+    AdminEditComponent,
+    PasswordResetComponent,
+    AddNewPackageComponent,
   
   ],
   imports: [
@@ -221,6 +235,10 @@ import { EditPackageComponent } from './edit-package/edit-package.component';
         path:'institute-dash-board/Edit-Place-Details-form',
         component:EditPlaceDetailsFormComponent
       
+      },
+      {
+        path:'institute-dash-board/Add-New-Package',
+        component:AddNewPackageComponent
       }
 
       // {
