@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, Component } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule} from '@angular/common/http';
 import { Router } from "@angular/router";
@@ -38,6 +38,11 @@ import { ISignUpComponent } from './isign-up/isign-up.component';
 import { AdminSignUpComponent } from './admin-sign-up/admin-sign-up.component';
 import { ForumComponent } from './forum/forum.component';
 import { ParallaxDirective } from './parallax.directive';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { FooterComponent } from './footer/footer.component';
+import { InstituteComponent } from './institute/institute.component';
+// import { IsideNavComponent } from './iside-nav/iside-nav.component';
+// import { AddPlaceComponent } from './add-place/add-place.component';
 import { FitnessComponent } from './fitness/fitness.component';
 import { EditorComponent } from './forum/editor/editor.component';
 import { ArticleComponent } from './forum/article/article.component';
@@ -47,11 +52,14 @@ import { SharedComponent } from './forum/shared/shared.component';
 import { ModelsComponent } from './forum/core/models/models.component';
 import { ServicesComponent } from './forum/core/services/services.component';
 import { InstituteDetailsComponent } from './fitness/institute-details/institute-details.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
-import { FooterComponent } from './footer/footer.component';
-import { InstituteComponent } from './institute/institute.component';
+
+
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
+// import { EditPlaceDetailsComponent } from './edit-place-details/edit-place-details.component';
+// import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-place-details-form.component';
+// import { PresentStatusComponent } from './present-status/present-status.component';
+
 
 @NgModule({
   declarations: [
@@ -75,6 +83,11 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
     AdminSignUpComponent,
     ForumComponent,
     ParallaxDirective,
+    EditProfileComponent,
+    FooterComponent,
+    InstituteComponent,
+    // IsideNavComponent,
+    // AddPlaceComponent,
     FitnessComponent,
     EditorComponent,
     ArticleComponent,
@@ -89,6 +102,10 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
     InstituteComponent,
     AdminEditComponent,
     PasswordResetComponent,
+    // EditPlaceDetailsComponent,
+    // EditPlaceDetailsFormComponent,
+    // PresentStatusComponent,
+  
   
   ],
   imports: [
@@ -101,7 +118,6 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
     InputsModule,
     CheckboxModule,
     ParticlesModule,
-    
     
     //FormGroup, FormControl, Validators,
     ButtonsModule, WavesModule, IconsModule,
@@ -117,11 +133,6 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
 
       },
       {
-        path:'admin-edit',
-        component: AdminEditComponent
-
-      },
-      {
         path:'user-sign-up',
         component:UserSignUpComponent
 
@@ -134,12 +145,6 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
       {
         path:'login',
         component:LoginComponent
-
-      },
-
-      {
-        path:'idashboard',
-        component:IDashboardComponent
 
       },
       {
@@ -190,10 +195,6 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
         component:FitnessComponent
       },
       {
-        path:'fitness/institute-details',
-        component:InstituteDetailsComponent
-      },
-      {
         path:'forum',
         component:ForumComponent
       },
@@ -209,6 +210,27 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
         path:'forum/article',
         component:ArticleComponent
       },
+      // {
+      //   path:'institute-dash-board/add-place',
+      //   component:AddPlaceComponent
+      // },
+      // {
+      //   path:'institute-dash-board/Edit-Place-Details',
+      //   component:EditPlaceDetailsComponent
+      // },
+      // {
+      //   path:'institute-dash-board/Edit-Place-Details/edit-place-details-form',
+      //   component:EditPlaceDetailsFormComponent
+      // },
+      {
+        path:'institute-dash-board',
+        component:IDashboardComponent
+      },
+      // {
+      //   path:'institute-dash-board/institute-profile',
+      //   component:IDashboardComponent
+      // },
+       
     ])
     
   ],
