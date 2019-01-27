@@ -34,6 +34,28 @@ export class EditPlaceDetailsComponent implements OnInit {
         })
   }
 
+
+  delete(id){ 
+    let httpHeaders = new HttpHeaders({
+      Authorization: "Bearer " + localStorage.getItem("access_token")
+    });
+    console.log(localStorage.getItem("access_token"));
+  var response = confirm("Are you sure you want to delete this article?");
+  
+  if(response == true){
+    return this.http.post('http://localhost:8000/api/place/delete',{id},{
+      headers: httpHeaders 
+    }).subscribe(response =>{ 
+  console.log(response);
+  window.location.reload()
+  
+    })
+   
+  }
+  else{
+  }
+  }
+
   
 
 }

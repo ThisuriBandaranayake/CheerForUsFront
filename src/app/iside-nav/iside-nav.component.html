@@ -12,8 +12,13 @@
           <br>
           <br>
           <br>
-          <h4 class="InstituteName">  INSTITUTE NAME</h4>
+          <div class="InastituteName">
+          <h4 class="InstituteName">INSTITUTE NAME</h4>
+        </div>
           <div id="navMan"><a href="#"><img src="assets/images/navMan.jpg" class="img-fluid flex-center"></a></div>
+          <button (click)="logout()"   class="log-out" mdbWavesEffect>Log out</button>
+          <button   class="log-out" mdbWavesEffect>Change Password</button>
+
         </div>
       </li>
       <!--/. Logo -->
@@ -34,7 +39,7 @@
           <li><a href="/institute-dash-board/add-place" class="SideNavOptions">Add New Place</a></li>
           <li><a href="/institute-dash-board/Edit-Place-Details" class="SideNavOptions">Edit Place/Package Details</a></li>
 
-          <li><a href="/institute-dash-board/Add-New-Package" class="SideNavOptions">Add New Packages</a></li>
+          <li><a href="/institute-dash-board/customer-details" class="SideNavOptions">Customer Details</a></li>
          
         </ul>
       </li>

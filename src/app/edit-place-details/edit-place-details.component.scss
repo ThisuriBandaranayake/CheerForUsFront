@@ -102,7 +102,11 @@
     margin-top: -10px;
 }
 .package-detais{
-    margin-left: 30px;
+    margin-left: -130px;
+    // margin-right: 5000px;
+    background-color: rgba(139, 174, 250, 0.9);
+    width: 1000px;
+    text-align: center;
 }
 .card-title1{
     font-size: 20px;
@@ -113,8 +117,9 @@
 
 .Time-price{
     // background-color: aqua;
-    width: 330px;
+    width: 870px;
     height: 80px;
+    text-align: center;
 }
 .registerB{
     width: 120px;
@@ -129,7 +134,11 @@
     margin-top: -15px;
     
 }
-
+.modal-content3{
+    background-color: rgba(0, 0, 0,0.9);
+    width: 500px;
+    color: white;
+}
 
 
 

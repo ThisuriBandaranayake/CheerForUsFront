@@ -62,7 +62,7 @@ import { EditPlaceDetailsComponent } from './edit-place-details/edit-place-detai
 import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-place-details-form.component';
 import { PresentStatusComponent } from './present-status/present-status.component';
 import { EditPackageComponent } from './edit-package/edit-package.component';
-import { AddNewPackageComponent } from './add-new-package/add-new-package.component';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 
 @NgModule({
   declarations: [
@@ -110,7 +110,7 @@ import { AddNewPackageComponent } from './add-new-package/add-new-package.compon
     InstituteComponent,
     AdminEditComponent,
     PasswordResetComponent,
-    AddNewPackageComponent,
+    CustomerDetailsComponent,
   
   ],
   imports: [
@@ -237,8 +237,8 @@ import { AddNewPackageComponent } from './add-new-package/add-new-package.compon
       
       },
       {
-        path:'institute-dash-board/Add-New-Package',
-        component:AddNewPackageComponent
+        path:'institute-dash-board/customer-details',
+        component:CustomerDetailsComponent
       }
 
       // {

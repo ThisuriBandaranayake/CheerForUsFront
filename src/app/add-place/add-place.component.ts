@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { HttpHeaders} from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 // import { access } from 'fs';
 
 @Component({
@@ -133,6 +135,7 @@ handleFileInputCP(file:FileList){
       response => {
         this.response = response;
         console.log(this.response);
+        window.location.reload()
       },
       error => {
         console.log(error);
