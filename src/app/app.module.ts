@@ -56,6 +56,8 @@ import { InstituteDetailsComponent } from './fitness/institute-details/institute
 
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
+import { EventEmitter } from 'events';
+import { GymComponent } from './gym/gym.component';
 // import { EditPlaceDetailsComponent } from './edit-place-details/edit-place-details.component';
 // import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-place-details-form.component';
 // import { PresentStatusComponent } from './present-status/present-status.component';
@@ -102,6 +104,7 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
     InstituteComponent,
     AdminEditComponent,
     PasswordResetComponent,
+    GymComponent,
     // EditPlaceDetailsComponent,
     // EditPlaceDetailsFormComponent,
     // PresentStatusComponent,
@@ -130,6 +133,11 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
       {
         path:'admin-sign-up',
         component:AdminSignUpComponent
+
+      },
+      {
+        path:'edit-profile',
+        component:EditProfileComponent
 
       },
       {
@@ -226,6 +234,10 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
         path:'institute-dash-board',
         component:IDashboardComponent
       },
+      {
+        path:'gym',
+        component:GymComponent
+      },
       // {
       //   path:'institute-dash-board/institute-profile',
       //   component:IDashboardComponent
@@ -234,7 +246,7 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
     ])
     
   ],
-  providers: [ArticlePostingService],
+  providers: [ArticlePostingService,EventEmitter],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

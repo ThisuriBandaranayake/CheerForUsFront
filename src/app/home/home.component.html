@@ -135,7 +135,7 @@
   
         <img src="/assets/images/b2.jpg" class="img-fluid z-depth-1" 
           alt="Responsive image" style="height: 230px;" >
-          <a (click)="gym()" >  <mask>
+          <a  href="/gym">  <mask>
               <p class="white-text" style="background-color:black">Gym</p>
           </mask></a>
       </div>
@@ -144,8 +144,8 @@
   
         <a href="/institute">  <img src="/assets/images/swimming.jpg" class="img-fluid"
           alt="Responsive image" style="height: 230px;"></a>
-          <a (click)="swim()"> <mask>
-              <p class="white-text" style="background-color:black">Swimming</p>
+          <a (click)="swim(name.value)"> <mask>
+              <p class="white-text" style="background-color:black" value="swimming" #name >Swimming</p>
           </mask></a>
       </div>
     <!-- Grid column -->

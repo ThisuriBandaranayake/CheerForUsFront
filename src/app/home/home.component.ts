@@ -4,6 +4,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ParticlesModule } from 'angular-particle';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { EventEmitterService } from '../event-emitter.service'; 
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 @Component({
   selector: 'app-home',
@@ -36,14 +38,14 @@ export class HomeComponent implements OnInit {
 
     searchResults: any;
     search_query:any;
-  
+  name:string;
     public form = {
       location: null,
     }
     institutecategoryplace;
     location: string;
   particlesJS: any;
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient,private router: Router,private eventEmitterService: EventEmitterService) { }
 
   ngOnInit() {
 
@@ -56,12 +58,18 @@ export class HomeComponent implements OnInit {
     
   // }
   gym(){
-    this.router.navigate(["/fitness"]);
-   this.search_query="gym";
+    
+    // this.name="gym";
+    // this.eventEmitterService.onFirstComponentButtonClick(name);
+   
+   
   }
   
-  swim(){
-
+  swim(name:string){
+       
+      // this.eventEmitterService.onFirstComponentButtonClick(name);  
+      // this.router.navigate(["/fitness"]);
+      
   }
   yoga(){
 
@@ -77,6 +85,9 @@ sports(){
    
 }
 
+go(){
+  this.router.navigate(["/fitness"]);
+}
 }
 
 
