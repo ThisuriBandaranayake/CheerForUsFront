@@ -54,6 +54,7 @@ import { ServicesComponent } from './forum/core/services/services.component';
 import { EditPlaceDetailsComponent } from './edit-place-details/edit-place-details.component';
 import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-place-details-form.component';
 import { PresentStatusComponent } from './present-status/present-status.component';
+import { EditPackageComponent } from './edit-package/edit-package.component';
 
 
 @NgModule({
@@ -94,6 +95,7 @@ import { PresentStatusComponent } from './present-status/present-status.componen
     EditPlaceDetailsComponent,
     EditPlaceDetailsFormComponent,
     PresentStatusComponent,
+    EditPackageComponent,
   
   
   ],
@@ -215,6 +217,12 @@ import { PresentStatusComponent } from './present-status/present-status.componen
         path:'institute-dash-board',
         component:IDashboardComponent
       },
+      {
+        path:'institute-dash-board/Edit-Place-Details-form',
+        component:EditPlaceDetailsFormComponent
+      
+      }
+
       // {
       //   path:'institute-dash-board/institute-profile',
       //   component:IDashboardComponent

@@ -18,6 +18,7 @@
     font-style: italic;
     color: rgb(50, 35, 77);
     margin: opx;
+    
 }
 .P-description{
     font-size: 20px;
@@ -65,8 +66,48 @@
 }
 .card{
     width: 1075px;
-    opacity: 0.7;
+    // opacity: 0.7;
 }
 .largest{
     width: 1550px;
 }
+
+
+.card-body-pop{
+    // background-color: green;
+    width: 4000px;
+    text-align: center;
+}
+
+.view-overlay-pop{
+    // background-color: red;
+    width: 120px;
+    height: 50px;
+    margin-left: 25px;
+    margin-top: 0px;
+   
+}
+.P-description-pop{
+    // background-color: violet;
+    width: 300px;
+    margin-left: 5px;
+    margin-top: -10px;
+}
+.package-detais{
+    margin-left: 30px;
+}
+.card-title1{
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+
+.Time-price{
+    // background-color: aqua;
+    width: 320px;
+}
+
+
+
+

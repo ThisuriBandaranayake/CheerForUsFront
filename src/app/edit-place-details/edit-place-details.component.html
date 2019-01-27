@@ -41,17 +41,108 @@
                                 
                             </div>
                             <div class="View-more-Details">
-                                    <button class="btn-purple-gradient">More Details...</button>
+                                    <button class="btn-purple-gradient" (click)="basicModal.show()" mdbWavesEffect>More Details...</button>
 
                             </div>
                             <div class="edit-place-Details">
-                                    <button class="btn-purple-gradient">Edit place Details</button>
-
+                                <a href="/institute-dash-board/Edit-Place-Details-form">
+                                    <button class="btn-purple-gradient" >Edit place Details</button>
+                                </a> 
                             </div>
-                            <div class="edit-package-Details">
-                                    <button class="btn-purple-gradient">Edit package Details</button>
+                                    <div class="edit-package-Details">
+                                        <button class="btn-purple-gradient" >Edit package Details</button>
+                                    </div>  
 
+
+
+
+
+
+
+<!-- <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Launch demo modal</button> -->
+
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+
+        <div class="card-body-pop">
+            <div class="card-title1">{{place.name}}</div>
+        </div>
+       </div>
+
+       <div class="row">
+            <div class="view-overlay-pop">
+                <img src="assets/images/navMan.jpg"  class="img-fluid" alt="Sample image for first version of blog listing">
+            </div>
+
+            <div class="modal-body">
+                <div class="P-description-pop">
+                    <p>{{place.description}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-group">
+                <a href="#" class="list-group-item disabled waves-light" mdbWavesEffect>Contact No:{{place.name}}</a>
+                <a href="#" class="list-group-item waves-light" mdbWavesEffect>Address:{{place.name}}</a>
+
+                
+
+            
+                <div *ngIf="institute_category_places" class="container">
+                        <div *ngFor="let place of institute_category_places.places.data" style="padding:1px">
+            
+                <div class="package-detais">
+                    <dl>
+                        <dt>{{place.name}}</dt>
+                        <dd>{{place.description}}</dd>
+                        <div class="row">
+                            <div class="Time-price">
+                                <dd>- Time Duration : {{place.name}}</dd>
+                                <dd>- Package Price : {{place.name}}</dd>
                             </div>
+                            <div>
+                                <button class="registerB" type="button" mdbBtn color="secondary" mdbWavesEffect>Register</button>
+                            </div>
+                        </div>
+                    </dl>
+                </div>
+                </div>
+                </div>
+            
+            </div>
+       
+                
+            
+
+      <div class="modal-footer">
+            <button class="registerB" type="button" mdbBtn color="secondary" mdbWavesEffect>edit package Details</button>
+            <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+  </div>
+
+    
+    </div>
+  </div>
+</div>
+
+  
+
+
+
+                                    
+
+
+
+
+
+
+
+                            
+                            
                             
                             <br>
                             <br>
@@ -68,4 +159,5 @@
     </div>
 
 </div>
+
 </div>
