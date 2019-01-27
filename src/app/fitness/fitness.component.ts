@@ -18,16 +18,7 @@ export class FitnessComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    console.log(this.search_query)
-    return this.http.post('http://localhost:8000/api/place/search', {
-      'search_query': this.search_query
-    }).subscribe(
-      data => {
-        this.searchResults = data;
-        this.institutecategoryplace = data;
-        console.log(data);
-      }
-    )
+    
   }
 
   onSubmit() {

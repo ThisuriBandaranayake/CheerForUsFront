@@ -94,8 +94,7 @@ export class LoginComponent implements OnInit {
           this.emailRequest=null;
          // this.users = data;
           console.log(data);
-          this.errormsg=data['message'];
-          alert(this.errormsg);
+          // 
           
         },
         error =>{

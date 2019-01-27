@@ -58,8 +58,10 @@ export class UserSignUpComponent implements OnInit {
     input.append('confirm_password',this.cpassword);
       return this.http.post('http://127.0.0.1:8000/api/user/signup',input).subscribe(
         data => {
-          this.users = data;
+          //this.users = data;
           console.log(data);
+
+          
           // this.username=null;
           // this.email=null;
           // this.password=null;
@@ -71,27 +73,23 @@ export class UserSignUpComponent implements OnInit {
           // this.gender=null;
           this.router.navigate(["/login"]);
         },
-        data => {
-          this.errorData = data;
-        //   console.log(data);
-        //  console.log(data.error.errors.birthday[0]);
-        //  console.log(data.error.errors.email[0]);
-        //  console.log(data.error.errors.gender[0]);
-        // // this.errormsg=error['errors']['errors'];
-        console.log(data.error.errors.email);
-        console.log(data.error.errors.birthday);
-        console.log(data.error.errors.gender);
-        console.log(data.error.errors.name);
-        console.log(data.error.errors.phone_number);
-        console.log(data.error.errors.password);
-        console.log(data.error.errors.confirm_password);
-        console.log(data.error.errors.first_name);
-        console.log(data.error.errors.last_name);
-        console.log(data);
+        error => {
+          this.errorData = error;
         
-          console.log(data.error.message);
-         this.errormsg=data.error.message;
-          alert(this.errormsg);
+        console.log(error.error.errors.email);
+        console.log(error.error.errors.birthday);
+        console.log(error.error.errors.gender);
+        console.log(error.error.errors.name);
+        console.log(error.error.errors.phone_number);
+        console.log(error.error.errors.password);
+        console.log(error.error.errors.confirm_password);
+        console.log(error.error.errors.first_name);
+        console.log(error.error.errors.last_name);
+        
+        
+        console.log(error.error.message);
+        this.errormsg=error['error']['message'];
+        alert(this.errormsg);
         },
       
       );

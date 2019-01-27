@@ -22,6 +22,7 @@ export class ISignUpComponent implements OnInit {
     username:null,
     country:null,
   }
+  errorData:any;
   errormsg:string;
   users;
   id:number;
@@ -57,6 +58,9 @@ onSignUp(){
   input.append('country','Sri Lanka');
   input.append('city',this.city);
   input.append('user_type',"institute");
+  input.append('latitude','1');
+  input.append('longitude','1');
+  input.append('country',"Sri Lanka");
   input.append('province',this.province);
   input.append('tpnumber',this.tpno);
   input.append('postal_code',this.postalCode);
@@ -80,11 +84,24 @@ onSignUp(){
       this.router.navigate(["/login"]);
     },
     error => {
-      console.log(error);
-     console.log(error['error']['message']);
-     console.log(error['error']['error']);
-     this.errormsg=error['error']['error'];
-      alert(this.errormsg);
+      this.errorData = error;
+        
+        console.log(error.error.errors.email);
+        console.log(error.error.errors.city);
+        console.log(error.error.errors.province);
+        console.log(error.error.errors.name);
+        console.log(error.error.errors.institute_name);
+        console.log(error.error.errors.address_line1);
+        console.log(error.error.errors.address_line2);
+        console.log(error.error.errors.postal_code);
+        console.log(error.error.errors.phone_number);
+        console.log(error.error.errors.password);
+        console.log(error.error.errors.confirm_password);
+        
+        
+        console.log(error.error.message);
+        this.errormsg=error['error']['message'];
+        alert(this.errormsg);
     }
   );
 }
