@@ -1,223 +1,222 @@
-
 <app-profile-nav></app-profile-nav>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="row">
   <br>
   <br>
-  
+
 </div>
-    <div class="row" >
-        <!-- Table -->
-        <div class="col-md-2  z-depth-5">
-          <ul class="nav flex-column  py-4 mb-r">
-            <li  class="nav-item"><a class="nav-link white-text" href="#">Payment details </a></li>
-            <li  class="nav-item"> <a class="nav-link white-text" (click)="frame.show()" >Change password</a></li>
+<div class="row">
+  <!-- Table -->
+  <div class="col-md-2  z-depth-5">
+    <ul class="nav flex-column  py-4 mb-r">
+      <li class="nav-item"><a class="nav-link white-text" href="#">Payment details </a></li>
+      <li class="nav-item"> <a class="nav-link white-text" (click)="frame.show()">Change password</a></li>
 
 
-<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
-  aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Change Password</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        
-
-        <div class="md-form mb-4">
-          
-          <input type="password" id="defaultForm-pass1" [formControl]="loginFormModalPassword1" class="form-control validate" name="currentPassword" [(ngModel)]="currentPassword"
-            mdbInputDirective>
-          <label data-error="wrong" data-success="right" for="defaultForm-pass1">Current password</label>
-        </div>
-        <div class="md-form mb-4">
-            
-            <input type="password" id="defaultForm-pass2" [formControl]="loginFormModalPassword2" class="form-control validate" name="newPassword" [(ngModel)]="newPassword"
-              mdbInputDirective>
-              
-            <label data-error="wrong" data-success="right" for="defaultForm-pass2">New password</label>
-           
-          </div>
-          <div>
-          <!-- <small>{{error.error.errors.new_password}}</small> -->
-         </div>
-          <div class="md-form mb-4">
-            
-              <input type="password" id="defaultForm-pass3" [formControl]="loginFormModalPassword3" class="form-control validate" name="confirmNewPassword" [(ngModel)]="confirmNewPassword"
-                mdbInputDirective>
-              <label data-error="wrong" data-success="right" for="defaultForm-pass3">Confirm new password</label>
-            </div>
-
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button mdbBtn color="default" class="waves-light" mdbWavesEffect (click)="changePassword()" >Save Changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-            <li  class="nav-item"><a class="nav-link white-text" href="#">Find an institute</a></li>
-            <li  class="nav-item"><a class="nav-link white-text" href="#">Join to forum</a></li>
-            </ul>
-         
-        </div>
-        <div class="col-md-7">
-          <br>
-       <table class="table">
-  <thead class="black white-text">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Institute</th>
-      <th scope="col">Category</th>
-      <th scope="col">Package</th>
-      <th scope="col">Payment state</th>
-      <th scope="col">Amount to be paid</th>
-      <th scope="col">Pay now</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td><button mdbBtn color="indigo" size="sm" mdbWavesEffect type="button" class="m-0"  (click)="basicModal.show()"> Pay Now</button></td>
-
-     
-
-      <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
-                <span aria-hidden="true">×</span>
+            <div class="modal-header text-center">
+              <h4 class="modal-title w-100 font-weight-bold">Change Password</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+                <span aria-hidden="true">&times;</span>
               </button>
-              <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
             </div>
-            <div class="modal-body">
-              <!-- Extended material form grid -->
-<form>
-  <!-- Grid row -->
-  <div class="form-row">
-    <!-- Grid column -->
-    <div class="col-md-6">
-      <!-- Material input -->
-      <div class="md-form form-group">
-          <label for="inputEmail4MD">Amount</label>
-        <input mdbInputDirective type="string" class="form-control" id="inputEmail4MD" placeholder="Amount">
-        
-      </div>
-    </div>
-    <!-- Grid column -->
+            <div class="modal-body mx-3">
 
-    <!-- Grid column -->
-    <div class="col-md-6">
-      <!-- Material input -->
-      
-      <div class="md-form form-group">
-        <select class="browser-default custom-select">
-          <option selected>Payment method</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-       
-      </div>
-    </div>
-    <!-- Grid column -->
-  </div>
-  <!-- Grid row -->
 
-  <!-- Grid row -->
- 
-  <!-- Grid row -->
+              <div class="md-form mb-4">
 
-  <!-- Grid row -->
-  <div class="form-row">
-    <!-- Grid column -->
-    <div class="col-md-6">
-      <!-- Material input -->
-      <div class="md-form form-group">
-        <input mdbInputDirective type="text" class="form-control" id="inputCityMD" placeholder="">
-        <label for="inputCityMD">Contact Number</label>
-      </div>
-    </div>
-    <!-- Grid column -->
+                <input type="password" id="defaultForm-pass1" [formControl]="loginFormModalPassword1" class="form-control validate"
+                  name="currentPassword" [(ngModel)]="currentPassword" mdbInputDirective>
+                <label data-error="wrong" data-success="right" for="defaultForm-pass1">Current password</label>
+              </div>
+              <div class="md-form mb-4">
 
-    <!-- Grid column -->
-    <div class="col-md-6">
-      <!-- Material input -->
-      <div class="md-form form-group">
-        <input mdbInputDirective type="email" class="form-control" id="inputZipMD" placeholder="">
-        <label for="inputZipMD">Email</label>
-      </div>
-    </div>
-    <!-- Grid column -->
-  </div>
-  <!-- Grid row -->
-  <button type="submit" class="btn btn-primary btn-md">Pay</button>
-</form>
-<!-- Extended material form grid -->
+                <input type="password" id="defaultForm-pass2" [formControl]="loginFormModalPassword2" class="form-control validate"
+                  name="newPassword" [(ngModel)]="newPassword" mdbInputDirective>
+
+                <label data-error="wrong" data-success="right" for="defaultForm-pass2">New password</label>
+
+              </div>
+              <div>
+                <!-- <small>{{error.error.errors.new_password}}</small> -->
+              </div>
+              <div class="md-form mb-4">
+
+                <input type="password" id="defaultForm-pass3" [formControl]="loginFormModalPassword3" class="form-control validate"
+                  name="confirmNewPassword" [(ngModel)]="confirmNewPassword" mdbInputDirective>
+                <label data-error="wrong" data-success="right" for="defaultForm-pass3">Confirm new password</label>
+              </div>
+
             </div>
-            <div class="modal-footer">
-              <button type="button" mdbBtn color="indigo" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Back</button>
-              
+            <div class="modal-footer d-flex justify-content-center">
+              <button mdbBtn color="default" class="waves-light" mdbWavesEffect (click)="changePassword()">Save Changes</button>
             </div>
           </div>
         </div>
       </div>
 
-    </tr>
-    
-    
-  </tbody>
-</table>
+
+      <li class="nav-item"><a class="nav-link white-text" href="#">Find an institute</a></li>
+      <li class="nav-item"><a class="nav-link white-text" href="#">Join to forum</a></li>
+    </ul>
+
+  </div>
+  <div class="col-md-7">
+    <br>
+    <table class="table">
+      <thead class="black white-text">
+        <tr>
+          <!-- <th scope="col">#</th> -->
+          <th scope="col">Package name</th>
+          <th scope="col">Time period (days)</th>
+          <th scope="col">Price</th>
+          <th scope="col">Subscribed date</th>
+          <th scope="col">Expiration date</th>
+          <th scope="col">Pay now</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div *ngIf="subscription_data != undefined">
+          <tr *ngFor="let subs of subscription_data">
+            <!-- <th scope="row">1</th> -->
+            <td>{{subs.customer_package.package_name}}</td>
+            <td>{{subs.customer_package.time_period_days}}</td>
+            <td>{{subs.customer_package.price}}</td>
+            <td>{{subs.subscribed_date}}</td>
+            <td>{{subs.expiration_date}}</td>
+            <td>
+              <button mdbBtn color="indigo" size="sm" mdbWavesEffect type="button" class="m-0" (click)="basicModal.show()">
+                Pay Now</button></td>
+            <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Extended material form grid -->
+                    <form>
+                      <!-- Grid row -->
+                      <div class="form-row">
+                        <!-- Grid column -->
+                        <div class="col-md-6">
+                          <!-- Material input -->
+                          <div class="md-form form-group">
+                            <label for="inputEmail4MD">Amount</label>
+                            <input mdbInputDirective type="string" class="form-control" id="inputEmail4MD" placeholder="Amount">
+
+                          </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-6">
+                          <!-- Material input -->
+
+                          <div class="md-form form-group">
+                            <select class="browser-default custom-select">
+                              <option selected>Payment method</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+
+                          </div>
+                        </div>
+                        <!-- Grid column -->
+                      </div>
+                      <!-- Grid row -->
+
+                      <!-- Grid row -->
+
+                      <!-- Grid row -->
+
+                      <!-- Grid row -->
+                      <div class="form-row">
+                        <!-- Grid column -->
+                        <div class="col-md-6">
+                          <!-- Material input -->
+                          <div class="md-form form-group">
+                            <input mdbInputDirective type="text" class="form-control" id="inputCityMD" placeholder="">
+                            <label for="inputCityMD">Contact Number</label>
+                          </div>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-6">
+                          <!-- Material input -->
+                          <div class="md-form form-group">
+                            <input mdbInputDirective type="email" class="form-control" id="inputZipMD" placeholder="">
+                            <label for="inputZipMD">Email</label>
+                          </div>
+                        </div>
+                        <!-- Grid column -->
+                      </div>
+                      <!-- Grid row -->
+                      <button type="submit" class="btn btn-primary btn-md">Pay</button>
+                    </form>
+                    <!-- Extended material form grid -->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" mdbBtn color="indigo" class="waves-light" aria-label="Close" (click)="basicModal.hide()"
+                      mdbWavesEffect>Back</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tr>
+        </div>
+
+      </tbody>
+    </table>
 
 
-      </div>
-      
+  </div>
+
   <!-- end of table -->
   <div class="col-md-3">
-     <!-- Card -->
-     <br>
+    <!-- Card -->
+    <br>
+
+    <!-- Card -->
+    <div class="card mb-6" *ngIf="user">
+
+      <!--Card image-->
+      <div class="view overlay">
+        <img class="card-img-top" src="{{user.avatar}}" alt="Card image cap">
+
+      </div>
+
+      <!--Card content-->
+      <div class="card-body">
+
+        <!--Title-->
+        <h6 class="card-title"><b>User Name:</b> {{user.name}}</h6>
+        <!--Text-->
+        <h6 class="card-title"><b> E-mail:</b> {{user.email}}</h6>
+        <h6 class="card-title"><b>Contact number:</b>{{user.phone_number}}</h6>
+        <h6 class="card-title"><b>Date of Birth:</b>{{user.birthday}}</h6>
+        <p class="card-text"></p>
+        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+        <row><a href="/edit-profile"> <button type="button" class="btn btn-light-blue btn-md">Edit Info</button></a>
+          <button type="button" class="btn btn-light-blue btn-md" (click)="logout()">Log Out</button>
+        </row>
+      </div>
 
       <!-- Card -->
-      <div class="card mb-6" *ngIf="user">
-    
-        <!--Card image-->
-        <div class="view overlay">
-          <img class="card-img-top" src="{{user.avatar}}" alt="Card image cap">
-         
-        </div>
-    
-        <!--Card content-->
-        <div class="card-body" >
-    
-          <!--Title-->
-          <h6 class="card-title"><b>User Name:</b> {{user.name}}</h6>
-          <!--Text-->
-          <h6 class="card-title"><b> E-mail:</b> {{user.email}}</h6>
-          <h6 class="card-title"><b>Contact number:</b>{{user.phone_number}}</h6>
-          <h6 class="card-title"><b>Date of Birth:</b>{{user.birthday}}</h6>
-          <p class="card-text"></p>
-          <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-<row><a href="/edit-profile">  <button type="button" class="btn btn-light-blue btn-md">Edit Info</button></a>
-      <button type="button" class="btn btn-light-blue btn-md" (click)="logout()">Log Out</button>
-</row>
-        </div>
-         
-<!-- Card -->
-  </div>
     </div>
   </div>
- 
-  <div class="row">
-    
-   
-    </div>
+</div>
+
+<div class="row">
+
+
+</div>
