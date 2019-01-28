@@ -13,35 +13,86 @@
      
       <div class="container">
         
-          <div class="row">
-            <div class="col-12 col-md-12 "><div class="card mb-3 text-center hoverable" >
+          <div class="row" >
+            <div class="col-12 col-md-12 " *ngFor="let plc of customer_packages"><div class="card mb-3 text-center hoverable" >
               <div class="card-body" >
                   <!--Grid row-->
                   <div class="row">
           
                       <!--Grid column-->
-                      <div class="col-md-4 offset-md-1 mx-3 my-3">
-                          <!--Featured image-->
-                          <div class="view overlay">
-                              <img src="/assets/images/Bricks.jpg" class="img-fluid" alt="Sample image for first version of blog listing" style="height:200px;width:500px">
-                              <a>
-                                  <div class="mask rgba-white-slight"></div>
-                              </a>
-                          </div>
-                      </div>
+                      
                       <!--Grid column-->
           
                       <!--Grid column-->
-                      <div class="col-md-7 text-left ml-3 mt-3"  >
+                      <div class="col-12 text-left ml-3 mt-3"  >
                           <!--Excerpt-->
-                          <a href="" class="green-text">
-                              <h6 class="font-bold pb-1"><i class="fa fa-desktop"></i> Work</h6>
-                          </a>
-                          <h4 class="mb-4"><strong>binding</strong></h4>
-                          <p>binding</p>
+                          
+                          <div class="row">
+                                <div class="col-4">
+                                        <h5>Package name :</h5>
+                                </div>
+                                <div class="col-8">
+                                        <p [(ngModel)]="package">{{plc.package_name}}</p>
+                                </div>
+                              </div>
+                              
+                         
+                                  <div class="row">
+                                        <div class="col-4">
+                                                <h5>Package price :</h5>
+                                        </div>
+                                        <div class="col-8" >
+                                                <p [(ngModel)]="price">{{plc.price}}</p>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                            <div class="col-4">
+                                                    <h5>valid time period in days :</h5>
+                                            </div>
+                                            <div class="col-8">
+                                                    <p [(ngModel)]="package">{{plc.time_period_days}}</p>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                                <div class="col-4">
+                                                        <h5>Description :</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                        <p [(ngModel)]="package">{{plc.description}}</p>
+                                                </div>
+                                              </div>
+                        
+                         
                           <!-- <p>by <a><strong>Carine Fox</strong></a>, 19/08/2016</p> -->
-                          <a class="btn btn-success">View more details</a>
-                          <a class="btn btn-success">Register</a>
+                          <div class="row">
+                              <div class="col-6">
+                          <a class="btn btn-primary" (click)="register()" >Register</a></div>
+                          <div class="col-6">
+                          <div *ngIf="errormsg">
+                                <button  type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Sign up first</button>
+                
+                                <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                                          <span aria-hidden="true">×</span>
+                                        </button>
+                                        <h4 class="modal-title w-100" id="myModalLabel">Sign up first</h4>
+                                      </div>
+                                      <div class="modal-body">
+                                        
+                                      </div>
+                                      <div class="modal-footer">
+                                            <a href="login"> <button type="button" mdbBtn color="primary" class="waves-light" aria-label="Close"  mdbWavesEffect>Login</button></a>
+                                            <a href="user-sign-up">  <button type="button" mdbBtn color="primary" class="relative waves-light"  mdbWavesEffect>Sign up</button></a>
+                                      </div>
+                                    </div>
+                                  </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
                       </div>
                       <!--Grid column-->
                   </div>
@@ -51,7 +102,9 @@
             
           
         </div>
-    </div>
+
+
+       
     <br>
    
 </div>

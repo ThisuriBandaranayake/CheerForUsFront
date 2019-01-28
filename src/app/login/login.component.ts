@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
   error: string;
   errormsg:string;
   errormsg2:string;
+  msg:any;
   
   constructor(public fb: FormBuilder,
     private http: HttpClient,
@@ -90,9 +91,13 @@ export class LoginComponent implements OnInit {
       input.append('email',this.emailRequest);
       return this.http.post('http://127.0.0.1:8000/api/user/password-reset-request',input).subscribe(
         data => {
-          this.emailRequest=null;
+          
          // this.users = data;
+         console.log(data['message']);
+          this.msg = data['message'];
+          alert(this.msg);
           console.log(data);
+          this.emailRequest=null;
           // 
           
         },
@@ -118,6 +123,10 @@ export class LoginComponent implements OnInit {
         console.log(data);
         this.errormsg=data['message'];
         alert(this.errormsg);
+        this.uemail=null;
+        this.code=null;
+        this.newPassword=null;
+        this.newCPassword=null;
         this.router.navigate(["/login"]);
       },
       error =>{

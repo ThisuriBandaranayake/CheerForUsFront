@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
   errormsg1: string;
   errormsg2: string;
   errormsg3: string;
-  msg: string;
+  msg: any;
   errorData: any;
   avatar: string = "assets/images/avatar.png";
   constructor(
@@ -73,13 +73,12 @@ export class ProfileComponent implements OnInit {
       });
     this.getSubscriptions();
   }
-  keys(): Array<string> {
-    return Object.keys(this.user);
-  }
 
-  ngOnDestroy(): void {
-    localStorage.removeItem("access_token");
-  }
+  
+
+  // ngOnDestroy(): void {
+  //   localStorage.removeItem("access_token");
+  // }
 
   logout() {
     this.auth
@@ -111,8 +110,8 @@ export class ProfileComponent implements OnInit {
       })
       .subscribe(
         data => {
-          console.log(data);
-          this.msg = data["message"];
+          console.log(data['message']);
+          this.msg = data['message'];
           alert(this.msg);
           this.currentPassword = null;
           this.newPassword = null;
@@ -138,14 +137,12 @@ export class ProfileComponent implements OnInit {
   subscription_data;
 
   getSubscriptions() {
-    let v = localStorage.getItem("access_token");
-    console.log(v);
-    return this.http
-      .post("http://127.0.0.1:8000/api/customer/subscription/get", {
-        headers: {
-          'Authorization': "Bearer " + localStorage.getItem("access_token")
-        }
-      })
+    let httpHeaders = new HttpHeaders({
+      Authorization: "Bearer " + localStorage.getItem("access_token")
+    });
+   
+    return this.http.post("http://127.0.0.1:8000/api/customer/subscription/get", { 
+        headers: httpHeaders})
       .subscribe(
         data => {
           this.subscription_data = data["subscriptions"]["data"];
@@ -154,18 +151,13 @@ export class ProfileComponent implements OnInit {
           try {
             this.errorData = error;
             console.log(error);
-            console.log(error.error.errors.current_password);
-            console.log(error.error.errors.new_password);
-            console.log(error.error.errors.confirm_new_password);
-
-            this.errormsg1 = error["error"]["message"];
-            this.errormsg2 = error["error"]["errors"]["new_password"];
-            this.errormsg3 = error["error"]["errors"]["confirm_new_password"];
-            alert(this.errormsg1);
+           
             // alert(this.errormsg2);
             // alert(this.errormsg3);
           } catch (e) {}
         }
       );
   }
+
+ 
 }

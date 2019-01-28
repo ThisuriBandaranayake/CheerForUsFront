@@ -1,0 +1,86 @@
+<div style="background-image: url(/assets/images/Bricks.jpg); background-attachment: fixed; background-size: cover; min-height: 700px">
+  <div class="full-bg-img mask rgba-purple-slight">
+      <div class="container">
+          <div class="d-flex align-items-center d-flex justify-content-center" style="height: 200px">
+
+              <h3 class="h3 display-1 white-text mb-1 wow fadeInDown" data-wow-delay="0.3s">Category name</h3>
+
+          </div>
+          <form class="form-inline md-form mr-auto mb-4" #search=ngForm (ngSubmit)="onSubmit()">
+              <!-- Material input -->
+              <div class="md-form">
+                  <input mdbInputDirective type="text" name="text" [(ngModel)]="search_query" id="form1" class="form-control">
+                  <label for="form1" class="">Search</label>
+              </div>
+
+              <!--<select class="mdb-select" searchable="Search here.." name="q" [(ngModel)]="location" required   placeholder="Search" aria-label="Search">
+            <option value="" disabled selected>Choose your location</option>
+            <option value=""  class="rounded-circle">Moratuwa</option>
+            <option value=""  class="rounded-circle">Nugegoda</option>
+            <option value=""  class="rounded-circle">Dehiwala</option>
+          </select>-->
+
+              <button class="btn btn-elegant btn-rounded btn-sm my-0" type="submit" (click)="onSubmit()">Search</button>
+              <!-- <button type="submit">Submit</button> -->
+
+          </form>
+      </div>
+  </div>
+  <!--<div *ngIf='searchResults'>
+      <div *ngFor='let place of searchResults.search_results.data'>
+          <div class="card" style="margin: 16px" style="width: 800px">
+              <div class="view overlay">
+                  <img class="img-thumbnail" style="width: 200px" class="card-img-top" src="{{localImageUrl(place.photo)}}"
+                      alt="Card image cap">
+                  <a href="#!">
+                      <div class="mask rgba-white-slight"></div>
+                  </a>
+                  <div class="card-body">
+                      <h4 class="card-title">{{place.name}}</h4>
+                      <p class="card-text">{{place.description}}</p>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+  </div>Udara-->
+
+  <div *ngIf='searchResults'>
+      <div *ngFor='let place of searchResults.search_results.data'>
+          <div class="full-bg-img mask rgba-pink-slight">
+
+              <div class="container">
+                  <div class="row">
+                      <div class="col-12 col-md-12 ">
+                          <div class="card mb-3 text-center hoverable">
+                              <div class="card-body">
+                                  <div class="row"><!--Grid row-->
+                                      <div class="col-md-4 offset-md-1 mx-3 my-3"><!--Grid column 1-->
+                                          <div class="view overlay"><!--Featured image-->
+                                              <img src="{{localImageUrl(place.photo)}}" class="img-fluid" alt="Sample image for first version of blog listing"
+                                              style="height:200px;width:500px">
+                                              <a><div class="mask rgba-white-slight"></div>                                        </a>
+                                          </div>
+                                      </div><!--Grid column 1 end-->                                                               
+                                      <div class="col-md-7 text-left ml-3 mt-3"><!--Grid column 2-->
+                                          <a href="" class="green-text"><!--Excerpt-->
+                                              <h6 class="font-bold pb-1"><i class="fa fa-desktop"></i> Work</h6>
+                                          </a>
+                                          <h4 class="mb-4"><strong><h4 class="card-title">{{place.name}}</h4></strong></h4>
+                                          <p class="card-text">{{place.description}}</p>
+                                  <!-- <p>by <a><strong>Carine Fox</strong></a>, 19/08/2016</p> -->
+                                          <a href="/fitness/institute-details" class="btn btn-success" href="/institute-details">View more details</a>
+                                          <a class="btn btn-success">Register</a>
+                                      </div>
+                                     <!--Grid column-->
+                                  </div><!--Grid row-->                           
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          <br>
+          </div>
+      </div>
+  </div>
+</div>

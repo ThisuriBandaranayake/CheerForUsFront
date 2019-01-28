@@ -150,6 +150,21 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 
       },
       {
+        path:'post-articles',
+        component:PostArticlesComponent
+
+      },
+      {
+        path:'institute',
+        component:InstituteComponent
+
+      },
+      {
+        path:'institute-details',
+        component:InstituteDetailsComponent
+
+      },
+      {
         path:'admin-sign-up',
         component:AdminSignUpComponent
 
