@@ -136,6 +136,16 @@ import { GymComponent } from './gym/gym.component';
 
       },
       {
+        path:'idashboard',
+        component:IDashboardComponent
+
+      },
+      {
+        path:'admin-edit',
+        component:AdminEditComponent
+
+      },
+      {
         path:'edit-profile',
         component:EditProfileComponent
 

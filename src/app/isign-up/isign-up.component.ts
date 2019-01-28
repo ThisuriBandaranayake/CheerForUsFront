@@ -86,17 +86,17 @@ onSignUp(){
     error => {
       this.errorData = error;
         
-        console.log(error.error.errors.email);
-        console.log(error.error.errors.city);
-        console.log(error.error.errors.province);
-        console.log(error.error.errors.name);
-        console.log(error.error.errors.institute_name);
-        console.log(error.error.errors.address_line1);
-        console.log(error.error.errors.address_line2);
-        console.log(error.error.errors.postal_code);
-        console.log(error.error.errors.phone_number);
-        console.log(error.error.errors.password);
-        console.log(error.error.errors.confirm_password);
+        // console.log(error.error.errors.email);
+        // console.log(error.error.errors.city);
+        // console.log(error.error.errors.province);
+        // console.log(error.error.errors.name);
+        // console.log(error.error.errors.institute_name);
+        // console.log(error.error.errors.address_line1);
+        // console.log(error.error.errors.address_line2);
+        // console.log(error.error.errors.postal_code);
+        // console.log(error.error.errors.phone_number);
+        // console.log(error.error.errors.password);
+        // console.log(error.error.errors.confirm_password);
         
         
         console.log(error.error.message);

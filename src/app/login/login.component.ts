@@ -74,13 +74,12 @@ export class LoginComponent implements OnInit {
       //  console.log(data.error.errors.email[0]);
       //  console.log(data.error.errors.gender[0]);
       // // this.errormsg=error['errors']['errors'];
-      console.log(data.error.errors.message);
-      console.log(data.error.errors.email);
-      
-      console.log(data.error.errors.error);
-      this.errormsg=data.error.errors.email;
+      // console.log(data.error.errors.message);
+      // console.log(data.error.errors.email);
+      console.log(data);
      
-        alert(this.errormsg);
+      this.errormsg = data['error']['message'];
+      alert(this.errormsg);
         
       },
     );
