@@ -82,8 +82,7 @@ loginFormModalPassword3 = new FormControl('', [Validators.required,Validators.mi
     
   }
   getSessionId(){
-    return this.http.get(
-      "http://127.0.0.1:8000/api/user/sessions").subscribe(
+    return this.http.get("http://127.0.0.1:8000/api/user/sessions").subscribe(
         response=>{
           console.log(response);
         }

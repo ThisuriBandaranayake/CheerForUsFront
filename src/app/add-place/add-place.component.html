@@ -1,0 +1,184 @@
+
+
+<div class="row">
+
+  <br>
+  <app-iside-nav></app-iside-nav>
+  
+
+<div class="background">
+<br>
+<!-- <div>
+    {{ imgUrl }}<BR>
+    {{ imgUrl2 }}
+  {{placeName}}{{categoryName}}{{placeDescription}}{{placeAddressLine1}}{{placeAddressLine2}}
+  {{placeCity}}{{placeProvince}}{{placeCountry}}{{placePostalCode}}{{placeLatitude}}{{placeLongitude}}
+</div> -->
+<br>
+<br>
+
+<mdb-card class="Idetails">
+  <br>
+  <div class="col-md-12">
+    <form #institutes=ngForm (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+      <h5>01.Place Name</h5>
+      <input type="text" id="InstituteName" class="form-control" placeholder="Place Name" name="place_name" [(ngModel)]="placeName">
+      <br>
+
+      <h5>02.Category</h5>
+      <select class="browser-default custom-select" (change)="setCategory($event.target.value)">
+        <option selected>Select the category</option>
+        <option value="Gym">Gym</option>
+        <option value="SwimmingPool">Swimming Pool</option>
+        <option value="Yoga">Dancing Class</option>
+        <option value="SportsClub">Karate Class</option>
+        <option value="Dancing">Sports Club</option>
+        
+</select>
+
+<!-- place photo uploader -->
+
+  <div class="row">
+    <div class="col-7">
+        <br>
+      <h5>03.Place cover photo</h5>
+      <div class="form-group">
+        <img src="{{ imgUrl2 }}" height="200px" width="400px">
+        <br><br>
+        <input type="file" clas="upload" #Image2 accept="image2/*" (change)="handleFileInputCP($event.target.files)" name="image2" [(ngModel)]="fileToUploadPP">
+        <br><br>
+        </div>
+      </div>
+
+<!-- cover photo uploader -->
+
+  <!-- <form #imageForm=ngForm (ngSubmit)="onSubmit()"> -->
+          <div class="col-5">
+              <br>
+            <h5>03.Place photo</h5>
+            <div class="form-group">
+              <img src="{{ imgUrl }}" height="200px" width="200px">
+              <br><br>
+              <input type="file" clas="upload" #Image accept="image/*" (change)="handleFileInput($event.target.files)" name="image" [(ngModel)]="fileToUploadCP">
+              <br><br>
+              </div>
+            </div>
+            <!-- <button class="btn btn-md btn-primary">Start uploading</button> -->
+          <!-- </form> -->
+          
+  </div>
+          
+
+<!--Description-->
+        <h5>05.Description</h5>
+        <div class="md-form">
+          <i class="fa fa-pencil prefix"></i>
+          <textarea type="text" id="form8" class="md-textarea form-control" name="place_description" mdbInputDirective [(ngModel)]="placeDescription"></textarea>
+        </div>
+        
+<!--Address-->  
+  <h5>06.Address</h5>       
+  <div class="form-row mb-4">
+              <div class="col">
+      <input type="text" id="defaultRegisterFormSName" class="form-control" placeholder="Address Line1"  name="place_address_line1" [(ngModel)]="placeAddressLine1">
+              </div>
+              <div class="col">
+      <input type="text" id="defaultRegisterFormSName" class="form-control" placeholder="Address Line2"  name="place_address_line2" [(ngModel)]="placeAddressLine2">
+              </div>
+  </div>
+   
+
+<!--city/province/country-->
+<div class="form-row mb-4">
+
+
+  <div class="col">
+  <h5>07.Country</h5>
+  <select class="browser-default custom-select" (change)="setCountry($event.target.value)">
+                  <option selected>Select the country</option>
+                  <option value="Sri Lanka">Sri Lanka</option>
+                  <option value="India">India</option>
+                  <option value="Nepal">Nepal</option>
+                  <option value="Maldives">Maldives</option>
+                  <option value="Singapore">Singapore</option>
+                  <option value="Pakistan">Pakistan</option>
+          </select>
+  </div>
+
+                  <div class="col">
+                  <h5>08.province</h5>
+                  <select class="browser-default custom-select" (change)="setProvins($event.target.value)">
+                                  <option selected>Select the Province</option>
+                                  <option value="Western">Western</option>
+                                  <option value="Sabaragamuwa">Sabaragamuwa	</option>
+                                  <option value="Eastern"> Eastern</option>
+                                  <option value="Uva">Uva</option>
+                                  <option value="Southern">Southern</option>
+                                  <option value="North Central">North Central</option>
+                                  <option value="Central">Central</option>
+                          </select>
+                  </div>
+
+                                  <div class="col">
+                                  <h5>09.City</h5>    
+                                  <select class="browser-default custom-select" (change)="setCity($event.target.value)">
+                                          <option selected>Select the City</option>
+                                          <option value="Moratuwa">Moratuwa</option>
+                                          <option value="Nugegoda">Nugegoda</option>
+                                          <option value="Kalutara">Kalutara</option>
+                                          <option value="Nawala">Nawala</option>
+                                          <option value="Piliyandala">Piliyandala</option>
+                                          <option value="Kottawa">Kottawa</option>
+                                          <option value="Bandarawela">Bandarawela</option>
+                                          <option value="Kandy">Kandy</option>
+                                          <option value="Mathale">Mathale</option>
+                                          <option value="Matara">Matara</option>
+                                          <option value="Galle">Galle</option>
+                                          <option value="Rathnapura">Rathnapura</option>
+                                          <option value="Anuradhapura">Anuradhapura</option>
+                                  </select>
+                                  </div>
+                                 
+  </div>
+
+  <div class="form-row mb-4">
+    <div class="col">
+      <h5>10.Postal Code</h5>
+      <input type="text" id="InstituteName" class="form-control" placeholder="Postal Code" name="place_postal_code" [(ngModel)]="placePostalCode">
+      
+  </div>
+
+  <div class="col">
+      <h5>11.Place Latitude</h5>
+      <input type="text" id="InstituteName" class="form-control" placeholder="Place Latitude" name="place_latitude" [(ngModel)]="placeLatitude">
+     
+  </div>
+
+  <div class="col">
+      <h5>12.Place Longitude</h5>
+      <input type="text" id="InstituteName" class="form-control" placeholder="Place Longitude" name="place_longitude" [(ngModel)]="placeLongitude">
+    
+  </div>
+
+  </div>
+    
+  
+      <button id="submit1" mdbBtn type="submit" color="default" class="waves-light" mdbWavesEffect>submit</button>
+     <div class="Add-new">
+      <a href="/institute-dash-board/add-place" ><h3>Add New Place</h3></a>
+    </div>
+  </form>
+ 
+</div>
+<br>
+     
+</mdb-card>
+
+<br>
+
+</div>
+</div>
+
+
+

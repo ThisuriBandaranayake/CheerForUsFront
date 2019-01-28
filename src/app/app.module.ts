@@ -43,6 +43,11 @@ import { FooterComponent } from './footer/footer.component';
 import { InstituteComponent } from './institute/institute.component';
 // import { IsideNavComponent } from './iside-nav/iside-nav.component';
 // import { AddPlaceComponent } from './add-place/add-place.component';
+// import { EditProfileComponent } from './edit-profile/edit-profile.component';
+// import { FooterComponent } from './footer/footer.component';
+// import { InstituteComponent } from './institute/institute.component';
+import { IsideNavComponent } from './iside-nav/iside-nav.component';
+import { AddPlaceComponent } from './add-place/add-place.component';
 import { FitnessComponent } from './fitness/fitness.component';
 import { EditorComponent } from './forum/editor/editor.component';
 import { ArticleComponent } from './forum/article/article.component';
@@ -62,6 +67,12 @@ import { GymComponent } from './gym/gym.component';
 // import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-place-details-form.component';
 // import { PresentStatusComponent } from './present-status/present-status.component';
 
+
+import { EditPlaceDetailsComponent } from './edit-place-details/edit-place-details.component';
+import { EditPlaceDetailsFormComponent } from './edit-place-details-form/edit-place-details-form.component';
+import { PresentStatusComponent } from './present-status/present-status.component';
+import { EditPackageComponent } from './edit-package/edit-package.component';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +101,8 @@ import { GymComponent } from './gym/gym.component';
     InstituteComponent,
     // IsideNavComponent,
     // AddPlaceComponent,
+    IsideNavComponent,
+    AddPlaceComponent,
     FitnessComponent,
     EditorComponent,
     ArticleComponent,
@@ -98,6 +111,11 @@ import { GymComponent } from './gym/gym.component';
     //CoreComponent,
     ModelsComponent,
     ServicesComponent,
+    EditPlaceDetailsComponent,
+    EditPlaceDetailsFormComponent,
+    PresentStatusComponent,
+    EditPackageComponent,
+  
     InstituteDetailsComponent,
     EditProfileComponent,
     FooterComponent,
@@ -109,6 +127,7 @@ import { GymComponent } from './gym/gym.component';
     // EditPlaceDetailsFormComponent,
     // PresentStatusComponent,
   
+    CustomerDetailsComponent,
   
   ],
   imports: [
@@ -241,6 +260,18 @@ import { GymComponent } from './gym/gym.component';
       //   component:EditPlaceDetailsFormComponent
       // },
       {
+        path:'institute-dash-board/add-place',
+        component:AddPlaceComponent
+      },
+      {
+        path:'institute-dash-board/Edit-Place-Details',
+        component:EditPlaceDetailsComponent
+      },
+      {
+        path:'institute-dash-board/Edit-Place-Details/edit-place-details-form',
+        component:EditPlaceDetailsFormComponent
+      },
+      {
         path:'institute-dash-board',
         component:IDashboardComponent
       },
@@ -248,6 +279,16 @@ import { GymComponent } from './gym/gym.component';
         path:'gym',
         component:GymComponent
       },
+      {
+        path:'institute-dash-board/Edit-Place-Details-form',
+        component:EditPlaceDetailsFormComponent
+      
+      },
+      {
+        path:'institute-dash-board/customer-details',
+        component:CustomerDetailsComponent
+      }
+
       // {
       //   path:'institute-dash-board/institute-profile',
       //   component:IDashboardComponent
